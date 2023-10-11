@@ -2,5 +2,5 @@ hexo clean
 hexo g
 hexo d
 git add -A
-git commit -m "$1"
+git commit -m "fix:修改信息"
 git push origin master
