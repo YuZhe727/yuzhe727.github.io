@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://www.xiaozhe.cc
+url: https://www.xiaozhe.cc/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -139,6 +139,6 @@ live2d:
 
 baidu_url_submit:
   count: 100
-  host: xiaozhe.cc
+  host: www.xiaozhe.cc
   token: jp7M1vOw74Yh3F09
   path: baidu_urls.txt
