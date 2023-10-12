@@ -143,5 +143,5 @@ live2d:
 baidu_url_submit:
   count: 100
   host: www.xiaozhe.cc
-  token: jp7M1vOw74Yh3F09
+  token: WrjmR4SenXme9OAh
   path: baidu_urls.txt
