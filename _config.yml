@@ -4,10 +4,10 @@
 
 # Site
 title: 小哲的博客
-subtitle: 算法码上来
-description: 华东师范大学 | 计算机科学与技术 | 自然语言处理
-keywords: "ECNU NLP DeepLearning AntNLP 韦阳 godweiyang WeiYang 自然语言处理 深度学习 算法码上来"
-author: 韦阳
+subtitle: 山高路远,静水深流
+description: 计算机基础 | java语言 | 闲聊
+keywords: "小哲 java 算法 计算机基础 闲聊"
+author: 小哲
 language: zh-CN
 timezone:
 
@@ -44,12 +44,14 @@ highlight:
   auto_detect: false
   tab_replace:
 
+#高亮插件
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: true    # default false
+  theme: 'default'
+  line_number: false    # default false
   custom_css:
 
+# 该文件中将每个文件认为是一个对象，存储了对象的基础信息和它的属性
 search:
   path: search.xml
   field: post
@@ -110,6 +112,7 @@ theme: matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# 主动推送给百度
 deploy:
 - type: git
   repository:
