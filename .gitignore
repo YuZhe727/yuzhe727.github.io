@@ -1,8 +1,7 @@
+.deploy*/
+node_modules/
+public/
+.idea/
 .DS_Store
 Thumbs.db
 *.log
-public/
-.deploy*/
-.vscode/
-node_modules
-.idea/
