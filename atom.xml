@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xiaozhe.cc/"/>
-  <updated>2023-10-25T03:34:04.677Z</updated>
+  <updated>2021-07-21T07:23:36.000Z</updated>
   <id>https://www.xiaozhe.cc/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://www.xiaozhe.cc/2023/10/25/ce-shi-3/"/>
-    <id>https://www.xiaozhe.cc/2023/10/25/ce-shi-3/</id>
-    <published>2023-10-25T03:33:49.666Z</published>
-    <updated>2023-10-25T03:34:04.677Z</updated>
+    <title>基于hexo框架、mastery主题的个人博客搭建[小白教程]</title>
+    <link href="https://www.xiaozhe.cc/2021/07/21/ji-yu-hexo-kuang-jia-mastery-zhu-ti-de-ge-ren-bo-ke-da-jian-xiao-bai-jiao-cheng/"/>
+    <id>https://www.xiaozhe.cc/2021/07/21/ji-yu-hexo-kuang-jia-mastery-zhu-ti-de-ge-ren-bo-ke-da-jian-xiao-bai-jiao-cheng/</id>
+    <published>2021-07-21T07:21:53.000Z</published>
+    <updated>2021-07-21T07:23:36.000Z</updated>
     
     <summary type="html">
     
@@ -29,72 +29,29 @@
       
         
         
-          &lt;p&gt;11111111&lt;/p&gt;
-
+          &lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
+      <category term="个人博客" scheme="https://www.xiaozhe.cc/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="https://www.xiaozhe.cc/tags/hexo/"/>
+    
+      <category term="git" scheme="https://www.xiaozhe.cc/tags/git/"/>
+    
+      <category term="mastery" scheme="https://www.xiaozhe.cc/tags/mastery/"/>
     
   </entry>
   
   <entry>
-    <title>测试2</title>
-    <link href="https://www.xiaozhe.cc/2023/10/12/ce-shi-2/"/>
-    <id>https://www.xiaozhe.cc/2023/10/12/ce-shi-2/</id>
-    <published>2023-10-12T07:27:32.000Z</published>
-    <updated>2023-10-12T10:51:10.611Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;![image-20231012152811371](/Users/zyz/Library/Application Support/typora-user-images/image-20231012152811371.png)&lt;/p&gt;
-&lt;div
-        
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="https://www.xiaozhe.cc/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="测试" scheme="https://www.xiaozhe.cc/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://www.xiaozhe.cc/2023/10/11/1/"/>
-    <id>https://www.xiaozhe.cc/2023/10/11/1/</id>
-    <published>2023-10-11T10:23:04.487Z</published>
-    <updated>2023-10-11T10:23:13.331Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;测试下&lt;/p&gt;
-
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>5W2H | 关于写博客的七点反思</title>
-    <link href="https://www.xiaozhe.cc/2020/01/14/5w2h-godweiyang/"/>
-    <id>https://www.xiaozhe.cc/2020/01/14/5w2h-godweiyang/</id>
-    <published>2020-01-14T07:27:31.000Z</published>
-    <updated>2023-10-11T09:03:41.373Z</updated>
+    <title>JVM系列知识点总结</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/jvm-xi-lie-zhi-shi-dian-zong-jie/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/jvm-xi-lie-zhi-shi-dian-zong-jie/</id>
+    <published>2021-07-12T08:41:37.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
     
     <summary type="html">
     
@@ -103,19 +60,514 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;关注公众号【算法码上来】，每日算法干货马上就来！&lt;/p&gt;
+&lt;p&gt;基于诸葛老师公开课&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;/medias/contact.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;h2 id=&quot;When？什么时候开始写的？&quot;&gt;&lt;a
+&lt;p&gt;笔记大致长这个样子——&lt;/p&gt;
+&lt;iframe id=&quot;embed_dom&quot; name=&quot;embed_dom&quot; frameborder=&quot;0&quot;
         
       
     
     </summary>
     
-      <category term="随笔" scheme="https://www.xiaozhe.cc/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="后端" scheme="https://www.xiaozhe.cc/categories/%E5%90%8E%E7%AB%AF/"/>
     
     
-      <category term="博客" scheme="https://www.xiaozhe.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="JVM" scheme="https://www.xiaozhe.cc/tags/JVM/"/>
+    
+      <category term="Java" scheme="https://www.xiaozhe.cc/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql数据库系列——持续更新中</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/mysql-shu-ju-ku-xi-lie-chi-xu-geng-xin-zhong/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/mysql-shu-ju-ku-xi-lie-chi-xu-geng-xin-zhong/</id>
+    <published>2021-07-12T08:24:45.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Mysql" scheme="https://www.xiaozhe.cc/tags/Mysql/"/>
+    
+      <category term="极客时间" scheme="https://www.xiaozhe.cc/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring IOC源码浅析</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/spring-ioc-yuan-ma-qian-xi/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/spring-ioc-yuan-ma-qian-xi/</id>
+    <published>2021-07-12T08:18:46.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一点思考&quot;&gt;&lt;a href=&quot;#一点思考&quot; class=&quot;headerlink&quot; title=&quot;一点思考&quot;&gt;&lt;/a&gt;一点思考&lt;/h2&gt;&lt;p&gt;在开始分析spring
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://www.xiaozhe.cc/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="spring" scheme="https://www.xiaozhe.cc/tags/spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven从入门到入坑</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/maven-cong-ru-men-dao-ru-keng/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/maven-cong-ru-men-dao-ru-keng/</id>
+    <published>2021-07-12T08:13:59.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;学习Maven的基础&quot;&gt;&lt;a href=&quot;#学习Maven的基础&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="敏捷开发" scheme="https://www.xiaozhe.cc/categories/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Maven" scheme="https://www.xiaozhe.cc/tags/Maven/"/>
+    
+      <category term="IDEA" scheme="https://www.xiaozhe.cc/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>递归的基本思想</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/di-gui-de-ji-ben-si-xiang/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/di-gui-de-ji-ben-si-xiang/</id>
+    <published>2021-07-12T08:09:39.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;从一个问题开始&quot;&gt;&lt;a href=&quot;#从一个问题开始&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://www.xiaozhe.cc/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="递归" scheme="https://www.xiaozhe.cc/tags/%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>四种基本的数据结构</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/si-chong-ji-ben-de-shu-ju-jie-gou/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/si-chong-ji-ben-de-shu-ju-jie-gou/</id>
+    <published>2021-07-12T08:05:33.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;在具体的算法题解之前，我会先简要的描述一些知识点，这些知识点都是基于数据结构与算法专栏的总结，对于详细的推理不再涉及，仅当做笔记使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;我们所熟识的数组&quot;&gt;&lt;a href=&quot;#我们所熟识的数组&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="极客时间" scheme="https://www.xiaozhe.cc/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="数据结构" scheme="https://www.xiaozhe.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>链表算法集锦(图文详解哦)</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/lian-biao-suan-fa-ji-jin-tu-wen-xiang-jie-e/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/lian-biao-suan-fa-ji-jin-tu-wen-xiang-jie-e/</id>
+    <published>2021-07-12T07:59:06.000Z</published>
+    <updated>2021-07-21T07:25:32.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、单链表的反转-递归-amp-迭代&quot;&gt;&lt;a href=&quot;#一、单链表的反转-递归-amp-迭代&quot; class=&quot;headerlink&quot; title=&quot;一、单链表的反转_递归&amp;amp;迭代&quot;&gt;&lt;/a&gt;一、单链表的反转_递归&amp;amp;迭代&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="链表" scheme="https://www.xiaozhe.cc/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>X数之和图文详解</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/x-shu-zhi-he-tu-wen-xiang-jie/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/x-shu-zhi-he-tu-wen-xiang-jie/</id>
+    <published>2021-07-12T07:56:02.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-两数之和&quot;&gt;&lt;a href=&quot;#1-两数之和&quot; class=&quot;headerlink&quot; title=&quot;1.两数之和&quot;&gt;&lt;/a&gt;1.两数之和&lt;/h2&gt;&lt;h3 id=&quot;1-1-题目描述&quot;&gt;&lt;a href=&quot;#1-1-题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="极客时间" scheme="https://www.xiaozhe.cc/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="数组" scheme="https://www.xiaozhe.cc/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构常见的八大排序图文详解</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/shu-ju-jie-gou-chang-jian-de-ba-da-pai-xu-tu-wen-xiang-jie/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/shu-ju-jie-gou-chang-jian-de-ba-da-pai-xu-tu-wen-xiang-jie/</id>
+    <published>2021-07-12T07:51:13.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="java" scheme="https://www.xiaozhe.cc/tags/java/"/>
+    
+      <category term="排序算法" scheme="https://www.xiaozhe.cc/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java多线程的前世今生</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/</id>
+    <published>2021-07-12T07:45:51.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="编程语言" scheme="https://www.xiaozhe.cc/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="java" scheme="https://www.xiaozhe.cc/tags/java/"/>
+    
+      <category term="并发编程" scheme="https://www.xiaozhe.cc/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那年深秋,在教室临窗写下的汇编</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/na-nian-shen-qiu-zai-jiao-shi-lin-chuang-xie-xia-de-hui-bian/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/na-nian-shen-qiu-zai-jiao-shi-lin-chuang-xie-xia-de-hui-bian/</id>
+    <published>2021-07-12T04:00:52.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;h3 id=&quot;1-为什么要学习汇编语言？&quot;&gt;&lt;a href=&quot;#1-为什么要学习汇编语言？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="intel8086汇编" scheme="https://www.xiaozhe.cc/tags/intel8086%E6%B1%87%E7%BC%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络传输层</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/ji-suan-ji-wang-luo-chuan-shu-ceng/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/ji-suan-ji-wang-luo-chuan-shu-ceng/</id>
+    <published>2021-07-12T03:52:37.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-1-概述和传输层服务&quot;&gt;&lt;a href=&quot;#1-1-概述和传输层服务&quot; class=&quot;headerlink&quot; title=&quot;1.1 概述和传输层服务&quot;&gt;&lt;/a&gt;1.1
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://www.xiaozhe.cc/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="抓包" scheme="https://www.xiaozhe.cc/tags/%E6%8A%93%E5%8C%85/"/>
+    
+      <category term="通用模式" scheme="https://www.xiaozhe.cc/tags/%E9%80%9A%E7%94%A8%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络应用层</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/ji-suan-ji-wang-luo-ying-yong-ceng/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/ji-suan-ji-wang-luo-ying-yong-ceng/</id>
+    <published>2021-07-12T03:51:04.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机网络" scheme="https://www.xiaozhe.cc/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="抓包" scheme="https://www.xiaozhe.cc/tags/%E6%8A%93%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络概述</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/ji-suan-ji-wang-luo-gai-shu/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/ji-suan-ji-wang-luo-gai-shu/</id>
+    <published>2021-07-12T03:47:57.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机网络" scheme="https://www.xiaozhe.cc/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>磁盘与文件</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/ci-pan-yu-wen-jian/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/ci-pan-yu-wen-jian/</id>
+    <published>2021-07-12T03:31:02.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、磁盘与文件&quot;&gt;&lt;a href=&quot;#一、磁盘与文件&quot; class=&quot;headerlink&quot; title=&quot;一、磁盘与文件&quot;&gt;&lt;/a&gt;一、磁盘与文件&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;1-生磁盘的使用&quot;&gt;&lt;a href=&quot;#1-生磁盘的使用&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="操作系统" scheme="https://www.xiaozhe.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>外设与文件系统</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/wai-she-yu-wen-jian-xi-tong/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/wai-she-yu-wen-jian-xi-tong/</id>
+    <published>2021-07-12T03:28:03.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;操作系统的&lt;strong&gt;核心&lt;/strong&gt;无非是&lt;strong&gt;多进程图像&lt;/strong&gt;和&lt;strong&gt;文件图像&lt;/strong&gt;，它们共同支撑了一个计算机&lt;strong&gt;最基础的骨架&lt;/strong&gt;，前者使多道程序能够被加载到内存，并有序的运行与切换，这其中
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="操作系统" scheme="https://www.xiaozhe.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟内存</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/xu-ni-nei-cun/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/xu-ni-nei-cun/</id>
+    <published>2021-07-12T03:26:10.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;我们在第三章的内存管理中常用的一个概念是虚拟内存，虚拟内存是用&lt;strong&gt;于分离用户与物理层&lt;/strong&gt;，且实现物&lt;strong&gt;理内存的扩展&lt;/strong&gt;的。&lt;/p&gt;
+&lt;p&gt;但对于虚拟内存的&lt;strong&gt;内在机理&lt;/strong&gt;，我们没有太多的谈及，只是
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="操作系统" scheme="https://www.xiaozhe.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内存管理</title>
+    <link href="https://www.xiaozhe.cc/2021/07/12/nei-cun-guan-li/"/>
+    <id>https://www.xiaozhe.cc/2021/07/12/nei-cun-guan-li/</id>
+    <published>2021-07-12T03:21:50.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1、内存使用与分段&quot;&gt;&lt;a href=&quot;#1、内存使用与分段&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="操作系统" scheme="https://www.xiaozhe.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux0.11" scheme="https://www.xiaozhe.cc/tags/linux0-11/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程与线程</title>
+    <link href="https://www.xiaozhe.cc/2021/07/11/jin-cheng-yu-xian-cheng/"/>
+    <id>https://www.xiaozhe.cc/2021/07/11/jin-cheng-yu-xian-cheng/</id>
+    <published>2021-07-11T12:32:04.000Z</published>
+    <updated>2021-07-18T12:07:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、多进程图像的引出&quot;&gt;&lt;a href=&quot;#一、多进程图像的引出&quot; class=&quot;headerlink&quot; title=&quot;一、多进程图像的引出&quot;&gt;&lt;/a&gt;一、多进程图像的引出&lt;/h1&gt;&lt;h2 id=&quot;1-多进程图像&quot;&gt;&lt;a href=&quot;#1-多进程图像&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="操作系统" scheme="https://www.xiaozhe.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="linux0.11" scheme="https://www.xiaozhe.cc/tags/linux0-11/"/>
     
   </entry>
   

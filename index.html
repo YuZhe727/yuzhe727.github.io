@@ -303,25 +303,46 @@
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
+    <div id="prev-cover" class="left waves-effect carousel-control">
+        <i class="icon fa fa-angle-left"></i>
+    </div>
+    <div id="next-cover" class="right waves-effect carousel-control">
+        <i class="icon fa fa-angle-right"></i>
+    </div>
+    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container">
-            <div class="row">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
-                <!-- 
-                    山高路远,静水深流
-                 -->
                 
-                    山高路远,静水深流
+                山高路远,静水深流
                 
             </div>
 
             <div class="description center-align">
                 
-                    计算机基础 | java语言 | 闲聊
-                    <!-- <span id="jinrishici-sentence">正在加载今日诗词...</span> -->
+                <span id="subtitle"></span>
+                <script src="/"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [
+                            
+                                "每个人都会找到他的意义",
+                            
+                                "Everyone will find their beans",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
                 
             </div>
         </div>
@@ -361,18 +382,166 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <a href="http://wpa.qq.com/msgrd?v=3&uin=2824353085&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
         <i class="fa fa-qq"></i>
     </a>
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fa fa-rss"></i>
-    </a>
 </div>
         </div>
     </div>
 
+    
+    
+
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/25.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">JVM系列知识点总结</div>
+                    <div class="description center-align">
+                    
+                        
+基于诸葛老师公开课
+
+笔记大致长这个样子——
+
+
+也可直接访问我的ProcessOn链接：
+JVM知识全景图
+
+
+山高路远，静水深流
+
+
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/07/12/jvm-xi-lie-zhi-shi-dian-zong-jie/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/26.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">Mysql数据库系列——持续更新中</div>
+                    <div class="description center-align">
+                    
+                        前言有一段时间我很困惑，如何在有限的时间内展开繁杂的内容，最终在评论区找到了答案：
+
+将每一小节的内容提炼成问题，通过回答这些问题来掌握知识，详略分明且高效！
+
+一.一条sql查询语句是如何执行的1.mysql的框架有哪些基本组件，各是什么
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/07/12/mysql-shu-ju-ku-xi-lie-chi-xu-geng-xin-zhong/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/13.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">Spring IOC源码浅析</div>
+                    <div class="description center-align">
+                    
+                        一点思考在开始分析spring IOC的源码之前，我们有必要先理清大致的脉络，而有三个问题对脉络的构建至关重要——
+
+从哪里出发：hello world~ 要想通这一点，我们需要把视角拉回java web，不可置否的是javaweb通过se
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/07/12/spring-ioc-yuan-ma-qian-xi/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/21.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">基于hexo框架、mastery主题的个人博客搭建[小白教程]</div>
+                    <div class="description center-align">
+                    
+                        一、前言借鉴了大佬们的个人博客搭建指南后，我得以有了互联网时代属于自己的小天地。
+但在搭建过程中，我发现了大多数的博客搭建博文对于像我这样的前端小白其实是不友好的，它们往往先入为主的陈述Hexo搭建的优势，却忽略了从静态的HTML页面变迁至
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/07/21/ji-yu-hexo-kuang-jia-mastery-zhu-ti-de-ge-ren-bo-ke-da-jian-xiao-bai-jiao-cheng/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/27.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">数据结构常见的八大排序图文详解</div>
+                    <div class="description center-align">
+                    
+                        摘要算法如果按照模块分，排序算法绝对算得上割据一方的存在。我们无可避免地会想，对一组数据进行排序让你玩得这么花，有这个必要吗？我想被要求手写快排的人至少是认为有的~
+就如同以前历史老师所说的那般：学习历史学的不是历史本身，而是历史背后的故事
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/07/12/shu-ju-jie-gou-chang-jian-de-ba-da-pai-xu-tu-wen-xiang-jie/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/26.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">计算机网络传输层</div>
+                    <div class="description center-align">
+                    
+                        1.1 概述和传输层服务传输层位于应用层与网络层之间，起着承上启下的重要作用。概括的说，传输层协议为运行在不同主机上的进程提供逻辑通信的功能。而从TCP/IP协议族的组成来看，它向上使进程间的通信成为可能，向下加强了网络层提供的尽力而为式的
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/07/12/ji-suan-ji-wang-luo-chuan-shu-ceng/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     
 </div>
 
@@ -427,32 +596,177 @@ $(function () {
             <div class="card">
                 <div class="card-content">
                     
-                    <div class="dream">
-    
-    <div class="title center-align">
-        <i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;迎风而来
-    </div>
-    
-    <div class="row">
-        <!-- <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            Everyone will find their meaning
-        </div> -->
-        <div align="middle">
-            <img src="/medias/contact.jpg" width="80%" >
-        </div>
-        
-    </div>
-    
-</div>
-                    
 
                     
 
                     
 
                     <div id="recommend-sections" class="recommend">
-                        
+                        <!--文章数组迁移  -->
 
+
+
+
+
+
+<div class="title"><i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+<!--  设置背景图片 有图片设置图片 没有图片，根据日期设置为feature image中的图片-->
+
+    
+    
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/26.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/数据库/" class="category" target="_blank">数据库</a>
+                    
+                </div>
+                <a href="/2021/07/12/mysql-shu-ju-ku-xi-lie-chi-xu-geng-xin-zhong/" target="_blank">
+                    <h3 class="post-title">Mysql数据库系列——持续更新中</h3>
+                </a>
+                <p class="post-description">
+                    
+                        前言有一段时间我很困惑，如何在有限的时间内展开繁杂的内容，最终在评论区找到了答案：
+
+将每一小节的内容提炼成问题，通过回答这些问题来掌握知识
+                    
+                </p>
+                <a href="/2021/07/12/mysql-shu-ju-ku-xi-lie-chi-xu-geng-xin-zhong/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/10.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/计算机基础/" class="category" target="_blank">计算机基础</a>
+                    
+                </div>
+                <a href="/2021/07/12/nei-cun-guan-li/" target="_blank">
+                    <h3 class="post-title">内存管理</h3>
+                </a>
+                <p class="post-description">
+                    
+                        1、内存使用与分段我们知道，计算机运行的核心不外于取指执行，而从哪里取指令呢，自然是内存，更具体的说，是从磁盘加载到内存中的一段程序。但指令
+                    
+                </p>
+                <a href="/2021/07/12/nei-cun-guan-li/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/0.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/编程语言/" class="category" target="_blank">编程语言</a>
+                    
+                </div>
+                <a href="/2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/" target="_blank">
+                    <h3 class="post-title">java多线程的前世今生</h3>
+                </a>
+                <p class="post-description">
+                    
+                        前言一个多月没写过博文了，不是没有值得记录的故事，确是静不下心。网申在即，靠目前的积淀，知识地图中缺了一大块，索性打消了网申的念头。但不免有
+                    
+                </p>
+                <a href="/2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/19.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/计算机基础/" class="category" target="_blank">计算机基础</a>
+                    
+                </div>
+                <a href="/2021/07/12/ji-suan-ji-wang-luo-ying-yong-ceng/" target="_blank">
+                    <h3 class="post-title">计算机网络应用层</h3>
+                </a>
+                <p class="post-description">
+                    
+                        摘要到第二章我们就将进入具体5层协议栈的描述，更具体地说，是从顶层应用层开始，渐进地学习计算机网络。我们知道，应用层是在传输层提供的服务上实
+                    
+                </p>
+                <a href="/2021/07/12/ji-suan-ji-wang-luo-ying-yong-ceng/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/26.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                </div>
+                <a href="/2021/07/12/ji-suan-ji-wang-luo-chuan-shu-ceng/" target="_blank">
+                    <h3 class="post-title">计算机网络传输层</h3>
+                </a>
+                <p class="post-description">
+                    
+                        1.1 概述和传输层服务传输层位于应用层与网络层之间，起着承上启下的重要作用。概括的说，传输层协议为运行在不同主机上的进程提供逻辑通信的功能
+                    
+                </p>
+                <a href="/2021/07/12/ji-suan-ji-wang-luo-chuan-shu-ceng/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/0.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/计算机基础/" class="category" target="_blank">计算机基础</a>
+                    
+                </div>
+                <a href="/2021/07/11/jin-cheng-yu-xian-cheng/" target="_blank">
+                    <h3 class="post-title">进程与线程</h3>
+                </a>
+                <p class="post-description">
+                    
+                        起笔自多进程图像，接着娓娓道出轻量级进程，即线程，然后着眼进程间如何切换，最后落笔于进程间的合作
+                    
+                </p>
+                <a href="/2021/07/11/jin-cheng-yu-xian-cheng/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #C644FC 0%, #5856D6 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
 
 
                     </div>
@@ -466,72 +780,37 @@ $(function () {
 
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-      测试
         <div class="row article-row">
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/10/25/ce-shi-3/" target="_blank">
+                    <a href="/2021/07/21/ji-yu-hexo-kuang-jia-mastery-zhu-ti-de-ge-ren-bo-ke-da-jian-xiao-bai-jiao-cheng/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="基于hexo框架、mastery主题的个人博客搭建[小白教程]">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">基于hexo框架、mastery主题的个人博客搭建[小白教程]</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            11111111
-
+                            一、前言借鉴了大佬们的个人博客搭建指南后，我得以有了互联网时代属于自己的小天地。
+但在搭建过程中，我发现了大多数的博客搭建博文对于像我这样的前端小白其实是不友好的，它们往往先入为主的陈述Hexo搭建的优势，却忽略了从静态的HTML页面变迁至
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-10-25
-                            </span>
-                            <span class="publish-author">
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/10/12/ce-shi-2/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="测试2">
-                            
-                            <span class="card-title">测试2</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            ![image-20231012152811371](/Users/zyz/Library/Application Support/typora-user-images/image-20231012152811371.png)
->
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-10-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-21
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/测试/" class="post-category" target="_blank">
-                                    测试
+                                <a href="/categories/个人博客/" class="post-category" target="_blank">
+                                    个人博客
                                 </a>
                                 
                                 
@@ -542,8 +821,16 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/测试/" target="_blank">
-                            <span class="chip bg-color">测试</span>
+                        <a href="/tags/hexo/" target="_blank">
+                            <span class="chip bg-color">hexo</span>
+                        </a>
+                        
+                        <a href="/tags/git/" target="_blank">
+                            <span class="chip bg-color">git</span>
+                        </a>
+                        
+                        <a href="/tags/mastery/" target="_blank">
+                            <span class="chip bg-color">mastery</span>
                         </a>
                         
                     </div>
@@ -553,46 +840,13 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/10/11/1/" target="_blank">
+                    <a href="/2021/07/12/jvm-xi-lie-zhi-shi-dian-zong-jie/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="JVM系列知识点总结">
                             
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            测试下
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-10-11
-                            </span>
-                            <span class="publish-author">
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/01/14/5w2h-godweiyang/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="5W2H | 关于写博客的七点反思">
-                            
-                            <span class="card-title">5W2H | 关于写博客的七点反思</span>
+                            <span class="card-title">JVM系列知识点总结</span>
                         </div>
                     </a>
 
@@ -600,22 +854,30 @@ $(function () {
                         <div class="summary block-with-text">
                             
                             
-关注公众号【算法码上来】，每日算法干货马上就来！
+基于诸葛老师公开课
+
+笔记大致长这个样子——
 
 
-When？什么时候开始写的？第一次写博客是 2015 年了，在 CSDN 和博客园上面，当时写文章是为了记录 ACM 竞赛的题解，陆陆续续写了几十篇。但是最后还是没有坚持下去，主要还是
+也可直接访问我的ProcessOn链接：
+JVM知识全景图
+
+
+山高路远，静水深流
+
+
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                                <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
                                 </a>
                                 
                                 
@@ -626,8 +888,530 @@ When？什么时候开始写的？第一次写博客是 2015 年了，在 CSDN �
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/博客/" target="_blank">
-                            <span class="chip bg-color">博客</span>
+                        <a href="/tags/JVM/" target="_blank">
+                            <span class="chip bg-color">JVM</span>
+                        </a>
+                        
+                        <a href="/tags/Java/" target="_blank">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/mysql-shu-ju-ku-xi-lie-chi-xu-geng-xin-zhong/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Mysql数据库系列——持续更新中">
+                            
+                            <span class="card-title">Mysql数据库系列——持续更新中</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            前言有一段时间我很困惑，如何在有限的时间内展开繁杂的内容，最终在评论区找到了答案：
+
+将每一小节的内容提炼成问题，通过回答这些问题来掌握知识，详略分明且高效！
+
+一.一条sql查询语句是如何执行的1.mysql的框架有哪些基本组件，各是什么
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/数据库/" class="post-category" target="_blank">
+                                    数据库
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Mysql/" target="_blank">
+                            <span class="chip bg-color">Mysql</span>
+                        </a>
+                        
+                        <a href="/tags/极客时间/" target="_blank">
+                            <span class="chip bg-color">极客时间</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/spring-ioc-yuan-ma-qian-xi/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Spring IOC源码浅析">
+                            
+                            <span class="card-title">Spring IOC源码浅析</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            一点思考在开始分析spring IOC的源码之前，我们有必要先理清大致的脉络，而有三个问题对脉络的构建至关重要——
+
+从哪里出发：hello world~ 要想通这一点，我们需要把视角拉回java web，不可置否的是javaweb通过se
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/spring/" target="_blank">
+                            <span class="chip bg-color">spring</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/maven-cong-ru-men-dao-ru-keng/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Maven从入门到入坑">
+                            
+                            <span class="card-title">Maven从入门到入坑</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            学习Maven的基础目前所有的项目项目都在使用Maven，那到底Maven是什么，为什么Maven可以大行其道，它究竟为我们的项目开发带来了怎样的好处呢——
+为什么要学习Maven
+在开发庞大的项目时，使用package的结构来区分复杂的代
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/敏捷开发/" class="post-category" target="_blank">
+                                    敏捷开发
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Maven/" target="_blank">
+                            <span class="chip bg-color">Maven</span>
+                        </a>
+                        
+                        <a href="/tags/IDEA/" target="_blank">
+                            <span class="chip bg-color">IDEA</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/di-gui-de-ji-ben-si-xiang/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="递归的基本思想">
+                            
+                            <span class="card-title">递归的基本思想</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            从一个问题开始假设A的推荐人是B，B的推荐人是C，如何来查找A的最终推荐人呢？
+这里直接给出答案——
+long findRootRerfererId(long actorId){
+    Long refererId = select re
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/算法/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/递归/" target="_blank">
+                            <span class="chip bg-color">递归</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/si-chong-ji-ben-de-shu-ju-jie-gou/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="四种基本的数据结构">
+                            
+                            <span class="card-title">四种基本的数据结构</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            
+在具体的算法题解之前，我会先简要的描述一些知识点，这些知识点都是基于数据结构与算法专栏的总结，对于详细的推理不再涉及，仅当做笔记使用。
+
+我们所熟识的数组1.1 从一个问题开始为什么大部分编程语言中，数组要从0开始编号，而不是从1开始？
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/数据结构与算法/" class="post-category" target="_blank">
+                                    数据结构与算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/极客时间/" target="_blank">
+                            <span class="chip bg-color">极客时间</span>
+                        </a>
+                        
+                        <a href="/tags/数据结构/" target="_blank">
+                            <span class="chip bg-color">数据结构</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/lian-biao-suan-fa-ji-jin-tu-wen-xiang-jie-e/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="链表算法集锦(图文详解哦)">
+                            
+                            <span class="card-title">链表算法集锦(图文详解哦)</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            一、单链表的反转_递归&amp;迭代1.1 问题描述
+反转一个单链表。
+示例:
+输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL进阶:你
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/数据结构与算法/" class="post-category" target="_blank">
+                                    数据结构与算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/链表/" target="_blank">
+                            <span class="chip bg-color">链表</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/x-shu-zhi-he-tu-wen-xiang-jie/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="X数之和图文详解">
+                            
+                            <span class="card-title">X数之和图文详解</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            1.两数之和1.1 题目描述
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+你
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/数据结构与算法/" class="post-category" target="_blank">
+                                    数据结构与算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/极客时间/" target="_blank">
+                            <span class="chip bg-color">极客时间</span>
+                        </a>
+                        
+                        <a href="/tags/数组/" target="_blank">
+                            <span class="chip bg-color">数组</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/shu-ju-jie-gou-chang-jian-de-ba-da-pai-xu-tu-wen-xiang-jie/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="数据结构常见的八大排序图文详解">
+                            
+                            <span class="card-title">数据结构常见的八大排序图文详解</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            摘要算法如果按照模块分，排序算法绝对算得上割据一方的存在。我们无可避免地会想，对一组数据进行排序让你玩得这么花，有这个必要吗？我想被要求手写快排的人至少是认为有的~
+就如同以前历史老师所说的那般：学习历史学的不是历史本身，而是历史背后的故事
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/数据结构与算法/" class="post-category" target="_blank">
+                                    数据结构与算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/java/" target="_blank">
+                            <span class="chip bg-color">java</span>
+                        </a>
+                        
+                        <a href="/tags/排序算法/" target="_blank">
+                            <span class="chip bg-color">排序算法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="java多线程的前世今生">
+                            
+                            <span class="card-title">java多线程的前世今生</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            前言一个多月没写过博文了，不是没有值得记录的故事，确是静不下心。网申在即，靠目前的积淀，知识地图中缺了一大块，索性打消了网申的念头。但不免有些落寞，像极了落跑的小橘子。
+这个时代越来越卷了，但也正因如此，我才更信奉积淀的魅力，这也正是我整理
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/编程语言/" class="post-category" target="_blank">
+                                    编程语言
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/java/" target="_blank">
+                            <span class="chip bg-color">java</span>
+                        </a>
+                        
+                        <a href="/tags/并发编程/" target="_blank">
+                            <span class="chip bg-color">并发编程</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/07/12/na-nian-shen-qiu-zai-jiao-shi-lin-chuang-xie-xia-de-hui-bian/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="那年深秋,在教室临窗写下的汇编">
+                            
+                            <span class="card-title">那年深秋,在教室临窗写下的汇编</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            前言1. 为什么要学习汇编语言？编程语言发展到如今，高级语言大行其道，他们通常被标榜为学习成本低。但由于高级语言不是直接调用操作系统，因而执行效率相对低一些。
+比如java语言，java源文件首先被编译，然后经过JVM的连接，最终执行得到运
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/计算机基础/" class="post-category" target="_blank">
+                                    计算机基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/intel8086汇编/" target="_blank">
+                            <span class="chip bg-color">intel8086汇编</span>
                         </a>
                         
                     </div>
@@ -641,6 +1425,30 @@ When？什么时候开始写的？第一次写博客是 2015 年了，在 CSDN �
 </main>
 
 
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -648,7 +1456,7 @@ When？什么时候开始写的？第一次写博客是 2015 年了，在 CSDN �
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.7k</span>
+            <span class="white-color">98.4k</span>
             
 
             <br>
@@ -687,14 +1495,6 @@ When？什么时候开始写的？第一次写博客是 2015 年了，在 CSDN �
 
     <a href="http://wpa.qq.com/msgrd?v=3&uin=2824353085&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
         <i class="fa fa-qq"></i>
-    </a>
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fa fa-rss"></i>
     </a>
 </div>
     </div>
