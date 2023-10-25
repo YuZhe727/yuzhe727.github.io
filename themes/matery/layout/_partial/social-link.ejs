@@ -21,15 +21,3 @@
         <i class="fa fa-qq"></i>
     </a>
 <% } %>
-
-<% if (theme.socialLink.weibo) { %>
-    <a href="https://weibo.com/<%= theme.socialLink.weibo %>" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
-        <i class="fa fa-weibo"></i>
-    </a>
-<% } %>
-
-<% if (config.feed && config.feed.path == 'atom.xml') { %>
-    <a href="<%- url_for('/atom.xml') %>" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fa fa-rss"></i>
-    </a>
-<% } %>

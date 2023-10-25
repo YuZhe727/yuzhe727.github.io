@@ -1,3 +1,4 @@
+<!--文章数组迁移  -->
 <%
     // get all top posts.
     var topPosts = [];
@@ -11,6 +12,7 @@
 
 <% if (topPostsCount > 0) { %>
 <%
+<!-- 生成唯一的hash值-->
     var hashCode = function (str) {
         if (!str && str.length === 0) {
             return 0;
@@ -23,6 +25,7 @@
         }
         return hash;
     };
+
 
     var featureImages = theme.featureImages;
     var imgCount = featureImages.length;
@@ -41,6 +44,7 @@
 <div class="title"><i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;<%- __('recommendedPosts') %></div>
 <% } %>
 <div class="row">
+<!--  设置背景图片 有图片设置图片 没有图片，根据日期设置为feature image中的图片-->
 <% if (topPostsCount % 2 === 0) { %>
     <% for (var i = 0; i < topPostsCount; i++) { %>
     <%
