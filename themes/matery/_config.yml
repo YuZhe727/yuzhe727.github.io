@@ -13,15 +13,6 @@ menu:
   Archives:
     url: /archives
     icon: fa-archive
-  About:
-    url: /about
-    icon: fa-user-circle-o
-  Friends:
-    url: /friends
-    icon: fa-address-book
-  Contact:
-    url: /contact
-    icon: fa-comments
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -32,13 +23,26 @@ cover:
   duration: 120 # 切换延迟时间. Switching delay time.
   intervalTime: 5000 # 自动切换下一张的间隔时间. Automatically switch the interval of the next one.
 
+# 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle:
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub:
+    - 从来没有真正的绝境, 只有心灵的迷途
+    - Never really desperate, only the lost of the soul
+
 # index page dream text,
 # 配置首页显示"梦想"的语句.
 dream:
-  enable: false
+  enable: true
   showTitle: true
-  title: 欢迎关注
-  text: 我搬到谁的隔壁，谁成了我的邻居。鸣谢生命有你参与，笑纳我的邀请。
+  title: 迎风而来
+  text: Everyone will find their meaning
   img: https://pic1.zhimg.com/80/v2-0205cde00e314b1414a5e9d94106a431_r.jpg
 
 # Whether to display the musics.
@@ -80,7 +84,7 @@ recommend:
 
 # Configure website favicon and LOGO
 # 配置网站favicon和网站LOGO
-favicon: /favicon.png
+favicon: /logo.png
 logo: /medias/logo.png
 
 # The configuration of the second button in the home banner,
@@ -90,17 +94,15 @@ indexbtn:
   enable: true
   name: Github
   icon: fa-github-alt
-  url: https://github.com/godweiyang
+  url: https://github.com/YuZhe727
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  qq: 792321264
-  github: godweiyang
-  weibo: godweiyang
-  email: godweiyang@gmail.com
-  zhihu: godweiyang
+  qq: 2824353085
+  github: YuZhe727
+  email: zhangyuzhe727@gmail.com
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -240,12 +242,12 @@ postCalendar: true
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
   enable: true
-  owner: xiaozhe
-  repo: xiaozhe.github.io
+  owner: 归处
+  repo: yuzhe727.github.io
   oauth:
     clientId: a0dd4b3edfe5d21c2c49
     clientSecret: 1308acb2f93f2d81dfad1bfe1a2d7b9784546b90
-  admin: xiaozhe
+  admin: 归处
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
@@ -287,7 +289,7 @@ valine:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://github.com/godweiyang/hexo-matery-modified
+  url: https://github.com/YuZhe727/yuzhe727.github.io
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,
@@ -409,6 +411,6 @@ reprint:
 
 # 雪花特效
 snow:
-  enable: false
+  enable: true
 
 baidu_push: true
