@@ -467,19 +467,18 @@
 <p>带宽，在计算机网络中用来表示网络的<strong>通信线路传输数据的能力</strong>。注意，这里是传输，而不是传播，带宽描述的是<strong>发送数据的发送器的能力强弱</strong>，而带宽越大，将数据注入这个链路所需要的时间就越少。而传播和发送器是没有关系的。它表示的是信号在信道中传输的速率。</p>
 </blockquote>
 <p>那协议又是什么东东呢？协议指在对等实体之间通信需要遵循的规则。通常我们会从一个协议的<strong>语法</strong>，<strong>语义</strong>，<strong>时序</strong>，<strong>动作</strong>方面来衡量一个协议。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204758527.png" alt="image-20210707204758527"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262116307.png" alt="image-20210707204758527"></p>
 <h3 id="从服务角度"><a href="#从服务角度" class="headerlink" title="从服务角度"></a>从服务角度</h3><p>从服务的维度来看，Internet包括<strong>分布式的应用程序</strong>和<strong>支撑分布式应用程序通信的基础设施</strong>。</p>
 <hr>
 <h2 id="1-2-网络边缘"><a href="#1-2-网络边缘" class="headerlink" title="1.2 网络边缘"></a>1.2 网络边缘</h2><p>网络边缘包含<strong>计算机和其他接入网络的设备</strong>，又因为他们处于边缘位置，故也称<strong>端系统</strong>。它的另一为人所知的称谓是<strong>主机</strong>，而网络边缘即是<strong>主机+运行在主机上的应用程序</strong></p>
 <p>我们来看下面的网络图示——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204813922.png" alt="image-20210707204813922"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262116719.png" alt="image-20210707204813922"></p>
 <p>在这个图中<strong>，计算机，服务器，AP(无线访问设备)</strong>都属于端系统的范畴。</p>
 <p>那这些端系统是如何介入网络的呢？很显然，通过通信链路，更具体的说，是通过<strong>接入网</strong>，接入网是<strong>将端系统物理连接到边缘路由器</strong>的链路。</p>
 <p>写到这，<strong>不妨将知识映射到实际的应用</strong>。我家是使用<strong>电话线</strong>来接入因特网的，学过通信原理的朋友都知道在信道中传输的信号必须是<strong>数字信号</strong>，也就是说，我们需要一个<strong>调制解调器</strong>来完成信号的转换，这就是我们常说的<strong>猫(Modem)</strong>。这样就可以保证使用计算机上网了。但如果要多个设备都接入网络，就需要我们常说的WIFI，具体的说，是<strong>WIFI路由器</strong>，WIFI路由器上有<strong>很多以太网的网口</strong>，这样就可以实现多设备的接入网络了，当然，是<strong>共享带宽</strong>哦。</p>
 <p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204838947.png" alt="image-20210707204826842"></p>
 <p>而同样值得一提的是，使用电话线的接入网它的<strong>上行和下行的速率是不一样的</strong>，我们普遍的需求是下载的速度更快，而对上传的速率没有严格的要求，因此使用这种带宽分发策略更有利。</p>
-<p>接入网的方式自然不限于电话线，使用线缆反而是现在更通用的方式。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204838947.png" alt="image-20210707204838947"></p>
+<p>接入网的方式自然不限于电话线，使用线缆反而是现在更通用的方式。<img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117561.png" alt="image-20210707204838947"></p>
 <p>我们来描述一下这个过程——<br><strong>首先计算机通过Modem,即DSL调制解调器完成信号的转化，连接线缆的设备共享线缆的接入网络，再通过CMTS(线缆调制解调终端系统)接入到ISP的路由器中。</strong></p>
 <p>我们描述了端系统是如何接入网络的，那端系统之上的<strong>应用进程是如何通信的呢</strong>？</p>
 <p>应用进程属于应用层，应用层的通信实现需要<strong>通过传输层提供的接口调用传输层的服务</strong>。当然，这只是一个概述，具体展开那就是第二章的故事了。</p>
@@ -493,19 +492,19 @@
 <p>那怎样实现传输呢？接根线直接连过去显然不合适，那是名副其实的互连，但着实不优雅。</p>
 <p>我们需要一种<strong>中继的设备</strong>，它需要知道数据从何而来，要去往何处，也要保证传输一定程度的稳定。在实际中，满足这样需求的设备就是<strong>交换机。而使用网络链路和交换机传输数据有两种基本方法：</strong>电路交换和分组交换。</p>
 <h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p>电路交换的思路是<strong>为每一个呼叫预留一条专有的电路</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204900893.png" alt="image-20210707204900893"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117944.png" alt="image-20210707204900893"></p>
 <p>从上图中可以看到，在两个交换机之间有四条链路，假如网络带宽是1Mbps,那每条链路的带宽都是250Kbps,发起通信以后以后，首先会建立一个专有的连接，在连接保持期间，它独享链路资源。这就好比两个人通过手机正在通话，第三方想接入的话会显示占线中。</p>
 <p>这种VIP的通信服务除了<code>专用带宽</code>以外，它也提供<code>缓存服务</code>。但同时它的缺点也很明显，接入的用户太少了。因特网的用户接入是有局部性和突发性的，一成不变的电路交换显然不能胜任。</p>
 <p>这里需要额外的给出一些<strong>小贴士</strong>：</p>
 <blockquote>
 <p>带宽可以认为是网络中的一种资源，而为了更充分的利用这种资源，通常将带宽分成片。这里可以类比CPU的时间片。通常的分片方式有时分，频分，码分，波分。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204915415.png" alt="image-20210707204915415"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117833.png" alt="image-20210707204915415"></p>
 </blockquote>
 <h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p>分组交换传输数据的<strong>粒度更小</strong>，它是<strong>基于分组</strong>的传输，那首先要了解分组的定义，在端与端之间传输数据的单元是报文。报文中包含协议设计者需要的任何东西。而网络核心的设备处于网络层，因而源主机将报文分成一个个的分组，分组按照协议要求，封装特定的头部和实体部分，在网络中传输。</p>
 <p>为了量化传输的效率，我们通常将分组的长度记做L比特，而将链路的传输速率记做R比特/秒，即带宽为Rbps，那传输速率就为L/R。</p>
 <p>分组交换为了提高传输的效率并让传输变得稳定可控，采用<strong>存储转发</strong>的机制。即路由器先将接收到的分组存储起来，将分组中的某些信息取出，按照一定的路由算法得到路由表，再由路由表即可得到下一条的IP地址，最终将分组转发给下一个路由器。</p>
 <p>上面我们提及存储转发可以让传输稳定可用，但实际上，<strong>存储转发只是一种尽力而为的机制</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204929034.png" alt="image-20210707204929034"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117316.png" alt="image-20210707204929034"></p>
 <p>当<code>分组的到达速率&gt;链路的输出速率</code>，分组就需要排队，当队列已满，即路由器的<code>缓存用完</code>时，分组就<code>会被抛弃</code>。</p>
 <p>从上图中可以看出，分组<code>没有时序的讲究</code>，分组共享链路的带宽资源。我们常将这种模式称为统计多路复用。</p>
 <h3 id="网络核心的关键功能"><a href="#网络核心的关键功能" class="headerlink" title="网络核心的关键功能"></a>网络核心的关键功能</h3><ol>
@@ -524,7 +523,7 @@
 <li><p>电路交换： 显然可以支撑1M/100K=<strong>10个</strong>用户</p>
 </li>
 <li><p>分组交换：假设有35个用户，按使用概率论的知识可以求得<strong>链路不允许10个以上用户活动的概率为0.004</strong></p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204942286.png" alt="image-20210707204942286"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117658.png" alt="image-20210707204942286"></p>
 <p>通俗的说，允许10个以上用户活动的概率就等于允许0个，1个。。。的<strong>概率累加和</strong>，而35个中可以允许1个用户活动的概率服从<strong>伯努利实验，即二项分布</strong>。</p>
 <p><img src="http://qnuez6z2b.hn-bkt.clouddn.com/typora/image-20210204122319342.png" alt="image-20210204122319342"></p>
 <p>通过计算结果，很容易推断出分组交换在<code>用户容量</code>方面优于电路交换。</p>
@@ -532,21 +531,21 @@
 </ul>
 <hr>
 <h2 id="1-4-Internet结构与ISP"><a href="#1-4-Internet结构与ISP" class="headerlink" title="1.4 Internet结构与ISP"></a>1.4 Internet结构与ISP</h2><p>这里我们不再回顾Internet的演变过程，下图直接给出最终的框架——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204955995.png" alt="image-20210707204955995"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117186.png" alt="image-20210707204955995"></p>
 <p>那如何来解释这张网络架构图呢？我们以<strong>从边沿到核心的思路</strong>说起：</p>
 <p>首先零散的端系统接入到<code>附近的ISP服务商</code>提供的区域网络，区域接入再通过很多路由器接入到去<code>global ISPS</code>,global ISPS通过互连IXP的方式接入到其他的global ISPS，这样一个网络框架就有了。但网络还需要实质的数据传输，这时候<code>ICP(内容分发网络，如谷歌)</code>就加入进去了，而为了节省成本，ICP通常会自己搭建更靠近用户的网络来向用户提供服务。</p>
 <p>为了更形象的展示错综复杂的网络，我们看下实际应用中的网络——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205016410.png" alt="image-20210707205016410"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118147.png" alt="image-20210707205016410"></p>
 <hr>
 <h2 id="1-5-分组延时-丢失和吞吐量"><a href="#1-5-分组延时-丢失和吞吐量" class="headerlink" title="1.5 分组延时,丢失和吞吐量"></a>1.5 分组延时,丢失和吞吐量</h2><p>又到了万恶的知识点环节，但朋友们大可放心，这些概念还是很好理解的——</p>
-<h3 id="分组延时"><a href="#分组延时" class="headerlink" title="分组延时"></a>分组延时</h3><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205026706.png" alt="image-20210707205026706"></p>
+<h3 id="分组延时"><a href="#分组延时" class="headerlink" title="分组延时"></a>分组延时</h3><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118516.png" alt="image-20210707205026706"></p>
 <p>分组延时有四种——</p>
 <ul>
 <li><p><code>节点处理延时</code>：检查<strong>分组首部</strong>以及决定将分组导向何处。</p>
 </li>
 <li><p><code>排队延时</code>：在输出链路上<strong>等待传输</strong>的时间</p>
 <p>在排队延时中我们引入<strong>流量强度</strong>的概念——<br>$$<br>流量强度=La/R<br>$$<br>a指的是分组到达队列的<strong>平均速率</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205224266.png" alt="image-20210707205224266"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118077.png" alt="image-20210707205224266"></p>
 </li>
 <li><p><code>传输延时</code>：长度为L的分组在带宽为Rbps的链路上传输的时间为<strong>L/R</strong>.</p>
 </li>
@@ -557,7 +556,7 @@
 <h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p>吞吐量指单位时间内从源端传输到目标端的数据量，它<strong>取决于路径上最小的吞吐量</strong>。</p>
 <hr>
 <h2 id="1-6-协议层次与服务模型"><a href="#1-6-协议层次与服务模型" class="headerlink" title="1.6 协议层次与服务模型"></a>1.6 协议层次与服务模型</h2><p>在解决复杂问题时，将问题模块化，分层解决是一个很好的思路，我们先来看日常生活中称作航班的例子——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205236557.png" alt="image-20210707205236557"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118996.png" alt="image-20210707205236557"></p>
 <p>这个例子有什么特点呢？</p>
 <ol>
 <li>在每一层都实现了<strong>特定的功能</strong>，比如购票，托运行李巴拉巴拉；</li>
@@ -569,10 +568,10 @@
 <p>与服务会发生概念混淆的，是<strong>原语</strong>的概念，这里的原语区别于操作系统的原语，指的是使用服务的方式，说白了，就是<strong>API</strong>。有了服务，自然就有服务作用的对象——</p>
 <p><code>服务访问点SAP</code>: 即下层提供的服务要通过<strong>接口</strong>来让上层调用。在传输层，SAP就是端口。</p>
 <p>我们将服务的粒度放小就是<strong>数据单元DU</strong>，下面的图会展示DU的结构——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205247263.png" alt="image-20210707205247263"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262119230.png" alt="image-20210707205247263"></p>
 <p>也就是说，数据单元是由<strong>实体+特定的协议头部</strong>构成的。</p>
 <p>到这里，前置知识大抵就完了，我们直接上正菜——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205300541.png" alt="image-20210707205300541"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262119497.png" alt="image-20210707205300541"></p>
 <p>换种描述方式——</p>
 <table>
 <thead>
@@ -627,7 +626,7 @@
 </tr>
 </tbody></table>
 <p>这时我们就可以解答实际中应用程序间的通信是如何实现的啦——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205315024.png" alt="image-20210707205315024"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262119692.png" alt="image-20210707205315024"></p>
 <blockquote>
 <p>山高路远，静水深流</p>
 </blockquote>
@@ -997,7 +996,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

@@ -428,14 +428,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.9k
+                    11.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    40 分
+                    38 分
                 </div>
                 
                 
@@ -474,32 +474,32 @@
 <li><code>解复用：</code>将传输层报文段中的数据交付给应用进程的过程</li>
 </ul>
 <p>也就是说，传输层的多路复用与解复用实现的就是<code>将主机到主机的交付服务延伸到应用程序到应用程序之间</code>，它关注的问题无非是<strong>将报文传给谁，报文中都包括什么</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210324385.png" alt="image-20210707210324385"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262101368.png" alt="image-20210707210324385"></p>
 <p>可以看出，复用与解复用的核心是通过套接字来完成的。而通过上一章节的知识，我们知道TCP和UDP的套接字所引用的信息是不一样的。我们分情况来看——</p>
 <h3 id="无连接的多路复用与解复用"><a href="#无连接的多路复用与解复用" class="headerlink" title="无连接的多路复用与解复用"></a>无连接的多路复用与解复用</h3><p>我们通过图解来解析UDP多路复用的过程——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210337051.png" alt="image-20210707210337051"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262101248.png" alt="image-20210707210337051"></p>
 <p><code>饮</code>：主机A中的传输层创建一个传输层报文，<strong>报文包含应用程序数据，源端口号19157，目的端口号46428和其他两个值</strong>。接着，传输层将该报文段传输给<strong>网络层</strong>，网络层再将报文段封装到一个<strong>IP数据报</strong>中，并通过网络链路交付给接收主机。</p>
 <p><code>啄</code>：接收主机传输层检查该报文段中的<strong>目的端口号46428</strong>，并将该报文段交付给端口号46428所<strong>标识的套接字</strong>。</p>
 <p>这里有一点可能会引起<strong>困惑</strong>的地方：socket是如何参与这个过程的。首先明确的是，<strong>socket是不被包含在报文段中的</strong>。UDP的Socket包含目的IP，目的端口号，它仅用于处理源端口或者目标端口的<strong>识别</strong>，即<strong>层间接口</strong>。但报文是实际参与通信过程的。这里的socket就像是一个<strong>开门的钥匙</strong>。</p>
 <h3 id="面向连接的多路复用与解复用"><a href="#面向连接的多路复用与解复用" class="headerlink" title="面向连接的多路复用与解复用"></a>面向连接的多路复用与解复用</h3><p>同样的，开局一张图——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224235450.png" alt="image-20210707224235450"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262101328.png" alt="image-20210707224235450"></p>
 <p>区别于UDP，TCP的socket所引用的信息是一个四元组，即——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224252958.png" alt="image-20210707224252958"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262101625.png" alt="image-20210707224252958"></p>
 <p>额，PID就不用管了，当一个报文段被交付给应用进程时，它需要使用四元组的socket来判别报文段应该被交付给具体哪一个应用进程。</p>
 <p>如果我们要求在传输层上只实现<strong>必要的最简单协议</strong>，那UDP完成符合这样的要求。UDP的全称是<strong>用户数据报协议</strong>。它仅在网络层的基础上提供<strong>必要的复用，解复用，以及简单的校验和</strong>。这使得它的功能基本上和网络层一致。</p>
 <p>我们知道，网络层提供的服务是不可靠的，所以使用UDP的传输层提供的服务同样不可靠。这意味着它不需要握手，即不面向连接。数据有可能发生乱序，重复。而假设发生了这种错误，客户端如何处理呢？它会直接<strong>丢弃</strong>。</p>
 <p>这种简洁的设计会有它的用武之地吗？当然，<strong>简洁也是一种优雅</strong>，它简单所以头部信息少，传输快，它不需要建立连接，也自然没必要维护连接的状态。甚至一些应用是在UDP的协议上构建的——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224304322.png" alt="image-20210707224304322"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262102628.png" alt="image-20210707224304322"></p>
 <p>那这是否意味着基于UDP的应用是不可靠的呢？不完全是，<strong>在应用程序做可靠传输的处理</strong>是一种可选的方式。</p>
 <p>我们再来拨云见日地看看UDP的报文结构：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224316644.png" alt="image-20210707224316644"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262102234.png" alt="image-20210707224316644"></p>
 <p>值得一提的是UDP仍然提供了必要的简单检错机制，即<strong>校验和</strong>，来看校验和的原理——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224330412.png" alt="image-20210707224330412"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262102683.png" alt="image-20210707224330412"></p>
 <p>即我们在源端得到测试的和，如果有进位，则再回卷得到和。数据报传输到目标端以后，目标端将<strong>校验和的反码与源端得到的校验和相加</strong>，如果相加为全1，则校验通过，反之不通过。</p>
 <h2 id="1-4-重点：可靠数据传输原理"><a href="#1-4-重点：可靠数据传输原理" class="headerlink" title="1.4 重点：可靠数据传输原理"></a>1.4 重点：可靠数据传输原理</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>可靠数据传输是一个<strong>一般性的问题</strong>，它不仅在传输层使用这个机制，在网络层和应用层也可以实现。而下一个小节中我们将以最通用的传输层为例介绍可靠数据传输协议RDT。</p>
 <p>在编程时，我们通常使用这样的思维：即<code>首先将具体问题转化为抽象的数学问题，再使用编程语言将数学问题实现</code>，在学习rdt时，这种思路同样适用。</p>
 <p>首先来看可靠数据传输面临的场景：对于应用层来说，传输层通过可靠数据传输的机制，并使用<strong>可靠的信道</strong>来向应用层提供服务——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224342304.png" alt="image-20210707224342304"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262102012.png" alt="image-20210707224342304"></p>
 <p><code>那这个可靠的服务是如何实现的呢</code>？显然是通过调用下层服务。从而对本层服务做加强来实现的，我们将这一过程<strong>抽象成原语实现</strong>，我们将这些原语具体描述，他们发挥着这样的功能——</p>
 <ul>
 <li><code>rdt_send:</code>被上层调用，将数据交付给下层的发送方实体。</li>
@@ -510,16 +510,16 @@
 <p>我们需要通过rdt来实现<strong>发送方和接收方动作的抽象</strong>，但这种抽象是基于不可靠的信道，它可能会发生<strong>乱序，重复，篡改</strong>等问题，直接给出解决方案着实有点难为人。所以这里引入了一种处理复杂问题的思路，即<strong>渐进式解决</strong>。</p>
 <p><code>具体的说，我们一层层地去掉那些美好的假设，然后在一个可行方案的基础上逐渐完善</code>。我们的任务仅仅是实现一个能够完成必要功能的rdt协议，所以双向传输可以简化为单向传输，此外，给出有助于解决问题的通用模型也势在必行。也就是有限状态机FSM，在学习数字系统设计时，接触过使用<strong>FSM描述的空调状态机</strong>。不想除了考试，居然还能有缘再见。在课堂终于学到有用的知识了。。。</p>
 <p>FSM是这样设计的：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224353943.png" alt="image-20210707224353943"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262102979.png" alt="image-20210707224353943"></p>
 <p>至此，前置知识就完结了，故事的大幕就此拉开——</p>
 <h3 id="rdt1-0"><a href="#rdt1-0" class="headerlink" title="rdt1.0"></a>rdt1.0</h3><p>这里<code>假设信道完全可靠</code>，它没有比特出错，甚至不会分组丢失，此时的rdt协议,恕我说句：工具人~。</p>
 <p>用状态机来描述一下此时的发送方与接收方——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224406899.png" alt="image-20210707224406899"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262102888.png" alt="image-20210707224406899"></p>
 <p>这个显然还没有复杂度需要详细描述的地步，next~</p>
 <h3 id="rdt2-0"><a href="#rdt2-0" class="headerlink" title="rdt2.0"></a>rdt2.0</h3><p>在2.0版本，我们就要抛弃掉一些幻想，这时候的信道不那么可靠，它可能会发生<code>比特的错误</code>。之前在聊UDP时谈及UDP报文结构中使用校验和来做差错检测，当然TCP也有这个机制。检测出来后，怎么更正呢？自然是重发，那<code>如何标识出错的状态</code>呢？</p>
 <p>这就需要引入<code>标记量</code>。假如接受方检测到比特出错，就发送显示的发送错误标志，也就是<code>NAK</code>，俗称：反向谢谢；而当检测后发送无误，就发送显示的发送正确标志，这回是正向的谢谢：<code>ACK</code>。</p>
 <p>同样的，向量机描述——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224420197.png" alt="image-20210707224420197"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262102586.png" alt="image-20210707224420197"></p>
 <p>这时，状态机已经没那么友好了，我们简要描述一下——</p>
 <ul>
 <li><code>发送方：</code>当rdt接收到应用层的数据后，将<code>数据与校验和组成传输报文</code>通过不可靠的信道发送给接收方，然后发送方等待接收方的回应。当等待到的是ACK时，继续等待上层调用。</li>
@@ -527,9 +527,9 @@
 </ul>
 <h3 id="rdt2-1"><a href="#rdt2-1" class="headerlink" title="rdt2.1"></a>rdt2.1</h3><p>咦，怎么又出现了2.1，自然是因为2.0实在不堪大用。2.0版本的确相比1.0版本迈出了一大步，但它本身存在致命的缺陷，也就是<strong>ACK,NAK本身也有可能发送错误</strong>。rdt的机制应该也必须是健壮的，所以当接收到不可识别的信息时<strong>有必要重发数据包</strong>。所以对数据包的标识就这么顺水推舟的发生了.即<strong>对分组加序号</strong>。但这里只使用1位，即2种可能结果标识正在处理的分组。这是因为目前仍处于<strong>STOP AND WAIT阶段</strong>，一次发送一个数据包，用0和1来标识要处理的数据包就行啦。但如何处理重复呢？<strong>丢弃</strong>发送时间较早那个的数据包。</p>
 <h4 id="接收方处理出错的ACK-NAK"><a href="#接收方处理出错的ACK-NAK" class="headerlink" title="接收方处理出错的ACK/NAK"></a>接收方处理出错的ACK/NAK</h4><p>老规矩——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224431777.png" alt="image-20210707224431777"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262103260.png" alt="image-20210707224431777"></p>
 <p>这时接收方在2.0版本的基础上增加了对分组序号的识别，再来看发送方的处理——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224444037.png" alt="image-20210707224444037"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262103560.png" alt="image-20210707224444037"></p>
 <p>看似很复杂，但实则只是穷举了对于不同分组的类似处理，毕竟只需要考虑两个分组，可以任性地穷举。来看下具体的场景——</p>
 <p><img src="http://qnuez6z2b.hn-bkt.clouddn.com/typora/image-20210223150554157.png" alt="image-20210223150554157"></p>
 <h3 id="rdt2-2"><a href="#rdt2-2" class="headerlink" title="rdt2.2"></a>rdt2.2</h3><p>2.2版本本质上和2.1版本并无二致，但出于简洁的考虑，只使用ACK，而不用NAK。那具体怎么操作的呢？</p>
@@ -537,14 +537,14 @@
 <blockquote>
 <p>发送方发送<strong>数据包1</strong>，接收方检测出错了，所以发送<strong>ACK0</strong>给发送方。发送方默念一句你丫的，然后重新发送数据包1.双方继续和谐地传递着数据包。</p>
 </blockquote>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224454789.png" alt="image-20210707224454789"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262103497.png" alt="image-20210707224454789"></p>
 <p>一看就会的图解——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224504993.png" alt="image-20210707224504993"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262103298.png" alt="image-20210707224504993"></p>
 <p>这里不再给出状态机描述，它的确适合转换为编程语言。但与人交互还是上图更友好些。</p>
 <h3 id="rdt3-0"><a href="#rdt3-0" class="headerlink" title="rdt3.0"></a>rdt3.0</h3><p>解决了乱序，比特出错。仍旧还有<strong>分组丢失</strong>的问题，如果按照rdt2.2机制，分组丢失后发送方接收方都鸦雀无声，陷入了<strong>死锁，浪费CPU资源</strong>。所以需要加入<strong>超时重传机制</strong>。</p>
 <p>即当分组发送出去后，计时器开始倒计时，如果计数到0还没有收到响应，那就重传。机制的核心在于<strong>计时的确定</strong>，<strong>网络状态是很难预测</strong>的，它的拥堵状况可以类似于高斯分布，我们需要使用数学中概率论的知识尽可能确定时间。当然，一个相对准确的计时器还需要<strong>相当长的路要走</strong>。</p>
 <p>诚然，凡事讲究善始如终，此处应有状态机——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224518042.png" alt="image-20210707224518042"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262103317.png" alt="image-20210707224518042"></p>
 <ol>
 <li>首先发送方等待应用层调用，传输层组织好报文结构后，通过不可靠的信道将分组0传输给接收方，并启动超时定时器；</li>
 <li>状态切换到等待ACK0的响应，如果超时或出错(ACK1)，则重传，如果接收到ACK0，状态切换至等待应用层调用1；</li>
@@ -552,7 +552,7 @@
 </ol>
 <hr>
 <p>至此，rdt3.0已经是用于传输单个分组的无懈可击的协议，但在信道带宽大的情况下，rdt3.0的性能非常感人。这就好比八车道的高速公路全程只准跑一辆自行车。这显然很难以忍受，所以如何一次性发送多个分组而无须等待确认是必须要解决的问题。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224528848.png" alt="image-20210707224528848"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262103055.png" alt="image-20210707224528848"></p>
 <p>我们将这种发送多个分组可以看做是填充到一条流水线中。因此解决这个问题的机制被称为<strong>流水线协议</strong>。流水线协议在rdt3.0基础上增加了<strong>传输分组的粒度</strong>。但它同时带来的问题可一点也不少——</p>
 <ul>
 <li>分组的序号显然只用0和1是不够的，必须<strong>扩大分组序号的范围</strong>，来唯一地标识一个分组；</li>
@@ -567,16 +567,16 @@
 </ul>
 <p>那如何表示缓冲区动态传输的过程呢？这就需要引入滑动窗口——</p>
 <h3 id="发送窗口"><a href="#发送窗口" class="headerlink" title="发送窗口"></a>发送窗口</h3><p>滑动窗口用来表示<code>发送缓冲区的范围</code>，即实际的<code>已发送未确认的分组个数</code>，我们通过图解来认识这个动态的过程——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224540604.png" alt="image-20210707224540604"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262104143.png" alt="image-20210707224540604"></p>
 <p>此时，没有分组发送，缓冲区大小N=5，滑动窗口前沿=后沿，窗口大小=前沿-后沿=0。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224551296.png" alt="image-20210707224551296"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262104225.png" alt="image-20210707224551296"></p>
 <p>接着，一个分组被发送，前沿移动一位，滑动窗口大小=前沿-后沿=1.此时分组0处于已发送未确认状态。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224601189.png" alt="image-20210707224601189"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262104480.png" alt="image-20210707224601189"></p>
 <p>此时，5个分组都被发送，缓冲区已满，滑动窗口大小=前沿-后沿=5=缓冲区大小。</p>
 <hr>
-<p>这个过程我们是假设没有分组收到确认，现在我们打开潘多拉魔盒，认为已经有分组已经收到确认，情况就有所不同了——<br>!<img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224616355.png" alt="image-20210707224616355"></p>
+<p>这个过程我们是假设没有分组收到确认，现在我们打开潘多拉魔盒，认为已经有分组已经收到确认，情况就有所不同了——<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262104491.png" alt="image-20210707224616355"></p>
 <p>这时，<code>分组0得到确认，窗口后沿移动</code>，此时前沿仍然指向最后一个进入缓冲区的已发送未确认分组。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224627690.png" alt="image-20210707224627690"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262104096.png" alt="image-20210707224627690"></p>
 <p>然后，分组1也得到确认，窗口后沿移动。有两个分组5,6被发送，进入缓冲区等待确认。窗口前沿移动到6的位置。</p>
 <hr>
 <h3 id="接收窗口"><a href="#接收窗口" class="headerlink" title="接收窗口"></a>接收窗口</h3><p>发送窗口告一段落，来类比地看接收窗口，接收窗口可以控制哪些分组可以接收：</p>
@@ -586,37 +586,37 @@
 </ul>
 <p>此外，接收窗口根据出错的概率分为两种情况，对应两种协议——</p>
 <h4 id="GBN"><a href="#GBN" class="headerlink" title="GBN"></a>GBN</h4><p>接收窗口的尺寸等于1，即<code>只能顺序接收</code>：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224639851.png" alt="image-20210707224639851"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262104832.png" alt="image-20210707224639851"></p>
 <p>接收窗口首先在分组0的位置，此时只有分组0的会被接收，如果接收到的是分组1，则丢弃。假设接收方接收到分组n,则表示小于等于分组n的所有分组都已经被接收，即<strong>累计式确认</strong>。</p>
 <h4 id="SR"><a href="#SR" class="headerlink" title="SR"></a>SR</h4><p>接收窗口的尺寸大于1，可以乱序接收：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224650324.png" alt="image-20210707224650324"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262104639.png" alt="image-20210707224650324"></p>
 <p>起初，接收窗口中有分组0,1,2,3.收到分组0,1后，接收窗口向前滑动。但如果分组没有按序到来，会发生什么呢？</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224701886.png" alt="image-20210707224701886"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262106126.png" alt="image-20210707224701886"></p>
 <p>可以看到，当高序号的分组到来后<code>，仍旧将其缓存，但并不移动滑动窗口</code>，只有当低序号的分组到来后，窗口才会整体后移——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224711512.png" alt="image-20210707224711512"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262106075.png" alt="image-20210707224711512"></p>
 <p>最后，可以总结出SR协议为非累积式接收。</p>
 <hr>
-<h4 id="正常情况下的窗口互动"><a href="#正常情况下的窗口互动" class="headerlink" title="正常情况下的窗口互动"></a>正常情况下的窗口互动</h4><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224721902.png" alt="image-20210707224721902"></p>
-<h4 id="异常情况下的窗口互动"><a href="#异常情况下的窗口互动" class="headerlink" title="异常情况下的窗口互动"></a>异常情况下的窗口互动</h4><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224736296.png" alt="image-20210707224736296"></p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224827566.png" alt="image-20210707224827566"></p>
+<h4 id="正常情况下的窗口互动"><a href="#正常情况下的窗口互动" class="headerlink" title="正常情况下的窗口互动"></a>正常情况下的窗口互动</h4><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262106433.png" alt="image-20210707224721902"></p>
+<h4 id="异常情况下的窗口互动"><a href="#异常情况下的窗口互动" class="headerlink" title="异常情况下的窗口互动"></a>异常情况下的窗口互动</h4><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107370.png" alt="image-20210707224736296"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107565.png" alt="image-20210707224827566"></p>
 <h4 id="用FSM描述的GBN"><a href="#用FSM描述的GBN" class="headerlink" title="用FSM描述的GBN"></a>用FSM描述的GBN</h4><ol>
 <li><p>发送方</p>
 <p>首先声明这些变量代表的含义：<code>N为窗口长度，base为窗口后沿，nextseqnum为满足发送条件但因缓冲区已满没有发送的分组序号</code>，</p>
 </li>
 </ol>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224840765.png" alt="image-20210707224840765"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107249.png" alt="image-20210707224840765"></p>
 <ol start="2">
 <li><p>接收方</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224850680.png" alt="image-20210707224850680"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107610.png" alt="image-20210707224850680"></p>
 </li>
 </ol>
-<h4 id="运行中的SR"><a href="#运行中的SR" class="headerlink" title="运行中的SR"></a>运行中的SR</h4><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224903011.png" alt="image-20210707224903011"></p>
+<h4 id="运行中的SR"><a href="#运行中的SR" class="headerlink" title="运行中的SR"></a>运行中的SR</h4><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107238.png" alt="image-20210707224903011"></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>GBN适用于<code>出错率低</code>的场景，<code>而链路容量大，回退代价高</code>的场景则是SR更优。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224915038.png" alt="image-20210707224915038"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107797.png" alt="image-20210707224915038"></p>
 <h2 id="1-5-面向连接的传输——TCP"><a href="#1-5-面向连接的传输——TCP" class="headerlink" title="1.5 面向连接的传输——TCP"></a>1.5 面向连接的传输——TCP</h2><p>在对TCP有大致的纹路了解后，我们进入TCP正式的探索。本着结构决定功能的特点，从TCP的段结构起笔，渲染TCP的可靠数据传输，进而浓墨于流量控制机制，最终落笔于连接管理。</p>
 <p><code>TCP提供的是点到点，可靠的，管道化的，按序的字节流，拥有流量控制机制，面向连接的服务。</code></p>
 <h3 id="段结构"><a href="#段结构" class="headerlink" title="段结构"></a>段结构</h3><p>TCP的报文段由一个<strong>首部字段和数据字段</strong>构成，数据字段即是应用层的数据，那这部分数据是源数据根据怎样的规则划分的呢？这里引入<strong>最大报文段长度MSS</strong>的概念。TCP会将要传输的文件分为若干个MSS。<strong>MSS的长度</strong>通常由<strong>本地发送主机发送的最大链路层帧长度</strong>来设置。在确定数据部分后，TCP为每个客户端数据配上一个<strong>TCP首部</strong>，从而形成多个TCP报文段。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707224931500.png" alt="image-20210707224931500"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107649.png" alt="image-20210707224931500"></p>
 <p>具体来看每个字段：</p>
 <ul>
 <li><p><code>源端口号：</code>TCP提供的是进程之间的逻辑通信，而标识进程的即是端口号，标识源端口号就相当于给出了数据<strong>复用</strong>的路径。</p>
@@ -624,11 +624,11 @@
 <li><p><code>目的端口号：</code>同样的，只有给出目的端口号，在接收方才能完成<strong>解复用</strong>的工作。</p>
 </li>
 <li><p><code>序号：</code>TCP把数据看做一个<strong>无结构，有序的字节流</strong>。而为了来标识每个报文段(<code>MSS</code>)的首字节在整个字节流中的位置，或者说偏移量，就引入了序号的概念。该序号的范围为<strong>2的32次方</strong>，可见冲突的几率比我中彩票还低~</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225012629.png" alt="image-20210707225012629"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262107745.png" alt="image-20210707225012629"></p>
 </li>
 <li><p><code>确认号：</code>在可靠数据传输中，我们使用ACK来作为确认字段，但ACK只能表示接收方对接收到数据的回应，而实际的传输是全双工，且高并发的。所以接收方的确认号将<strong>确认与下一次传输的数据相结合</strong>作为确认号。也就是说，假设确认号为2000,即表示<strong>期望收到的下一个字节的序号</strong>，这里给出的序号同样也具有<strong>GBN累计确认</strong>的意义。</p>
 <p>我们试着使用序号与确认号来描述简化的传输过程——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225024780.png" alt="image-20210707225024780"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262108234.png" alt="image-20210707225024780"></p>
 <p>即主机A发送序号42及对于序号79的确认，主机B收到后，发送对于序号42的确认，即ACK=43，且发送主机A期望的79，即seq=79.</p>
 </li>
 <li><p><code>接收窗口：</code>该字段用于<strong>流量控制</strong>，即指示接收方愿意接受的字节数量，在抓包的时候任一数据发送源都会使用<strong>Win字段</strong>来告诉另一方自己接收窗口的大小。</p>
@@ -637,21 +637,10 @@
 </li>
 </ul>
 <p>而从进程通信的<code>流程框架</code>来看，TCP报文段又会经历怎样的<strong>复用与解复用</strong>呢——</p>
-<p>在形成报文段以后，这些报文段被下传给网络层，网络层将其分别封装在<strong>网络层IP数据报</strong>中，接着被发送到网络中，TCP在另一端接收报文段，该报文段被放在该<strong>TCP连接的接收缓存</strong>中，应用程序从缓存中读取数据流。</p>
-<h3 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h3><p>了解了确认号与序号，可靠数据传输的纹路已经逐渐明晰。在学习通用的rdt时，我们谈及当一个分组丢失时，超时重传机制是有必要的，这在TCP的机制中同样适用。但在TCP的机制中，我们需要将超时重传的机制具象化，即真正高效地使用。</p>
-<p>如何来估计超时重传的往返时间？<strong>定时器RTO</strong>应该设置多长时间？是否需要为每一个分组都设置一个定时器呢？我们来渐进式地解答——</p>
-<ol>
-<li><p>显然，定时器设置的时间应该是<strong>大于往返时间RTT</strong>的，所以我们可以随机地选取某一个RTT作为<strong>SampleRTT</strong>,但由于路由器的拥塞和网络负载均衡的特点，SampleRTT波动是很大的，所以为了更趋近于真实RTT，我们引入SampleRTT的均值EstimatedRTT。通过这两个标量，可以近似得到这样的公式：<br>$$<br>EstimatedRTT=（1-a）•EstimatedRTT+a•SampleRTT<br>$$<br>这里的a推荐值为<strong>0.125</strong>，将通过公式得到的均值称为之<strong>指数加权移动平均</strong>。</p>
-</li>
-<li><p>这里直接给出公式——<br>$$<br>Timeoutinterval=EstinMrtedRTT+4•DevRTT<br>$$<br>这里的DevRTT是为了解决波动问题，而引入的一个SampleRTT与EstimatedRTT之间差值。</p>
-</li>
-<li><p>TCP并不会为每个分组都维护一个定时器，因为高并发的发送维护定时器的代价是很大的，因此TCP使用了<strong>单一重传定时器机制</strong>。即只为<strong>发送缓冲区中最古老的已发送未确认分组</strong>维护定时器。</p>
-</li>
-</ol>
-<p>至此，TCP可靠数据传输的自肖像已经变得丰满起来。我们不妨在已经构建框架的前提下给出一个最简化的TCP发送方——<br><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225039262.png" alt="image-20210707225039262">)</p>
+<p><img src="../../../old_img/imgs/zyz_img3/image-20210707225039262.png" alt="image-20210707225039262"></p>
 <p>即当超时定时器触发以后，发送方会传输<strong>至今没有得到确认的最小序号分组</strong>。即这里的机制又是类似于<strong>选择性重发SR</strong>。在重发后，超时定时器又会与当前没有得到确认的最小序号分组相关联。此外，还有一种情况，即缓冲区为空，即所有的分组都已得到确认，此时需要重启定时器。</p>
 <p>通过下图来看简要的交互：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225051029.png" alt="image-20210707225051029"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262108170.png" alt="image-20210707225051029"></p>
 <p>另外，我们来穷举关于ACK的几种情况及相应的处理方式——</p>
 <table>
 <thead>
@@ -679,13 +668,13 @@
 </tbody></table>
 <p>这个简化的TCP交互是默认不存在重复确认的，但实际上重复确认的情况是有可能出现的，TCP针对这种情况也给出了<strong>快速重传机制</strong>。</p>
 <p>收到<strong>重复确认</strong>往往是因为<strong>定时器设置的太大</strong>，接收方没有收到某个分组，但在定时器时间内仍会收到乱序到达的其他分组，这时接收方就会发送冗余分组，当发送方接收到<strong>三个冗余确认</strong>后，就会在定时期间<strong>重传最小序号的报文段</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225101991.png" alt="image-20210707225101991"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262108914.png" alt="image-20210707225101991"></p>
 <p>再来看下快速重传的伪代码——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225112511.png" alt="image-20210707225112511"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262108053.png" alt="image-20210707225112511"></p>
 <p>即接收方收到ACK，判断ACK与窗口后沿的关系，假如<strong>ACK大于窗口后沿，则将窗口后沿滑动</strong>，将<strong>定时器与新的报文段关联</strong>。否则，也就是ACK重复的情况，则记录ACK重复的个数，当其等于3时，触发快速重传机制。</p>
 <h3 id="流量管理"><a href="#流量管理" class="headerlink" title="流量管理"></a>流量管理</h3><p>传输层在将数据解复用以后，不是直接交付给应用程序使用，而是将其放置在<strong>接收缓冲区</strong>内，上层应用再<strong>从缓冲区中读取数据</strong>。但当从发送方发送来的数据太多就有可能<strong>淹没接收缓冲区</strong>，导致报文段丢失，因此，约定发送方的发送速率与接收方的接收速率是必须的，这种<strong>为了匹配速率的机制就称为流量控制</strong>。</p>
 <p>流量控制机制是通过互相告知缓冲区可用空间来实现的。那如何告知呢？即是通过接收方向发送方发送的报文段中的<strong>rwnd字段</strong>，它表示了<strong>接收缓冲区中可用的空间</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225128655.png" alt="image-20210707225128655"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262109134.png" alt="image-20210707225128655"></p>
 <p>我们将rwnd再具象化，即它是通过什么来实现的呢？接收窗口！！！但这里的接收窗口和rdt中的接收窗口还是有所区别的。为了量化接收窗口的大小，我们还需要引入两个变量：</p>
 <ul>
 <li><code>LastByteRead</code>:主机B上的应用进程从缓存读出的数据流的最后一个字节的编号。</li>
@@ -695,7 +684,7 @@
 <h3 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h3><p>我们来深入了解如何建立和拆除一个TCP连接，首先，我们需要建立一些共识，也就是连接都需要做什么？</p>
 <p>在socketAPI的编程中，我们需要维护两个套接字，即连接是针对双方而言的，<strong>每一端可以看做维护一个半连接</strong>，所以在建立TCP连接时，两端都有<strong>告诉对方我要建立连接</strong>的诉求。除此之外，还需要<strong>为连接配置资源</strong>，因为连接就意味着马上会有数据传输，所以<strong>缓冲区自然是需要</strong>的，此外，<strong>序号和确认号也是必选项</strong>咯。</p>
 <h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>好啦，实际地去建立连接时，首先先入为主的想法是两次握手——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225141658.png" alt="image-20210707225141658"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262109592.png" alt="image-20210707225141658"></p>
 <p>但两次握手面临着很多问题：</p>
 <ul>
 <li>假如接收方的确认超时了，此时发送方会重发连接建立请求。但我们注意到<strong>接收方的机制简言之就是收到连接请求则同意建立</strong>。也就是说，虽然确认超时了，但接收方仍会维护一个<strong>半连接的状态</strong>及对应的资源。</li>
@@ -716,9 +705,9 @@
 <li><p><code>第三次握手:</code>在收到ACK报文段后，客户也要给该连接<strong>分配缓存和变</strong>量。客户主机则向服务器发送另外一个报文段；这最后一个报文段<strong>对服务器的允许连接的报文段进行了确认</strong>（该客户通过<strong>将值serverjsn+1放置到TCP报文段首部的确认字段</strong>中来完成此项工作）。因为连接已经建立了，所以该<strong>SYN比特被置为0</strong>。该三次握手的第三个阶段可以在报文段<strong>负载中携带客户到服务器的数据</strong>。</p>
 </li>
 </ol>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225201937.png" alt="image-20210707225201937"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262109132.png" alt="image-20210707225201937"></p>
 <p>嗯，熟悉的FSM环节——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225214552.png" alt="image-20210707225214552"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262109716.png" alt="image-20210707225214552"></p>
 <hr>
 <h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>天下没有不散的宴席。TCP连接也不能免俗。相比于三次握手，四次挥手还是水到渠成的，双端都可以主动发起断开连接的请求，然后<strong>双方断开自己维护的半连接</strong>即可，同样的，我们来复现这个过程——</p>
 <ol>
@@ -726,7 +715,7 @@
 <li>服务器接收该报文段后，<strong>其ACK比特置1</strong>.</li>
 <li>反向同理。</li>
 </ol>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225225357.png" alt="image-20210707225225357"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262109651.png" alt="image-20210707225225357"></p>
 <h2 id="1-6-拥塞控制原理"><a href="#1-6-拥塞控制原理" class="headerlink" title="1.6 拥塞控制原理"></a>1.6 拥塞控制原理</h2><hr>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在rdt可靠数据传输机制中，分组丢失是不可避免的，而<strong>分组丢失的原因通常是由网络拥塞</strong>，当路由器的缓存被占满后，后来者将会别抛弃，本质上说这种状况是因为网络是不可控的，很难从端系统获知网络的状况，但发送方又本着<code>多多益善</code>的方式在加剧网络的恶化。</p>
 <p>为了避免网络拥塞，TCP使用了怎样的机制，这种处理机制出发点是什么，它针对性地解决了哪些问题，如此种种。要解决这些问题，我们仍要铺好第一块砖石——</p>
@@ -741,7 +730,7 @@
 </li>
 </ul>
 <p>先来看路由器缓存，假设路由器缓存无限大，那分组就不会被丢弃。这时假设有两个发送端通过一条链路(带宽为R)发送数据，那么它的吞吐量和延时表现为这样——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225238081.png" alt="image-20210707225238081"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262110916.png" alt="image-20210707225238081"></p>
 <p>可见，即便在理想状态下，当超出链路的承载能力后，<code>流量强度变大，排队延时激增</code>。硬件条件这是不可逾越的天花板。所以我们很难控制不发生拥塞，而要从拥塞发生后的处理技巧入手。</p>
 <p>接着，我们去掉缓存无限的假设，这时分组丢失就变得无可避免，分组丢失就意味着重传，而<code>重传导致链路中重复的分组</code>，也就是不必要的分组增多，直接使得<code>发送方比接收方更高的发送速率</code>，导致本就不宽裕的链路带宽更显的捉襟见肘。另外，超时重传作用的结果也是一样的。</p>
 <p>最后，我们设想在类似<code>进程发生死锁</code>的一种情景，每个发送方占用着别的发送方需要的链路带宽，而别的进程也占用着自己需要的链路带宽，如果人的欲望一般，我们知道这条路是错的，但贪念仍在驱使着躯干向前。</p>
@@ -775,9 +764,9 @@
 </li>
 <li><p><code>如何对速率做调整</code></p>
 <p>那明确了问题，如何针对两种拥塞做出发送速率的调整呢？在<strong>RDT</strong>中，我们引入<code>接收窗口rwnd</code>来限制接收分组，这里我们也采用类似的机制，引入<code>拥塞窗口cwnd</code>。类比接收窗口表示能够接收分组的上限，拥塞窗口表示的即是——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225253295.png" alt="image-20210707225253295"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262110805.png" alt="image-20210707225253295"></p>
 <p>是不是似曾相识，发送窗口表示的是<strong>实际的</strong>已发送未确认的分组数量。而拥塞窗口就如同在对发送窗口做<strong>动态调整</strong>，除此之外，别无二致。那确定了拥塞窗口的值，发送方的发送速率也可以得出来——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225302111.png" alt="image-20210707225302111"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262110531.png" alt="image-20210707225302111"></p>
 </li>
 </ul>
 <ul>
@@ -788,7 +777,7 @@
 <ul>
 <li><p><code>慢启动：</code></p>
 <p>TCP会将cwnd的值<code>初始化为一个2/3/4MSS</code>(具体由MSS的大小决定)的值，但显然，这点速率是不够打的，所以当分组首次被确认后，会以<code>指数级的增长趋势</code>尽快加速，直至超时后打回原形，也就是1个MSS.这时，TCP还会维护一个<strong>慢启动阈值</strong>，也就是警戒值，它的值为<strong>cwnd(max)/2</strong>，接着，开始下一次拥塞控制，当cwnd的值指数增加至慢启动阈值后，不再鲁莽地指数级增长，而是维持<code>线性增长</code>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225311975.png" alt="image-20210707225311975"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262110199.png" alt="image-20210707225311975"></p>
 <p>这种线性增长的机制就是拥塞避免——</p>
 </li>
 <li><p><code>拥塞避免：</code></p>
@@ -805,12 +794,12 @@
 </li>
 </ul>
 <p>接下来就是小总结环节——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225324365.png" alt="image-20210707225324365"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262110595.png" alt="image-20210707225324365"></p>
 <p>再将两种情况汇总，就有了下图——</p>
 <p><img src="C:%5CUsers%5Czyz%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210304182714108.png" alt="image-20210304182714108"></p>
 <h3 id="TCP吞吐量"><a href="#TCP吞吐量" class="headerlink" title="TCP吞吐量"></a>TCP吞吐量</h3><p>这里我们取快速恢复阶段的数据量均值作为参考(慢启动指数级的增加实则很快，也导致实际传输的流量不多)，即——<br>$$<br>一条连接的平均吞吐量=3/4<em>W/RTT<br>$$<br>另外也给出在<code>经过高带宽TCP，且丢包率为L的情况</code>下，吞吐量的描述——<br>$$<br>一条连接的平均吞吐量：1.22</em>MSS/RTT/根号下2<br>$$</p>
 <h3 id="TCP公平性"><a href="#TCP公平性" class="headerlink" title="TCP公平性"></a>TCP公平性</h3><p>太饿了，去吃饭，偷懒一手——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707225338648.png" alt="image-20210707225338648"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262110286.png" alt="image-20210707225338648"></p>
 <p>也就是多个TCP连接时，网络状况会趋向于<code>带宽均分</code>。</p>
 <p>而如果一个链路中既有使用TCP的服务，也有使用UDP的服务，那对于TCP是不友好的，因为<code>UDP百无禁忌</code>，它没有拥塞控制机制，如果有可能，UDP会一点点的蚕食掉带宽，而最终导致更恶劣的后果，可见，<strong>不限制贪欲最终会陷入恶性循环</strong>。但这种机制也并非一无是处，流媒体就表示这是我的菜，因为<code>音视频应用起码泵出数据的速率是恒定</code>的，即便数据会丢失。</p>
 <hr>
@@ -1248,7 +1237,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

@@ -474,13 +474,13 @@
 <ul>
 <li><input checked disabled type="checkbox"> 操作系统初始化时设置中断向量表 <strong>interrupt vector table</strong> (<strong>IVT</strong>) ，它里面存储有很多表项，即中断向量，也就是中断处理程序的入口地址。</li>
 </ul>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121190122738.png" alt="image-20201121190122738"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262059073.png" alt="image-20201121190122738"></p>
 <p>接下来跳转中断处理程序，首先对<strong>错误码进行压栈</strong>，并将<strong>页的错误线性地址</strong>存储在<strong>寄存器cr2</strong>中——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121190333570.png" alt="image-20201121190333570"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262059110.png" alt="image-20201121190333570"></p>
 <p>将状态保存后，跳转<strong>申请物理内存的函数</strong>——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121190506454.png" alt="image-20201121190506454"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262059121.png" alt="image-20201121190506454"></p>
 <p>最后<strong>将请求的页加载到物理内存</strong>中，<strong>重新设置映射地址</strong>——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121190556951.png" alt="image-20201121190556951"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262059012.png" alt="image-20201121190556951"></p>
 <h2 id="2-内存换出"><a href="#2-内存换出" class="headerlink" title="2.内存换出"></a>2.内存换出</h2><p>为了保持货架上总有人们想要的商品，我们通常会将货柜中不常用的商品先撤到仓库中以腾出空间。</p>
 <ul>
 <li><input checked disabled type="checkbox"> 内存也是如此，有换入，就必然有换出。</li>
@@ -491,23 +491,23 @@
 <p>这个想法还是很nice的，但我们无法预知以后发生的事情，也就无法做出有效的预估。</p>
 <p>但这种想法是值得借鉴的，由这种想法进而衍生出了<strong>LRU算法</strong>，所谓LRU算法，就是选出<strong>最近最少使用</strong>的那个进程，然后换出。这里也应用了<strong>程序局部性</strong>的特点。</p>
 <h3 id="LRU的准确实现——时间戳"><a href="#LRU的准确实现——时间戳" class="headerlink" title="LRU的准确实现——时间戳"></a>LRU的准确实现——时间戳</h3><p>假设存在一个<strong>页序列ABCABDADBCB</strong>，但只有<strong>四个存储块</strong>，这时需要选出<strong>具有最小时间戳的页</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121201707370.png" alt="image-20201121201707370"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262059836.png" alt="image-20201121201707370"></p>
 <p>但页表ldt也是需要维护的，每更换一次时间戳，就要对页表进行更新，而页表是内存中的，访存次数过多实现代价未免过高。</p>
 <h3 id="LRU的准确实现——页码栈"><a href="#LRU的准确实现——页码栈" class="headerlink" title="LRU的准确实现——页码栈"></a>LRU的准确实现——页码栈</h3><p>页码栈的实现代价同样很大，因而不作为实际应用使用，但很有必要了解它的思想——</p>
 <p>栈中只有三个页的内存空间，<strong>最底层的空间</strong>存放<strong>最-近最少使用的页</strong>，<strong>最上层的空间</strong>存放<strong>当前使用的页</strong>。</p>
 <p>因此在发生缺页时，将<strong>最底层栈内的页弹出</strong>，然后将其压入栈顶。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121202032441.png" alt="image-20201121202032441"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262059971.png" alt="image-20201121202032441"></p>
 <p>一言以蔽之，LRU的准确实现在实际应用中代价太大，不可取。我们来看下实际应用中使用的近似实现：</p>
 <h3 id="LRU的近似实现——将时间和变成是和否"><a href="#LRU的近似实现——将时间和变成是和否" class="headerlink" title="LRU的近似实现——将时间和变成是和否"></a>LRU的近似实现——将时间和变成是和否</h3><p>记录时间和的系统开销太大，那我们能不能只维护一个标志位，也就是为使用页框的每一页设置一个<strong>引用位</strong>。</p>
 <p>这里我们暂且不考虑多少个页框，也就是多少个帧更为合适。而是着重描述它的运行机制<strong>SCR</strong>(再给一次机会算法)——</p>
 <p>我们用<strong>循环队列</strong>来表述<strong>页框</strong>，假如<strong>加载一页</strong>到页框中，<strong>硬件</strong>会自动<strong>设置标志位R=1</strong>，如果<strong>发生缺页</strong>，就<strong>扫描这个循环队列</strong>，如果<strong>标志位R=1</strong>，则将它<strong>置为0</strong>，表示<strong>这个页最近没有被使用过</strong>，如果标志位<strong>R=0</strong>,则<strong>淘汰该页</strong>，并<strong>换入新的页</strong>。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121215941114.png" alt="image-20201121215941114"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262100517.png" alt="image-20201121215941114"></p>
 <p>这样就完美了吗？假如很<strong>少发生缺页</strong>，那么指针就不需要置位，也就不<strong>需要移动指针</strong>，这样标志位<strong>R的值会在0和1之间反复切换</strong>，这样SCR算法就会退化为<strong>FIFO</strong>，而这本质上是因为<strong>标志位R记录了太多历史信息</strong>，所以我们需要<strong>清除历史信息</strong>，也就需要引入一个<strong>跑得更快的指针</strong>——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121215954545.png" alt="image-20201121215954545"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262100702.png" alt="image-20201121215954545"></p>
 <p>这样的模型更像是一个时钟，因而SCR算法又称<strong>CLOCK算法</strong></p>
 <p>那么置换的策略有了，我们还需要解决一个问题，分配多少帧更合适呢？</p>
 <p>假如帧过多，那么就不存在<strong>内存的高效利用</strong>了，如果分的少，又会导致换入频繁，进程总在等待IO，CPU利用率下降，最终发生<strong>颠簸现象</strong>——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201121215924180.png" alt="image-20201121215924180"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img2/202310262100133.png" alt="image-20201121215924180"></p>
 <p>这里我们只是提出通过<strong>工作集的算法</strong>可以算出分配多少合适，而不再过多讨论。</p>
 <hr>
 <blockquote>
@@ -876,7 +876,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

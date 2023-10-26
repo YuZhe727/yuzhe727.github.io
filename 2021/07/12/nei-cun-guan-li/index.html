@@ -481,7 +481,7 @@
 <h3 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h3><p>为了更好地使用内存，<strong>分治思想</strong>的引入自然势在必行，程序根据每一段代码的<strong>属性</strong>与<strong>功能</strong>将其分成了多个段，分析每个段的功能变得容易了很多。这个时候，<strong>段</strong>才是程序运行的<strong>单元</strong>。</p>
 <p>这个单元有它的<strong>状态</strong>，它的<strong>执行结果</strong>等等，而在程序载入的时候，这些<strong>段</strong>也被载入到<strong>不同的地址</strong>中，降低了管理的复杂度。</p>
 <p>为了<strong>描述</strong>这些段的信息，同时方便管理这些个段，就衍生出了进程的<strong>段表</strong>——<strong>LDT</strong>,段表中存放每个段的基地址，段号，长度，权限等等——</p>
-<p><img src="https://raw.githubusercontent.com/future727/Pictures/main/img/image-20210627160125632.png" alt="1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262001902.png" alt="image-20231026200149765"></p>
 <p>这个表的思想不是第一次引入，更准确的说，在<strong>操作系统启动</strong>的时候就需要维护一个段表——<strong>GDT</strong>,操作系统故事的大幕也是就此揭开的。</p>
 <p>对于内存的使用，大的来说是分<strong>三个阶段</strong>的，首先将<strong>程序分段</strong>，这是在<strong>编译时期</strong>完成的，我们只需要显式的告诉编译器自己声明的不同的段，接着就需要在内存中找出一段<strong>空闲的内存空间</strong>，那是哪一段呢？怎么知道这段内存可以被使用呢？这些是后话了；最后就将分好段的程序<strong>载入</strong>到分好区的内存中执行。</p>
 <p>第一步我们已经完成了，我们接下来就来看分区思想是如何引入的，内存又是如何实现分区的？</p>
@@ -507,7 +507,7 @@
 <p>在平时读书时，我们要锁定某一页，会从找这一页所在的目录，然后浏览这个目录下的具体页就行了。而在操作系统中，多级页表就是这样的目录。多级页表又划分为页目录项和页表，只会将需要的页加载到内存中去。</p>
 </blockquote>
 <p>下面我们来具体分析这个过程——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195238389.png" alt="image-20210707195238389"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262017602.png" alt="image-20210707195238389"></p>
 <p>在<strong>虚拟内存</strong>中，一个具体的地址由<strong>四个字节</strong>来指示，<strong>前十位存储页目录号</strong>，接下来的<strong>10位用来存放页号</strong>，剩下的<strong>12位用来页内地址的偏移</strong>。</p>
 <p>页目录在内存中固定驻留，需要占用16K的内存空间。这远小于将所有页表加载到内存的4M。</p>
 <p><strong>页目录号</strong>由<strong>页目录指针</strong>来指向，找到具体的目录后，然后<strong>将这个目录中的页加载到内存</strong>，接着找到具体的页，最终由<strong>页内偏移</strong>找到具体的<strong>物理内存位置</strong>。</p>
@@ -516,41 +516,41 @@
 <ul>
 <li><input checked disabled type="checkbox"> TCB，也就是快表，它是一种<strong>相连存储的寄存器</strong></li>
 </ul>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195249863.png" alt="image-20210707195249863"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262017253.png" alt="image-20210707195249863"></p>
 <p>首先在TLB中找是否存在对应的逻辑地址，<strong>如果有</strong>，直接转化<strong>逻辑地址到物理地址</strong>，当然，这一步<strong>对于用户是透明</strong>的。</p>
 <p>如果在TLB中<strong>没有找到</strong>逻辑地址，即TLB未命中，那么就需要通过<strong>多级页表</strong>来查找。</p>
 <p>那么TLB在理论层面是很好用，但真正应用效果如何呢？</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195302146.png" alt="image-20210707195302146"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262017790.png" alt="image-20210707195302146"></p>
 <p>可以看到，TLB的效率的确很高，但是需要建立在TLB命中率高的情况下的，然而实际情况下TLB是不大的，那为什么仍然可以发挥作用呢?这是因为<strong>程序的地址访问</strong>存在<strong>局部性</strong>——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195318860.png" alt="image-20210707195318860"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262018224.png" alt="image-20210707195318860"></p>
 <h2 id="4、段页结合的实际内存管理"><a href="#4、段页结合的实际内存管理" class="headerlink" title="4、段页结合的实际内存管理"></a>4、段页结合的实际内存管理</h2><h3 id="内存管理的模型"><a href="#内存管理的模型" class="headerlink" title="内存管理的模型"></a>内存管理的模型</h3><p>段是程序员编写程序的方式，而页是物理内存的使用方式，那如何将段页结合呢？</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195330375.png" alt="image-20210707195330375"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262018137.png" alt="image-20210707195330375"></p>
 <p>首先在<strong>虚拟内存</strong>中划分一段<strong>地址空间</strong>用于存放应用程序的段。</p>
 <ul>
 <li><input checked disabled type="checkbox"> 这里的地址空间只是<strong>逻辑上</strong>的，<strong>物理地址</strong>还需要做进一步的<strong>映射</strong>。</li>
 </ul>
 <p>这里的<strong>虚拟内存是分段</strong>的，接着将分段的虚拟内存映射到<strong>分页的物理地址</strong>上去。</p>
 <p>而从用户的角度来说：段面向用户，页面向硬件。从逻辑地址到物理地址的映射对于用户时透明的，只有映射到段是对用户可见的。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195343879.png" alt="image-20210707195343879"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262018835.png" alt="image-20210707195343879"></p>
 <h3 id="一个实际的段，页结合"><a href="#一个实际的段，页结合" class="headerlink" title="一个实际的段，页结合"></a>一个实际的段，页结合</h3><p>要体现实际的内存管理，那就一定要<strong>使用内存</strong>，而使用内存即是<strong>将程序加载到内存</strong>，加载到内存的程序更具体的说它是一个<strong>进程</strong>。</p>
 <p>则所谓的内存管理是从<strong>进程创建</strong>开始的，而进程创建时使用<strong>fork系统调用</strong>，故事的大幕也便就此拉开了——</p>
 <ul>
 <li><input checked disabled type="checkbox"> 这个过程分为<strong>分割虚拟内存</strong>-》<strong>建段表</strong>-》<strong>分配到物理内存</strong>-》<strong>建页表</strong>-》<strong>映射完成</strong></li>
 </ul>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195411176.png" alt="image-20210707195411176"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262018867.png" alt="image-20210707195411176"></p>
 <p>上图首先在<strong>copy_process函数</strong>中调用<strong>copy_mem函数</strong>，在该函数中首先<strong>分配虚存</strong>，为每个<strong>进程</strong>分配<strong>64MB</strong>的虚存，要注意的是虚存地址是<strong>不重复</strong>的，这样就不会导致相同的地址冲突。</p>
 <p>接着<strong>建立段表</strong>，也就是在PCB中建立<strong>段表LDT</strong>，在后期进程切换的时候，PCB也就跟着切换。</p>
 <p>接下来开始分配物理内存——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195423193.png" alt="image-20210707195423193"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262018281.png" alt="image-20210707195423193"></p>
 <p>调用<strong>copy_page_tables函数</strong>将虚拟内存的地址<strong>old_data_base映射</strong>到物理内存的地址<strong>new_data_base</strong>，在这个函数中，<strong>虚拟地址用from_dir指代</strong>，<strong>物理地址用to_dir指代</strong>，需要注意的是：</p>
 <p>from右移22位得到<strong>目录项的编号</strong>，又因为一个虚拟地址占4个字节，则表现为from&gt;&gt;20</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195447747.png" alt="image-20210707195447747"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262019602.png" alt="image-20210707195447747"></p>
 <p>在下面的循环中，将具体的页映射到物理地址——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195510386.png" alt="image-20210707195510386"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262019373.png" alt="image-20210707195510386"></p>
 <p>最终，执行指令，在对应的内存地址空间中完成<strong>写时复制</strong>，即经<strong>地址总线</strong>将数据发送到物理空间中，整个过程的<strong>地址翻译</strong>由<strong>硬件MMU</strong>完成，将<strong>逻辑地址</strong>翻译为<strong>虚拟地址</strong>，再将虚拟地址翻译为<strong>物理地址</strong>——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195523166.png" alt="image-20210707195523166"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262019235.png" alt="image-20210707195523166"></p>
 <p>完结——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707195535245.png" alt="image-20210707195535245"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262019707.png" alt="image-20210707195535245"></p>
 <hr>
 <blockquote>
 <p>山高路远，静水深流</p>
@@ -921,7 +921,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

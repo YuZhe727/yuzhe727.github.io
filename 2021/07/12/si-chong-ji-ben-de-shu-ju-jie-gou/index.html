@@ -506,12 +506,11 @@
 </blockquote>
 <p>定义中的内存块即是链表的节点，为了将所有节点串起来，每个节点<strong>存储数据</strong>以外，还需要<strong>记录下一个节点的地址，也就是后继指针next。</strong></p>
 <p>常用的链表有三种，其中最简单常用的是单链表——</p>
-<h3 id="2-2-1-单链表"><a href="#2-2-1-单链表" class="headerlink" title="2.2.1 单链表"></a>2.2.1 单链表</h3><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230130075.png" alt="image-20210707230130075"></p>
+<h3 id="2-2-1-单链表"><a href="#2-2-1-单链表" class="headerlink" title="2.2.1 单链表"></a>2.2.1 单链表</h3><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262025304.png" alt="image-20210707230130075"></p>
 <p>我们习惯将第一个节点称为头结点，将最后一个节点称为尾结点，值得注意的是，尾结点不再指向一个地址，而指向null。</p>
 <p>与数组一样，链表也支持数据的查找，插入和删除。</p>
 <p>在插入，删除新元素时，只需要考虑相邻节点的指针改变——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230140227.png" alt="image-20210707230140227"></p>
-<p>在链表中查找元素是不方便的，必须顺序遍历链表，它的时间复杂度为O(n).</p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262025648.png" alt="image-20210707230140227">在链表中查找元素是不方便的，必须顺序遍历链表，它的时间复杂度为O(n).</p>
 <h3 id="2-2-2-循环链表"><a href="#2-2-2-循环链表" class="headerlink" title="2.2.2 循环链表"></a>2.2.2 循环链表</h3><p>循环链表是特殊的单链表，它与单链表的区别就在于尾结点。循环链表的尾结点指针指向的是头结点。那么这么结构适用于什么场景呢？</p>
 <p>它可以用来高效的解决<strong>环结构的链表</strong>，比如著名的<strong>约瑟夫环</strong>问题。</p>
 <p>在实际应用中，被更多使用的要属双向链表，我们来看下它特定的结构得以应用于什么场景呢。。。</p>
@@ -523,7 +522,7 @@
 </ol>
 <p>对于第一种情况，没有捷径可走，只能去逐个遍历节点元素。而对于第二个节点，双向链表增加了通过前驱指针找给定节点的遍历，因此高效的多。同样的，插入一个节点时，使用双向链表也提供了更多的可能。</p>
 <p>既然双向链表这么牛，那实际应用场景中有没有双向链表的大展身手呢，那就是LinkedHashMap,这种高效的集合底层即是使用了这种数据结构。</p>
-<p>看到这，很多朋友会问，既然双向链表的效率这么高，那再给他加上循环链表的特点岂不是如虎添翼，的确如此，我们来看究极版——<br><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230151299.png" alt="image-20210707230151299"></p>
+<p>看到这，很多朋友会问，既然双向链表的效率这么高，那再给他加上循环链表的特点岂不是如虎添翼，的确如此，我们来看究极版——<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262025338.png" alt="image-20210707230151299"></p>
 <h2 id="2-3-链表VS数组性能大比拼"><a href="#2-3-链表VS数组性能大比拼" class="headerlink" title="2.3 链表VS数组性能大比拼"></a>2.3 链表VS数组性能大比拼</h2><p>这里不再俗套的给出很多理论，而是通过具体的应用场景来考虑数组与链表性能——</p>
 <p>CPU缓存应该哪种数据结构呢？CPU管理的是连续的内存空间，使用链表简直天然地不友好，所以使用数组。而对于一个插入删除更频繁的系统来说，使用数组则更众望所归。其实抛开场景说数据结构就是耍流氓，在之前的定义中，我们就提及，数据结构是用于特定场景的。</p>
 <h2 id="2-4-如何轻松的写出正确的链表代码"><a href="#2-4-如何轻松的写出正确的链表代码" class="headerlink" title="2.4 如何轻松的写出正确的链表代码"></a>2.4 如何轻松的写出正确的链表代码</h2><p>链表的代码因为涉及到指针的操作，往往空想起来比较绕，要想高效地写出链表代码，我们还需要一些技巧——</p>
@@ -557,8 +556,8 @@
 <h1 id="三-更进一步——关于栈"><a href="#三-更进一步——关于栈" class="headerlink" title="三.更进一步——关于栈"></a>三.更进一步——关于栈</h1><h2 id="3-1-从一个问题开始"><a href="#3-1-从一个问题开始" class="headerlink" title="3.1 从一个问题开始"></a>3.1 从一个问题开始</h2><p>我们在浏览网站时都会用到前进和后退的功能，那这种功能是如何实现的你知道吗？</p>
 <p>没错，就是使用这节我们会讲到的栈，针对这个需求，假设将我们浏览的网页按照先后顺序存储在一个数组中，我们根据下标，即可实现前进和后退，但这里有一个致命的BUG，那就是它无法按我们的需求去删减一些存储在数组中的网页，也正因此我们需要引入栈。</p>
 <p>假设我们依次访问了三个网页A,B,C，那栈的情况是这样的——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230201483.png" alt="image-20210707230201483"></p>
-<p>这时，我们想回退到a页面了，就需要出栈c,b到栈Y中——<br><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230229659.png" alt="image-20210707230229659"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262025407.png" alt="image-20210707230201483"></p>
+<p>这时，我们想回退到a页面了，就需要出栈c,b到栈Y中——<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262025129.png" alt="image-20210707230229659"></p>
 <p>然后，我们再去访问页面d:就会入栈X，如果我们再想访问页面b,c就不行了，栈Y会清空栈中的内容</p>
 <h2 id="3-2-为什么要学习栈"><a href="#3-2-为什么要学习栈" class="headerlink" title="3.2 为什么要学习栈"></a>3.2 为什么要学习栈</h2><p>栈是一种操作受限的线性表，从功能上来说，数组异或链表都可以实现栈。但是数组或是链表都暴露了太多的接口，这就需要我们非常注意邻界条件。</p>
 <p>而特定的数据结构是对特定情境的抽象，对于某些场景来说，用栈就很合适了。</p>
@@ -567,9 +566,9 @@
 <h3 id="支持动态扩容的顺序栈"><a href="#支持动态扩容的顺序栈" class="headerlink" title="支持动态扩容的顺序栈"></a>支持动态扩容的顺序栈</h3><p>我们先来分析下入栈和出栈的时间复杂度，出栈时，时间复杂度为O(1)没有悬念，而入栈时假如还有空间，那时间复杂度自然也是O(1)，但当栈满的时候入栈，就需要扩容，这里的时间复杂度用均摊时间复杂度理解仍为O(1).</p>
 <p>既然，我们需要扩容这种机制，而栈本身又可以使用数组实现。不妨用栈来继承一个可以实现动态扩容的集合。</p>
 <p>实际上，java就是这样做的——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230239639.png" alt="image-20210707230239639"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262025774.png" alt="image-20210707230239639"></p>
 <p>当需要扩容时，会将数组大小扩展为原来的2倍：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230251442.png" alt="image-20210707230251442"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262026179.png" alt="image-20210707230251442"></p>
 <h3 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h3><p>栈在函数调用，括号匹配，表达式运算方面有广泛的应用，我们一一来看——</p>
 <p><code>函数调用</code> ：</p>
 <blockquote>
@@ -579,7 +578,7 @@
 <blockquote>
 <p>编译器实则就是使用两个栈来实现的。其中一个是保存操作数的栈，另一个是保存运算符的栈。当我们从左到右遍历表达式，当遇到数据，我们直接压入操作数栈。</p>
 <p>当遇到运算符时，首先与运算符栈的栈顶运算符进行比较，如果比栈顶运算符的优先级低或者相等，则从运算符栈取出栈顶元素，然后从操作数栈取两个元素进行运算，并将运算结果压入操作数栈，继续比较。来看下王争老师的举例——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230302756.png" alt="image-20210707230302756"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262026989.png" alt="image-20210707230302756"></p>
 </blockquote>
 <p><code>括号匹配</code></p>
 <blockquote>
@@ -612,7 +611,7 @@
 <h2 id="4-2-概述"><a href="#4-2-概述" class="headerlink" title="4.2 概述"></a>4.2 概述</h2><p>队列是一种操作受限的线性表，对比栈，它同样支持入队和出队。操作时，<strong>队头指针指向队头元素，队尾指针指向队尾元素的下一个内存空间。</strong></p>
 <h2 id="4-3-五花八门的队列"><a href="#4-3-五花八门的队列" class="headerlink" title="4.3 五花八门的队列"></a>4.3 五花八门的队列</h2><h3 id="顺序队列的实现"><a href="#顺序队列的实现" class="headerlink" title="顺序队列的实现"></a>顺序队列的实现</h3><p>参考博文：<a href="https://blog.csdn.net/qq_48573752/article/details/113776915" target="_blank" rel="noopener">https://blog.csdn.net/qq_48573752/article/details/113776915</a></p>
 <p>通过小例子来理解顺序队列的基础操作——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230319078.png" alt="image-20210707230319078"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262026398.png" alt="image-20210707230319078"></p>
 <p>但是我们发现，当tail==n的时候，队列中还有空闲的空间，但却不能执行入队操作，这时要怎么办呢？</p>
 <p>数据搬移，也就是当tail==n时触发一次整体的数据搬移，这样的话，入队的时间复杂度就不再是O(1)，因为会涉及到数据的搬移，我们来看下新的入队操作：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token keyword">int</span> item<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -632,7 +631,7 @@
 <span class="token punctuation">}</span></code></pre>
 <p>这样的入队操作无疑更严谨了一些。但这样还是太麻烦了些，有没有什么办法可以不进行数据搬移就可以入队呢，那就要看循环队列了。</p>
 <h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h3><p>在循环队列中，应该注意的核心问题就是队列满的判别条件，我们画张图理解下——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230332406.png" alt="image-20210707230332406"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262026081.png" alt="image-20210707230332406"></p>
 <p>再结合代码看下:</p>
 <p>参见博文：<a href="https://blog.csdn.net/qq_48573752/article/details/113776915" target="_blank" rel="noopener">https://blog.csdn.net/qq_48573752/article/details/113776915</a></p>
 <h3 id="并发队列与阻塞队列"><a href="#并发队列与阻塞队列" class="headerlink" title="并发队列与阻塞队列"></a>并发队列与阻塞队列</h3><p>上面的队列都是我们耳闻能详的知识，而实际工程中应用更多的实则是并发队列与阻塞队列。</p>
@@ -1011,7 +1010,7 @@ long findRootRerfererId(long actorId){
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

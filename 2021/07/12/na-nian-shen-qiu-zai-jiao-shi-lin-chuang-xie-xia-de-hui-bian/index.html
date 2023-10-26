@@ -469,7 +469,7 @@
 <p>[^undefined]: 注 ： 我们这里的汇编专指8086CPU的汇编语言</p>
 <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="1-为什么要使用寄存器"><a href="#1-为什么要使用寄存器" class="headerlink" title="1. 为什么要使用寄存器"></a>1. 为什么要使用寄存器</h3><p>CPU本身只负责<strong>运算</strong>，不负责<strong>存储数据</strong>，数据一般都存储在<strong>内存</strong>之中，CPU要用的时候就去内存读写数据，但是CPU读写的速度<strong>远高于</strong>内存的读写速度，为了避免被拖慢，CPU都自带一级缓存和二级缓存，<strong>CPU缓存</strong>可以看作是读写速度较快的内存。</p>
 <p>但是，CPU缓存还是不够快，另外数据在缓存里面的地址是<strong>不固定</strong>的，CPU每次读写都要<strong>寻址</strong>也会拖慢速度，因此，除了缓存之外，CPU还自带了<strong>寄存器</strong>，用来存储最常用的数据。也就是说，那些最频繁读写的数据，比如循环变量，都会放在寄存器中，CPU优先读写寄存器，再由寄存器跟内存交换数据</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201103224649594.png" alt="image-20201103224649594"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262121976.png" alt="image-20201103224649594"></p>
 <p>寄存器不依靠地址区分数据，而依靠名称。每一个寄存器都有自己的名称，我们告诉CPU去具体哪一个寄存器中拿数据，这样的速度是最快的，因而也称寄存器是CPU的<strong>零级缓存</strong>。</p>
 <hr>
 <h3 id="2-寄存器的概述"><a href="#2-寄存器的概述" class="headerlink" title="2.寄存器的概述"></a>2.寄存器的概述</h3><p>8086的寄存器都是16位的，可以存放两个字节的数据，也就是说它的寻址能力就只有2的16次方个字节空间，也就是64KB。</p>
@@ -478,7 +478,7 @@
 <h3 id="3-物理地址"><a href="#3-物理地址" class="headerlink" title="3.物理地址"></a>3.物理地址</h3><p>8086CPU有20位的地址总线，可以传送20位地址，达到1MB寻址能力，但数据总线只有16位，它只能传输16的地址，表现出来的寻址能力只有64KB，所以我们需要使用两个16位的地址来合成20位的物理地址。</p>
 <p>这两个16位的地址，一个是段地址CS，一个是偏移地址IP，采用物理地址=短地址*16+偏移地址的运算方式扩展16位到20位，换句话说，也就是逻辑左移4位。</p>
 <p>有了物理地址，我们就可以知道从哪个内存地址读取指令，那如何将取出来的指令执行呢？</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201108221905157.png" alt="image-20201108221905157"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262121725.png" alt="image-20201108221905157"></p>
 <p>了解了指令执行的模型，我们知道CS,IP的值是从寄存器中读取的，那寄存器是怎样存储值的呢？</p>
 <h3 id="4-寄存器的分类"><a href="#4-寄存器的分类" class="headerlink" title="4.寄存器的分类"></a>4.寄存器的分类</h3><p>从类型上说，我们存储的数据有两类，字节型和字型。</p>
 <p>而从数据类型来说，数据分为通用的数据和具有特定意义的数据，在计算时，通用的寄存器存储在通用寄存器中，而特殊的数据，比如需要保留状态的数据，会被存储在标志寄存器中。下面我们来看具体的描述——</p>
@@ -783,7 +783,7 @@
 <h3 id="4-以学促用"><a href="#4-以学促用" class="headerlink" title="4. 以学促用"></a>4. 以学促用</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><blockquote>
 <p>将实验七中的Power idea 公司的数据，按照图10.2所下图屏幕中显示出来</p>
 </blockquote>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201112151602560.png" alt="image-20201112151602560"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262122441.png" alt="image-20201112151602560"></p>
 <h4 id="代码与注释"><a href="#代码与注释" class="headerlink" title="代码与注释"></a>代码与注释</h4><pre class=" language-ASM"><code class="language-ASM">assume cs:codesg
 ;将整个data段看作是一个数组，长度一共为
 ;21*4+21*4+2*21=168+42=210字节
@@ -1502,7 +1502,7 @@ end start</code></pre>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

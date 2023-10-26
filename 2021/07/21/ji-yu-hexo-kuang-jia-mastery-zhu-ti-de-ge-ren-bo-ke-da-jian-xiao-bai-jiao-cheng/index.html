@@ -465,9 +465,9 @@
 <p>但在搭建过程中，我发现了大多数的博客搭建博文对于像我这样的前端小白其实是不友好的，它们往往先入为主的陈述Hexo搭建的优势，却忽略了从静态的HTML页面变迁至Hexo的过程，试想一个连Hexo都没听过的人，一上来就是一堆陌生的名词，自然会望而却步。</p>
 <p>而在接下来的篇幅下，我会引导小伙伴们主动思考，从一个最基础的Idea出发，一步步点亮这个火光，最终构建出以Hexo为核心的框架。</p>
 <h2 id="二、Idea"><a href="#二、Idea" class="headerlink" title="二、Idea"></a>二、Idea</h2><p>说到个人博客，你可能会脑海中浮现这样简洁而清新的界面：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210721092923885.png" alt="image-20210721092923885"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262027543.png" alt="image-20210721092923885"></p>
 <p>抑或这样温馨且中二：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210721092956147.png" alt="image-20210721092956147"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262027910.png" alt="image-20210721092956147"></p>
 <p>但不论那种类型的页面，当你轻击右键，查看网站源代码时，发现大家殊途同归，最终都被渲染为HTML页面，再具体一点说：</p>
 <h3 id="1-0版本"><a href="#1-0版本" class="headerlink" title="1.0版本"></a>1.0版本</h3><p>首先我们输入博客域名，服务器为我们展示静态的html网页，但我们很快发现每个页面在布局上都是相似的，我们将这样的布局称为主题，它们与内容无关；而另一部分即是围绕内容展开的，比如：内容所属的作者、标题、分类等等</p>
 <p>说到这，聪明的你一定会想到，<code>最终的HTML页面需要由通用的布局与不同的内容组成</code></p>
@@ -487,9 +487,7 @@
 <p>Node.js 是能够在服务器端运行JavaScript 的开放源代码、跨平台运行环境。</p>
 </blockquote>
 <h3 id="2-0版本"><a href="#2-0版本" class="headerlink" title="2.0版本"></a>2.0版本</h3><p>现在我们完全可以在装有node.js环境的计算机上跑EJS的代码，并让它生成静态页面，但要别人可以访问到我们的页面，显然还需要部署到服务器上，但是腾讯云/阿里云好像都价格不菲，能不能既免费，还把项目给部署了？</p>
-<p>github为我们提供了白嫖的机会~</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210720155337760.png" alt="image-20210720155337760"></p>
-<p>哇，这样我们只需新建一个符合规范的仓库就搞定了，果然很香。但后期我们如何维护本地仓库与远程仓库呢？</p>
+<p>github为我们提供了白嫖的机会~我们只需新建一个符合规范的仓库就搞定了，果然很香。但后期我们如何维护本地仓库与远程仓库呢？</p>
 <p>使用<strong>版本控制工具</strong>！！！版本控制工具有很多，选择哪一个呢？</p>
 <p>当然是git咯，它和其他版本控制工具有着这样的差异：</p>
 <ul>
@@ -502,26 +500,25 @@
 <p>用过SVN的小伙伴应该体会过那种<code>被网速支配的恐惧</code>，而Git完全没有这方面的顾虑！</p>
 <h3 id="3-0版本"><a href="#3-0版本" class="headerlink" title="3.0版本"></a>3.0版本</h3><p>任何一个系统的设计，都应该考虑到丰富的<code>集成性与可扩展性</code>，如果到这里戛然而止，那我们只是做出一个生硬的页面而已，如果要在基础上添加一个评论模块，或是更换一个主题，整个系统维护起来非常笨重。</p>
 <p>到这里，我们的主角Hexo登场了：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720160710051.png" alt="image-20210720160710051"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262029040.png" alt="image-20210720160710051"></p>
 <p>这样一个<strong>一站式的解决方案才是设计的最终归宿</strong>。至此，我们对于一个框架应该具有什么组件已经了然于胸，开始动手实践吧——</p>
 <h2 id="三、搭建过程"><a href="#三、搭建过程" class="headerlink" title="三、搭建过程"></a>三、搭建过程</h2><h3 id="1-下载Node-js"><a href="#1-下载Node-js" class="headerlink" title="1.下载Node.js"></a>1.下载Node.js</h3><p>这里没什么特别的要求，下载一个长期稳定，不高不低的版本即可：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720161140877.png" alt="image-20210720161140877"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262029674.png" alt="image-20210720161140877"></p>
 <p>注：<strong>千万别下载最新版本</strong>，因为其他组件可能还没有对它提供支持，不适配导致的结果可能会是莫名其妙的报错。</p>
 <p>安装好以后，在命令提示符中输入<code>node -v</code>，如果出现版本号，就安装成功啦。</p>
 <p>接着输入<code>npm -v</code>,验证包管理工具是否可用，使用过linux系统的小伙伴在安装软件时，就会体会到npm的便利。</p>
 <p>下载安装包时，npm会请求它的镜像源，如果这个镜像源中没有我们想要的包，就需要切换镜像源，<code>nrm就是来保证快速切换的</code>。</p>
 <p>nrm的使用可以参考这篇博文：<a href="https://segmentfault.com/a/1190000017419993" target="_blank" rel="noopener">https://segmentfault.com/a/1190000017419993</a></p>
 <p>在这里，我们首先在终端运行npm install -g nrm命令即可安装nrm，接着使用nrm ls命令列出可选择的源，这里推荐使用淘宝镜像源：</p>
-<h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h3><p>博主是一路next的，只需要保证可以使用<code>命令行打开</code>即可：</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210720161337100.png" alt="image-20210720161337100"></p>
+<h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h3><p>博主是一路next的，只需要保证可以使用<code>命令行打开</code>即可。</p>
 <p>安装完成后，命令提示符中使用<code>git --version</code>命令验证</p>
-<h3 id="3-创建git-pages仓库"><a href="#3-创建git-pages仓库" class="headerlink" title="3.创建git pages仓库"></a>3.创建git pages仓库</h3><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720164923978.png" alt="image-20210720164923978"></p>
+<h3 id="3-创建git-pages仓库"><a href="#3-创建git-pages仓库" class="headerlink" title="3.创建git pages仓库"></a>3.创建git pages仓库</h3><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262029942.png" alt="image-20210720164923978"></p>
 <p>新建仓库后，点击仓库处的setting选项：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720165118917.png" alt="image-20210720165118917"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262030549.png" alt="image-20210720165118917"></p>
 <p>找到下面的github pages选项：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720165156373.png" alt="image-20210720165156373"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262030619.png" alt="image-20210720165156373"></p>
 <p>再设置一通：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720165456776.png" alt="image-20210720165456776"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262031253.png" alt="image-20210720165456776"></p>
 <h3 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4.安装Hexo"></a>4.安装Hexo</h3><p>在合适的地方新建一个文件夹(编程党建议这样：<code>/develop/blog/</code>),用来存放我们的博客文件。</p>
 <p>在该目录下右键点击<code>Git Bash Here</code>，打开git的控制台窗口，以后我们所有的操作都在git控制台进行，笨重的命令提示符可以告一段落了。</p>
 <p>输入<code>npm -i hexo-cli -g</code>安装hexo，如果有报错，敬请无视。安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
@@ -544,7 +541,7 @@
 <p>然后生成密钥SSH key：</p>
 <pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"zhangyuzhe727@gmail.com"</span></code></pre>
 <p>在需要输入时，干净利落地来个回车，三个回车就OK了，按照提示，生成的密钥是放在这里的：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720171700663.png" alt="image-20210720171700663"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262031043.png" alt="image-20210720171700663"></p>
 <ul>
 <li><code>id_rsa</code>: 使用哈希算法rsa生成的私钥；</li>
 <li><code>id_rsa.pub</code>: 生成的公钥</li>
@@ -552,11 +549,11 @@
 </ul>
 <p>显然这里使用的是非对称加密，安全性更好，将生成的公钥复制，放在远程仓库端，具体操作：<br>打开github，在头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便，再将复制的公钥粘贴进去即可。</p>
 <p>然后输入<code>ssh -T git@github.com</code>验证是否连接成功，出现用户名就说明成功啦：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720172854704.png" alt="image-20210720172854704"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262031874.png" alt="image-20210720172854704"></p>
 <p>最后在根目录下的配置文件注明<code>以怎样的方式将本地仓库部署到远端仓库的哪个目录下</code>就OK了。</p>
 <hr>
 <h3 id="6-梦开始的地方"><a href="#6-梦开始的地方" class="headerlink" title="6.梦开始的地方"></a>6.梦开始的地方</h3><p>至此，一个最基础的基于Hexo的博客就搭建完成了，我们来看下它的目录结构：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720184026599.png" alt="image-20210720184026599"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262031183.png" alt="image-20210720184026599"></p>
 <ul>
 <li><code>.deploy_git:</code>将被部署到远端仓库的文件目录，输入<code>hexo d</code>命令后生成该目录；</li>
 <li><code>.git:</code>声明本地仓库与远端哪个仓库的哪个分支相关</li>
@@ -571,18 +568,18 @@
 </ul>
 <p>在博客根目录下<strong>hexo g &amp; hexo s hexo d</strong>三连后，输入<code>github用户名.github.io</code>，即可看到一个相貌平平的页面~</p>
 <p>不如我们来换个炫酷的主题吧：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720190529308.png" alt="image-20210720190529308"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262032775.png" alt="image-20210720190529308"></p>
 <p>权衡之下，选择了<strong>闪烁之狐大佬</strong>的博客主题：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720190808008.png" alt="image-20210720190808008"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262032951.png" alt="image-20210720190808008"></p>
 <h2 id="四、个性化设计"><a href="#四、个性化设计" class="headerlink" title="四、个性化设计"></a>四、个性化设计</h2><p>在themes目录下执行<code>git clone git@github.com:blinkfox/hexo-theme-matery.git</code>命令，发现晚上的网速着实感人。分析一手，应该是发起DNS查询的时候绕了一大圈，解决方式：在本机<code>操作系统缓存host文件</code>中加入两条记录：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720192925773.png" alt="image-20210720192925773"></p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720193017067.png" alt="image-20210720193017067"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262032562.png" alt="image-20210720192925773"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262032504.png" alt="image-20210720193017067"></p>
 <p>重新尝试，速度直接起飞，果然实践是检验真理的唯一标准。</p>
 <hr>
 <p>接着在全局配置文件中设置主题：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720200803910.png" alt="image-20210720200803910"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262032824.png" alt="image-20210720200803910"></p>
 <p>然后三连，展示的页面是这样的：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img5/image-20210720200953438.png" alt="image-20210720200953438"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262033683.png" alt="image-20210720200953438"></p>
 <p>逐个点击后，发现有的页面展示不出来，这样大致有了一个修正的方向，然后在去别人的博客逛逛，发现了一些炫酷的个性化设计：</p>
 <ol>
 <li>雪花特效；</li>
@@ -592,7 +589,7 @@
 <li>图片水印</li>
 <li>二级目录</li>
 </ol>
-<p>这些暂时都作为待更新内容，让孩子先把提前批过了~</p>
+<p>这些暂时都作为待更新内容</p>
 <hr>
 <blockquote>
 <p>山高路远，静水深流</p>
@@ -983,7 +980,7 @@ JVM知识全景图
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>
