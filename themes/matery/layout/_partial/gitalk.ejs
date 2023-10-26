@@ -14,7 +14,7 @@
         owner: '<%- theme.gitalk.owner %>',
         proxy: '<%- theme.gitalk.proxy %>',
         admin: <%- JSON.stringify(theme.gitalk.admin) %>,
-        id: '<%- page.path %>',
+        id: '<%- md5(page.path) %>',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
