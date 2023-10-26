@@ -965,7 +965,10 @@
         id: '2021/07/12/ji-suan-ji-wang-luo-chuan-shu-ceng/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
+    let md5 = crypto.createHash("md5");
+    md5.update(page.path);
+    var result=md5.digest('hex');
+    gitalk.id = result;
     gitalk.render('gitalk-container');
 </script>
     

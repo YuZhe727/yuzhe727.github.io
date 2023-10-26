@@ -641,7 +641,10 @@ image-20210619004641611
         id: '2021/07/11/cao-zuo-xi-tong-ji-chu/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
+    let md5 = crypto.createHash("md5");
+    md5.update(page.path);
+    var result=md5.digest('hex');
+    gitalk.id = result;
     gitalk.render('gitalk-container');
 </script>
     

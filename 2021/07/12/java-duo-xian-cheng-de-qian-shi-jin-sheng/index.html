@@ -1215,7 +1215,10 @@ service<span class="token punctuation">.</span><span class="token function">subm
         id: '2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
+    let md5 = crypto.createHash("md5");
+    md5.update(page.path);
+    var result=md5.digest('hex');
+    gitalk.id = result;
     gitalk.render('gitalk-container');
 </script>
     
