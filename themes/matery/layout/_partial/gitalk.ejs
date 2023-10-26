@@ -7,6 +7,7 @@
 
 <script src="<%- theme.libs.js.gitalk %>"></script>
 <script>
+    const crypto = require('crypto');
     let gitalk = new Gitalk({
         clientID: '<%- theme.gitalk.oauth.clientId %>',
         clientSecret: '<%- theme.gitalk.oauth.clientSecret %>',
@@ -14,7 +15,7 @@
         owner: '<%- theme.gitalk.owner %>',
         proxy: '<%- theme.gitalk.proxy %>',
         admin: <%- JSON.stringify(theme.gitalk.admin) %>,
-        id: <%- require('crypto-js').MD5(page.path).toString() %>,
+        id: <%- crypto.createHash('md5').update(page.path) %>,
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
