@@ -117,6 +117,7 @@ deploy:
 - type: git
   repository:
     github: git@github.com:YuZhe727/yuzhe727.github.io.git
+    coding: git@e.coding.net:g-ufvb1989/gerenboke/myblog.git
   branch: master
 - type: baidu_url_submitter
 
