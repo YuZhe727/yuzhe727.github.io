@@ -8,8 +8,6 @@
 <script src="<%- theme.libs.js.gitalk %>"></script>
 <script>
     const CryptoJS = require('crypto-js');
-    // 对 page.path 进行 MD5 加密
-    const md5EncryptedPath = CryptoJS.MD5(page.path).toString();
     let gitalk = new Gitalk({
         clientID: '<%- theme.gitalk.oauth.clientId %>',
         clientSecret: '<%- theme.gitalk.oauth.clientSecret %>',
@@ -17,7 +15,7 @@
         owner: '<%- theme.gitalk.owner %>',
         proxy: '<%- theme.gitalk.proxy %>',
         admin: <%- JSON.stringify(theme.gitalk.admin) %>,
-        id: '<%- md5EncryptedPath %>,
+        id: <%- CryptoJS.MD5(page.path).toString() %>,
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
