@@ -705,14 +705,6 @@
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
-    // 对 page.path 进行 MD5 加密
-    let md5 = crypto.createHash('md5');
-    md5.update(page.path);
-    let encryptedPath = md5.digest('hex');
-
-    // 将加密后的路径赋值给 id
-    gitalk.id = encryptedPath;
-
     gitalk.render('gitalk-container');
 </script>
     
