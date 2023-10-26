@@ -104,7 +104,7 @@
     <%- partial('_partial/livere') %>
     <% } %>
 
-    <% if (theme.valine.enable) { %>
+    <% if (!theme.valine.enable) { %>
     <%- partial('_partial/valine') %>
     <% } %>
 
