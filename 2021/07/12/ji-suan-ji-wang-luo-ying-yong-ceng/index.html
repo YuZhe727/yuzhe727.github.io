@@ -458,7 +458,7 @@
             <div id="articleContent">
                 <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>到第二章我们就将进入具体5层协议栈的描述，更具体地说，是从顶层<strong>应用层</strong>开始，渐进地学习计算机网络。我们知道，应用层是在传输层提供的服务上实现应用进程通信的，也就是<strong>借助操作系统使用Socket API的方式</strong>实现的。那基于Socket API应用层都实现了服务呢？常用的有<strong>Web,Http，FTP,Email，DNS，CDN</strong>。在讲述这些具体应用之前，我们会先对<strong>通用的原理</strong>作以介绍。然后展开描述这些应用层的服务。</p>
 <p>好啦，了解了概况，就让我们出发吧。。。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205341750.png" alt="image-20210707205341750"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262111663.png" alt="image-20210707205341750"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在开始正式的内容之前，我们有必要先建立有意识的学习习惯。</p>
 <p>为什么要学习应用层呢？应用层或者更具体的说是应用程序，<strong>应用程序是互联网存在的理由</strong>，在其以下的四层，它们的确实现了很多功能，但这些功能如果不能被集成应用到一个应用程序上，那分层的结构就只是纸上谈兵罢了。</p>
 <p>应用层也是与我们<strong>日常生活最贴近</strong>的一层，我们与电脑上可以实现<strong>人机交互</strong>的绝大部分应用都是应用层的应用。</p>
@@ -497,7 +497,7 @@
 <p>进程可类比于一座房子，而它的套接字可以类比于它的门。当一个进程想向位于另外一台主机上的另一个进程发送报文时，它把报文推出该门（套接字）。该发送进程假定该门到另外一侧之间有运输的基础设施，该设施将把报文传送到目的进程的门口。一旦该报文抵达目的主机，它通过接收进程的门（套接字）传递，然后接收进程对该报文进行处理。</p>
 </blockquote>
 <p>再从它的含义来看，socket是操作系统生成的一个整数，这个整数可以理解为<strong>传输信息的引用</strong>。这些信息具体的说，即是包含源IP，源port，目标IP，目标port的四元组。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205357679.png" alt="image-20210707205357679"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262111500.png" alt="image-20210707205357679"></p>
 <p>我们不必关注四元组的信息，而只需要关注<strong>socket的状态</strong>即可。操作系统的文件系统同样应用了这样的思想，在打开一个文件时，<strong>OS返回一个文件句柄</strong>，而不是使用这个文件的目录名，文件名，这样使用简单且易管理。</p>
 <p>值得一提的是，四元组是针对TCP的socket信息，但对于使用UDP的服务来说，情况又有所不同。</p>
 <p>使用UDP提供的服务时，两个进程之间的通信不需要建立连接，即<strong>不面向连接</strong>，每个报文都是独立传输的，它的前后报文也可能被送到<strong>不同的分布式进程</strong>，也就是说，对于UDP的socket，即只需指明报文将发往何处，而不必关心报文来自哪里。所以<strong>Socket中封装对方的IP及端口</strong>即可，</p>
@@ -513,7 +513,7 @@
 <p>在我们浏览的网页中，包含图文，动画，视频等，为了更好地描述这些事物，它们有了通用的名字：<strong>对象</strong>。对象可以认为是<strong>HTML页面的最小组成单元</strong>。直观地看，在我们浏览一个页面时，不同的对象并非同时出现，显然它们有可能来自不同的目的地，那如何来<strong>标识由对象组成的HTML页面</strong>呢？</p>
 <p>这就需要<strong>URL</strong>(统一资源定位符)，URL表示资源的<strong>地点</strong>，即资源来自于互联网中哪个IP。如果只使用URL标识资源位置，未免有点宽泛。所以引入<strong>URI</strong>(统一资源标识符)就势在必行了。</p>
 <p>URI用字符串标识资源的<strong>位置</strong>。则URL是URI的子集，具体看下符合<strong>RFC标准</strong>的URI格式——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205411737.png" alt="image-20210707205411737"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262111959.png" alt="image-20210707205411737"></p>
 <ul>
 <li><code>协议方案名：</code>更多被使用的是http，但使用<strong>SSL安全传输层</strong>服务的<strong>https</strong>必然将取代http.</li>
 <li><code>登录信息：</code>即用户认证，默认是匿名访问。</li>
@@ -538,14 +538,14 @@
 <p>自然是HTTP协议咯，HTTP协议全称是<strong>超文本传输协议</strong>。它的出现主要是为了解决<strong>文本传输</strong>的问题。一路走来经历了<strong>HTTP1.0,HTTP1.1,HTTP2.0</strong>.可见版本更迭异常缓慢。但这并不意味着HTTP不受人青睐。相反，由于它本身非常简单。开发者在它的基础上开发出了很多应用方法并投入使用，现在<strong>HTTP协议已经超出Web框架的局限</strong>，被用于各种各样的场景中。可见，简单也意味着丰富的可扩展性。</p>
 <h3 id="网络基础TCP-IP"><a href="#网络基础TCP-IP" class="headerlink" title="网络基础TCP/IP"></a>网络基础TCP/IP</h3><p>为了更好地理解HTTP，我们有必要先了解一下TCP/IP。</p>
 <p>我们所用的网络都是在TCP/IP协议族的基础上运行的，它约定了<strong>端系统间相互通信的规则</strong>。因为后面的小结会涉及到具体的TCP/IP协议族，这里我们只给出一个框架——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205429415.png" alt="image-20210707205429415"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262112579.png" alt="image-20210707205429415"></p>
 <p>在TCP/IP协议族提供的网络基础上，HTTP按部就班地传输着报文。接下来我们将剥茧抽丝地<strong>解析报文传输</strong>的过程：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205540218.png" alt="image-20210707205540218"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262112161.png" alt="image-20210707205540218"></p>
 <p>在这张图中，可以看到HTTP协议的职责在于<strong>生成目标Web服务器的请求报文，及对Web服务器请求内容的处理</strong>。</p>
 <h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>HTTP报文都是以<strong>ASCII码</strong>的形式与人交互，请求报文和响应报文的格式是这样的——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205553641.png" alt="image-20210707205553641"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262112330.png" alt="image-20210707205553641"></p>
 <h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p>这里给出一个请求报文的例子，我们来剖析它的每一个字段——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205631561.png" alt="image-20210707205631561"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262112015.png" alt="image-20210707205631561"></p>
 <p>请求行中包括请求的方法，使用的协议及版本。</p>
 <ul>
 <li><code>Host:</code>请求资源所在的服务器，比如WWW.Baidu.com</li>
@@ -560,7 +560,7 @@
 </ul>
 <p>其他的首部还有很多，我们就不一一列举了。</p>
 <h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p>同样的，通过一个小例子我们简要认识一下HTTP响应报文——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205648733.png" alt="image-20210707205648733"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262112197.png" alt="image-20210707205648733"></p>
 <p>首先是状态行，它的信息包括协议类型，版本，状态码，状态码对应的解释。</p>
 <p>再来看字段的解析：</p>
 <ul>
@@ -578,9 +578,9 @@
 <h3 id="无状态协议"><a href="#无状态协议" class="headerlink" title="无状态协议"></a>无状态协议</h3><p>HTTP协议是一个<strong>无状态</strong>的协议，它不会维护历史信息，这使得它能够<strong>支持的用户数量多</strong>，但比如说在登录网页以后，维护登录状态又是必不可少的。</p>
 <p>那如何使它可以记录状态呢？对HTTP协议本身做文章未免<strong>不是开发者的初衷</strong>，所以由<strong>客户端</strong>来维护历史信息，由于要维护的历史信息比较多，这里与用户交互的不是信息本身，而是指向这些信息的引用，小甜饼<strong>Cookie</strong>就这样应运而生了。</p>
 <p>我们通过下图来认识一下Cookie机制——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205705315.png" alt="image-20210707205705315"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262112353.png" alt="image-20210707205705315"></p>
 <h3 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h3><p>HTTP1.0协议是不支持持久连接的，也就是每次发送报文时，都需要建立TCP连接——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205856780.png" alt="image-20210707205856780"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262112356.png" alt="image-20210707205856780"></p>
 <p>这样每次请求时都会造成<strong>无谓的TCP连接和断开</strong>，增加通信量的消耗。</p>
 <p>因此在HTTP1.1中引入了持久连接，持久连接是指如果<strong>没有一方明确要求断开连接时，这个连接会一直保存</strong>。也就是说，持久连接是<code>双方端系统需要设置的</code>，而不是在通信过程中设定。</p>
 <p>持久连接使多数请求以<strong>管线化方式</strong>发送称为可能。这就可以实现<strong>高并发发送</strong>。类似于<strong>流水线</strong>。</p>
@@ -593,7 +593,7 @@
 <li>HEAD用于请求报文首部</li>
 </ul>
 </li>
-<li><code>状态行：</code><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205842449.png" alt="image-20210707205842449"></li>
+<li><code>状态行：</code><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262113733.png" alt="image-20210707205842449"></li>
 <li></li>
 </ul>
 <h3 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h3><p>假设有这样一种需求，客户请求服务器资源时因为链路太长导致响应时间慢，老板要求你解决这个问题，这时根据你的经验有两种处理方式——</p>
@@ -604,11 +604,11 @@
 <p>缓存应该是学习的一大热点了，但凡缓存，就需要注意缓存一致性问题。首先我们要能发现缓存是否一致，也就是<strong>通过加时间字段</strong>。如果字段值超时了，Web代理就丢弃缓存内容。</p>
 <hr>
 <h3 id="加餐——HTTPS"><a href="#加餐——HTTPS" class="headerlink" title="加餐——HTTPS"></a>加餐——HTTPS</h3><p>先来看张图，可以看到在URL的前面有一个<strong>锁的标识</strong>，而我们所熟识的HTTP是不加密的，所以呢，这里的锁实际上标识使用的协议是HTTPS，我们的故事也将从这张图开始啦。。。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210408101342730.png" alt="image-20210408101342730"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262113511.png" alt="image-20210408101342730"></p>
 <p>我们知道，HTTP最大的特点与优点就是<strong>简单易用</strong>，但简单也必然带来一些问题：</p>
 <ul>
 <li><p><code>明文传输</code>：由于HTTP本身不具备加密的功能，自然就不可能对通信整体(即通信请求与通信内容)进行加密，而不加密的HTTP有被窃听的风险，如果我们使用<strong>wireShark抓包工具</strong>，就会收获满满——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210408102109238.png" alt="image-20210408102109238"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262113278.png" alt="image-20210408102109238"></p>
 <p>这可不怎么靠谱，那怎样实现加密呢？考虑到发生数据泄露的位置可能是<strong>通信源或者通信链路</strong>，我们可以对症下药，对<strong>通信链路</strong>进行加密，这就引出了<strong>SSL安全套接字层/TLS安全层传输协议</strong>。当然对通信内容本身加密也是一种可行的idea,这里我们先着重介绍SSL。</p>
 <p>SSL采用一种叫做公开密钥加密的加密处理方式，我们常说的使用密钥加密，指的是客户端使用密钥加密，服务器端使用同一密钥解密，但这样显然面临一种困境：如果有第三方得到密钥，那就可以为所欲为。这里可以尝试客户端使用公开密钥加密，而服务器端使用私有秘钥解密的策略。</p>
 <p>两种策略各有千秋，那到底使用哪一种呢？</p>
@@ -626,7 +626,7 @@
 </blockquote>
 <h2 id="1-3-FTP-amp-Email"><a href="#1-3-FTP-amp-Email" class="headerlink" title="1.3 FTP&amp;Email"></a>1.3 FTP&amp;Email</h2><p>在开发应用时，FTP的身影并不多，唯一一次见证它的背影是在使用<strong>Maven找包</strong>的时候，给我的直观感觉就是，这不就是<strong>文件系统</strong>嘛~</p>
 <p>鉴于它太古老了，我们只是简要描述一下它工作的流程——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205929522.png" alt="image-20210707205929522"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262114883.png" alt="image-20210707205929522"></p>
 <ol>
 <li>FTP的服务器始终守护在21号端口处等待连接，FTP的客户端发起连接请求，<strong>基于TCP的控制连接</strong>建立。</li>
 <li><strong>用户身份认证</strong>，认证后访问文件目录，也因此需要维护历史信息，即<strong>FTP是有状态的协议</strong>，值得一提的是，身份认证是使用<strong>明文传输</strong>，着实不可靠。</li>
@@ -636,7 +636,7 @@
 <p>这是一个么得感情的分割线~</p>
 <p>Email不同于FTP，它在工作交流，面试简历提交等方面<strong>应用非常广泛</strong>。Email由三部分构成：<strong>用户代理</strong>，也就是客户端软件，<strong>邮件服务器</strong>，<strong>协议</strong>。</p>
 <p>我们同样复现EMail的工作流程——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707205938954.png" alt="image-20210707205938954"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262114959.png" alt="image-20210707205938954"></p>
 <ol>
 <li>首先用户在用户代理中写好邮件，用户代理通过<strong>STMP协议</strong>将邮件传输到<strong>用户邮箱服务器的队列</strong>中。</li>
 <li>邮箱服务器再将邮件从队列中提取出来，使用SMTP协议将邮件发送到目标服务器。</li>
@@ -652,9 +652,9 @@
 <p>显然，日常使用时域名显然是更好的选择，域名在初期使用没有分层的结构，因为主机数量少，不会出现重名，只需要维护一张映射表就行了，维护起来游刃有余。</p>
 <p>但当主机数指数级增多以后，重名变得不可避免，<strong>分层式的命名</strong>开始大势所趋。这时只维护一张表也显然不够了，<strong>分布式数据库</strong>被引入。而既然是应用层协议，自然会使用到传输层的服务，DNS使用的就是相对简单的<strong>UDP协议</strong>，可见网络核心的功能其实是在网络边沿实现的，网络核心只要保证传输就ok了。</p>
 <p>再说回<strong>层次树状化</strong>的命名，首先从根开始，也就是顶级域名，顶级域名对应的是顶级服务器，全世界只有13台顶级，即<strong>根服务器</strong>。而且<strong>中国并没有</strong>，有人担忧万一根服务器被黑了，网络安全是否变的不可靠了。但实际上这对网络安全并没有什么大的影响。分布式足以解决这一看起来很棘手的问题。在这些顶级域下，又有很多<strong>子域</strong>，子域的类型分为两种，即<strong>通用的</strong>和<strong>国家的</strong>。最终演化到树叶，就是<strong>主机</strong>啦。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210048205.png" alt="image-20210707210048205"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262114702.png" alt="image-20210707210048205"></p>
 <p>如果将DNS的命名规则平面化的话，它可以这样表示：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210104057.png" alt="image-20210707210104057"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262114976.png" alt="image-20210707210104057"></p>
 <p>假如我们要访问耶鲁大学AI学院的网站。通俗的方式是首先找到顶级域名，再找到通用域名edu，然后找到edu下的yale,接着发现cs，最后定位到AI。从它宽泛的命名框架来看，域名适用于任何主机，这就意味着<strong>域名不代表地域，它只是一个逻辑的概念</strong>，而非物理上的。</p>
 <h3 id="2-如何解析转换关系？"><a href="#2-如何解析转换关系？" class="headerlink" title="2.如何解析转换关系？"></a>2.如何解析转换关系？</h3><p>解析关系直观地看，可以维护一张映射表，但考虑到性能，我们使用专门的名字服务器来存储这样的一张表，但当主机变多时，<strong>一个服务器容易宕机，且不好维护</strong>。</p>
 <p>这时需要演化为分布式的名字服务器，而完成其功能的实际上是<strong>分布式的数据库</strong>。</p>
@@ -678,7 +678,7 @@
 <li>应用首先调用解析器，解析器作为客户向名字服务器发出查询报文，该查询报文被封装在UDP段中。</li>
 <li>名字服务器返回响应报文。</li>
 </ul>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210144625.png" alt="image-20210707210144625"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262114850.png" alt="image-20210707210144625"></p>
 <p>那名字服务器是如何获取到远端的IP映射关系呢？</p>
 <p>这里要分有缓存和没缓存两种情况讨论——</p>
 <ol>
@@ -691,12 +691,12 @@
 </ol>
 <h3 id="3-如何维护映射关系？"><a href="#3-如何维护映射关系？" class="headerlink" title="3.如何维护映射关系？"></a>3.如何维护映射关系？</h3><p>关系的维护无非增删改查，假如要在上级域的名字服务器中增加一个映射关系，那就往数据库中<strong>添加两条记录</strong>，分别指向<strong>新增的子域的域名</strong>和<strong>域名服务器的地址</strong>。这样在下次访问时会方便很多。但缓存有可能出现<strong>不一致</strong>的问题，因而在某些时候删除也是必要的。</p>
 <h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><p>最后，简单看下DNS协议的报文——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210157098.png" alt="image-20210707210157098"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262114238.png" alt="image-20210707210157098"></p>
 <h2 id="1-6-P2P应用"><a href="#1-6-P2P应用" class="headerlink" title="1.6 P2P应用"></a>1.6 P2P应用</h2><p>因为我在毕业后所将从事的工作和P2P的体系架构<strong>大抵是没有太多交集</strong>的，所以这一小节的知识点我只<strong>简要描述原理</strong>。</p>
 <p>先入为主地说，P2P的产生是为了解决CS体系的缺陷，即<strong>服务器压力大，负载均衡能力弱，可靠性不好</strong>。而相应的，P2P体系在这些方面是要略胜一筹的。</p>
 <p>P2P体系常常被应用在<strong>文件分发，流媒体</strong>，在这些应用场景中，peer节点的压力比较轻。</p>
 <p>为了形象描述P2P体系，我们来看下面这张图——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210209024.png" alt="image-20210707210209024"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262114534.png" alt="image-20210707210209024"></p>
 <p>这张图描述了两种体系结构随着客户端数量的增加，下载文件所消耗的时间，可以看到，CS体系呈现出线性的关系，而P2P则是类似于对数关系。</p>
 <p>如果单纯从下载性能方面来看的话，P2P早就风靡一时了。但因为它难以管理的缺陷，导致了它应用的并不多。</p>
 <p>我们来了解通用的P2P的管理模式——</p>
@@ -730,7 +730,7 @@
 <li><code>策略2</code>：靠近ISP的数据中心部署，效果也很不错，而且部署的节点相对较少，减少了成本。</li>
 </ul>
 <p>我们来看一个小例子来体会下CDN服务是如何被使用的——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707210224483.png" alt="image-20210707210224483"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262115570.png" alt="image-20210707210224483"></p>
 <p>步骤：</p>
 <ol>
 <li><p>ICP预先部署资源到CDN节点</p>
@@ -1109,7 +1109,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

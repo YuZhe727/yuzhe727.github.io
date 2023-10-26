@@ -454,7 +454,7 @@
             <div id="articleContent">
                 <p>操作系统的<strong>核心</strong>无非是<strong>多进程图像</strong>和<strong>文件图像</strong>，它们共同支撑了一个计算机<strong>最基础的骨架</strong>，前者使多道程序能够被加载到内存，并有序的运行与切换，这其中又包含有内存的管理；而后者将完成程序如何实现持久化存储，如何对文件进行读写，统一的文件视图是如何搭建的这些任务。</p>
 <p>完成多进程，内存这些核心的图像可以使<strong>多道程序</strong>在底层完成运行，但交互是不能实现的。人是通过使用硬件来间接与CPU交互的。因而我们还需要学习使用外设，也就是<strong>用于读和写的终端设备</strong>，而这些读和写操作的对象不一而足，但因为其一致的属性，都把他们归于<strong>文件系统</strong>。</p>
-<p>我们先给出一个基本的架构——<br><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201122092432000.png" alt="image-20201122092432000"></p>
+<p>我们先给出一个基本的架构——<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262034241.png" alt="image-20201122092432000"></p>
 <p>关于外设与文件系统的故事也就此开始了。。。</p>
 <hr>
 <h2 id="1-IO系统"><a href="#1-IO系统" class="headerlink" title="1.IO系统"></a>1.IO系统</h2><h3 id="显示器"><a href="#显示器" class="headerlink" title="显示器"></a>显示器</h3><p>首先我们给出一个直观的需求，如何在屏幕上使用printf打印出hello,world?</p>
@@ -471,7 +471,7 @@
 <p>通过这个通俗的例子我们得见<strong>接口</strong>的庐山真面目——</p>
 <p>不管什么设备，操作系统都为其提供了统一的接口<strong>open,read,write,close</strong>，而这些设备用<strong>/dev/xxx</strong>来标识。通过这个文件，我们可以找到控制器的地址，内容格式等等。</p>
 <p>接口呈现给我们的是一个封装好的功能块，而我们不仅要会知道接口的存在，还要通过接口来探寻<strong>底层的故事</strong>：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124151108165.png" alt="image-20201124151108165"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262034926.png" alt="image-20201124151108165"></p>
 <p>大致的流程框架有了，我们来看printf函数是如何在显示器上输出的——</p>
 <p>printf库首先<strong>创建缓存buf</strong>，然后将<strong>格式化的输出</strong>都写到缓存中，<strong>缓存满了</strong>以后再写到显存中，而如何写到显存中呢？核心就在于<strong>sys_write函数</strong>，：</p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">sys_write</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> fd<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span>buf<span class="token punctuation">,</span><span class="token keyword">int</span> count<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -491,39 +491,39 @@
 <p>上图——</p>
 </blockquote>
 <p>那<code>文件是如何通过当前进程的信息被找到</code>的呢？这就是操作系统全局化的雏形了——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124152440698.png" alt="image-20201124152440698"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262034969.png" alt="image-20201124152440698"></p>
 <p>这里从当前进程打开的文件序列中找到<strong>dev/tty0文件</strong>，也就是<strong>外设</strong>，那这里的<strong>open系统调用</strong>做了什么呢？</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124152750656.png" alt="image-20201124152750656"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262034666.png" alt="image-20201124152750656"></p>
 <p>而这些步骤的核心就是建立一个链——</p>
 <p><img src="C:%5CUsers%5Czyz%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201124152913538.png" alt="image-20201124152913538"></p>
 <p>接着我们需要知道文件的实际物理地址，即通<code>过inode的结构体找到实际存储在磁盘中的位置</code>，然后接着往下走——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124153222880.png" alt="image-20201124153222880"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262035900.png" alt="image-20201124153222880"></p>
 <p>这里判断外设的类型，得到是<strong>字符型的设备</strong>，然后将输出内容放在<strong>输出队列中</strong>以<strong>字符</strong>的形式输出——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124153420690.png" alt="image-20201124153420690"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262035442.png" alt="image-20201124153420690"></p>
 <p>输出的时候即使从<strong>用户缓冲区读取</strong>，然后<strong>调用写函数</strong>去——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124153549847.png" alt="image-20201124153549847"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262036021.png" alt="image-20201124153549847"></p>
 <p>开始写入：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124153650464.png" alt="image-20201124153650464"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262036584.png" alt="image-20201124153650464"></p>
 <p>那从显存的什么位置开始写入呢？直观的说，是光标所在处，所以我们需要读取光标的位置——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124153855802.png" alt="image-20201124153855802"></p>
-<p>而输出的内容是不仅仅包含字符的，还有它的颜色，因而pos指针需要加2——<br><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124154015935.png" alt="image-20201124154015935"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262036435.png" alt="image-20201124153855802"></p>
+<p>而输出的内容是不仅仅包含字符的，还有它的颜色，因而pos指针需要加2——<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262036633.png" alt="image-20201124154015935"></p>
 <p>printf系统调用的故事就到此为止了，我们再来回顾一下这个过程——</p>
 <p>首先调用printf库函数——》核心是系统调用write——》通过字符设备接口调用基本功能——》tty设备写入缓冲区——》显示器写，即写入缓存，在显示器展示。</p>
 <hr>
 <h3 id="键盘"><a href="#键盘" class="headerlink" title="键盘"></a>键盘</h3><p>外设包括显示器和键盘，上一节中我们介绍了<strong>显示器的工作机制</strong>，在接下来的篇幅中我们将了解到<strong>键盘是如何工作的</strong>。</p>
 <p>让外设工作起来无非三步：首先<strong>CPU</strong>通过<strong>out指令</strong>向外设控制器的某些<strong>寄存器</strong>发出<strong>读/写</strong>的命令，接着<strong>把out指令以我呢间的形式封装起来</strong>发出<strong>中断</strong>，形成统一的<strong>文件视图</strong>，最终<strong>向内存中读写数据</strong>。</p>
 <p>那如何使用键盘呢？从按下键盘开始，也就是从<strong>键盘中断处理</strong>开始，再深入的说，从<strong>中断初始化</strong>开始：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124161528247.png" alt="image-20201124161528247"></p>
-<p>然后需要知道从硬件的哪个<strong>端口扫描</strong>按下的键——<br><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124161642136.png" alt="image-20201124161642136"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262037091.png" alt="image-20201124161528247"></p>
+<p>然后需要知道从硬件的哪个<strong>端口扫描</strong>按下的键——<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262040730.png" alt="image-20201124161642136"></p>
 <p>那<strong>60端口</strong>是什么呢？这就是<strong>扫描码</strong>，通过扫描码我们就可以知道<strong>按下了哪个键</strong>，进入分支<strong>key_table</strong></p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124161856604.png" alt="image-20201124161856604"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262037429.png" alt="image-20201124161856604"></p>
 <p>在这个分支中，可以<strong>知道按下什么键时将触发的函数</strong>。我们进入显示字符函数——<strong>do-self函数</strong>，在这里取得按下键的<strong>ASII码</strong>，并将其放入<strong>缓冲队列read_q的头部</strong>，到这里，我们已经完成了<strong>CPU对字符的读取</strong>，最后我们需要完成<strong>回显</strong>即可——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124162445909.png" alt="image-20201124162445909"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262037093.png" alt="image-20201124162445909"></p>
 <hr>
 <p>我们来对这个过程做一总结——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124162614747.png" alt="image-20201124162614747"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262037526.png" alt="image-20201124162614747"></p>
 <p>至此，外设的工作机制就告一段落了，我们再以外设的视角来切进去——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20201124162727355.png" alt="image-20201124162727355"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310262037732.png" alt="image-20201124162727355"></p>
 <hr>
 <blockquote>
 <p>山高路远，静水深流。</p>
@@ -893,7 +893,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>

@@ -555,7 +555,7 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>那我们只需要在实现逆序遍历的同时判断顺序遍历和逆序遍历对应的值是否相等即可，代码非常简洁，但我写不出来。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231628900.png" alt="image-20210707231628900"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262125172.png" alt="image-20210707231628900"></p>
 <h3 id="福利环节"><a href="#福利环节" class="headerlink" title="福利环节"></a>福利环节</h3><p><img src="https://pic2.zhimg.com/80/v2-6b854efd30ba33dbd1d758605fbf7c44_1440w.jpg?source=1940ef5c" alt="img"></p>
 <pre class=" language-java"><code class="language-java"></code></pre>
 <h2 id="3-趣味图解"><a href="#3-趣味图解" class="headerlink" title=".3 趣味图解"></a>.3 趣味图解</h2><blockquote>
@@ -653,7 +653,7 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
 <p>从思路上来说，编写快慢指针的代码很舒服，那它的时间空间复杂度是不是也是如此呢？</p>
 <p>快慢指针的相遇取决于问题的规模N，所以它的<strong>时间复杂度为O(n)</strong>,在代码运行时并不需要申请额外空间，<strong>空间复杂度为O(1)</strong>。nice~ 看起来是要皆大圆满的节奏，<strong>但是从思维挑战来说，故事才刚刚开始</strong>——</p>
 <h3 id="链表反转后判断头结点"><a href="#链表反转后判断头结点" class="headerlink" title="链表反转后判断头结点"></a>链表反转后判断头结点</h3><p>先给出结论：<strong>有环链表反转后头节点与反转前头结点相同</strong>。为了得到这个结论，动手是必然的——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231558495.png" alt="image-20210707231558495"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262123928.png" alt="image-20210707231558495"></p>
 <p>在反转的基础上加一个判断就行了。而它的时间空间复杂度自然同反转链表一致，分别为O(n),O(1).</p>
 <p>到这里，才算是皆大圆满了，碎觉觉。可是呢，大晚上的，本来挺困，画完贼精神。算法果然比咖啡管用~</p>
 <p><img src="https://image.dbbqb.com/202102062347/23aca80ed56c35ae3c68f96539ccba42/gZ7Xk" alt="img"></p>
@@ -664,7 +664,7 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
 <blockquote>
 <p>图片来自于：<a href="https://leetcode-cn.com/problems/linked-list-cycle/solution/dong-hua-yan-shi-141huan-xing-lian-biao-b99vd/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/linked-list-cycle/solution/dong-hua-yan-shi-141huan-xing-lian-biao-b99vd/</a></p>
 </blockquote>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231530342.png" alt="image-20210707231530342"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262123611.png" alt="image-20210707231530342"></p>
 <h2 id="3-4-代码演示"><a href="#3-4-代码演示" class="headerlink" title="3.4 代码演示"></a>3.4 代码演示</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * Definition for singly-linked list.
  * class ListNode {
@@ -728,7 +728,7 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
 <hr>
 <h1 id="四、合并两个有序链表"><a href="#四、合并两个有序链表" class="headerlink" title="四、合并两个有序链表"></a>四、合并两个有序链表</h1><hr>
 <h2 id="4-1-问题描述"><a href="#4-1-问题描述" class="headerlink" title="4.1 问题描述"></a>4.1 问题描述</h2><blockquote>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231509844.png" alt="image-20210707231509844"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262124577.png" alt="image-20210707231509844"></p>
 </blockquote>
 <h2 id="4-2-思路及复杂度分析"><a href="#4-2-思路及复杂度分析" class="headerlink" title="4.2 思路及复杂度分析"></a>4.2 思路及复杂度分析</h2><p>老规矩，先审题。将两个有序的链表合并为一个有序的链表最直观简洁的方式就是合并链表再排序咯，这样问题就被转化为了排序问题。排序时可以考虑使用原地排序的桶排序算法，时间空间复杂度都为O(n)，效率还是很不错的。</p>
 <p>但排序不是我们的核心内容，至少目前不是。要合并为一个有序的单链表，就必然会涉及<strong>基于遍历的比较</strong>。而遍历链表，也就是循环的实现通常有两种，即迭代和递归。这里两种方法都能实现目标。让我们一探究竟咯——</p>
@@ -739,7 +739,7 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
 <p>也就是说，在循环结束后，还需要我们手动将哨兵节点指向非空的链表，这就很容易了：<strong>prev.next = l1==null?l2:l1;</strong></p>
 <p>思路已经很详细了，我们来看下时空复杂度。时间复杂度取决于迭代的次数，显然，迭代的规模也就是需要比较的次数，即<strong>O(n+m)</strong>,而空间的话，只需要<strong>常数的空间</strong>存放元素就ok了，也就是<strong>O(1)</strong>.</p>
 <h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>题解区对于递归解法的调侃无过于一看全会，一写全废。这说的不就是我嘛。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231456371.png" alt="image-20210707231456371"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262124922.png" alt="image-20210707231456371"></p>
 <p>不可否认，这评价的确很中肯~</p>
 <p>递归的学习是<strong>基于理解和熟练度</strong>的，大多数的题目，都是有迹可循，使用适当的方法论就可以解决的，没有智商差一说。大可不必妄自菲薄。</p>
 <p>老规矩，找<strong>递归公式</strong>和<strong>递归终止条件</strong>。递归终止条件很友好，即<strong>l1==null || l2==null.</strong>而递归公式就需要分析了。合并的问题能否分为子问题 ，子问题的解决方法相同，而且又需要有递和归的演化，就是它咯——<br>$$<br>list1[0]+merge(list1[1:],list2)   list1[0]&lt;list2[0]\\</p>
@@ -796,11 +796,11 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
     <span class="token punctuation">}</span> 
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h1 id="五、-删除链表倒数第N个元素"><a href="#五、-删除链表倒数第N个元素" class="headerlink" title="五、 删除链表倒数第N个元素"></a>五、 删除链表倒数第N个元素</h1><h2 id="5-1-问题描述"><a href="#5-1-问题描述" class="headerlink" title="5.1 问题描述"></a>5.1 问题描述</h2><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231440028.png" alt="image-20210707231440028"></p>
+<h1 id="五、-删除链表倒数第N个元素"><a href="#五、-删除链表倒数第N个元素" class="headerlink" title="五、 删除链表倒数第N个元素"></a>五、 删除链表倒数第N个元素</h1><h2 id="5-1-问题描述"><a href="#5-1-问题描述" class="headerlink" title="5.1 问题描述"></a>5.1 问题描述</h2><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262124505.png" alt="image-20210707231440028"></p>
 <h2 id="5-2-思路及复杂度分析"><a href="#5-2-思路及复杂度分析" class="headerlink" title="5.2 思路及复杂度分析"></a>5.2 思路及复杂度分析</h2><p>老规矩，先审题。要删除链表的某个元素，我们<strong>必须知道它的前驱节点</strong>，所以不管哪种解法，<strong>哨兵节点</strong>的添加都可以简化解题流程。</p>
 <p>最直观的解法解法无过于将问题转化为<strong>删除链表第length-n+1个元素</strong>。我们不妨称之为朴素的解法。</p>
 <h3 id="朴素解法"><a href="#朴素解法" class="headerlink" title="朴素解法"></a>朴素解法</h3><p>问题转化以后，思路就变得很明晰了。首先我们需要遍历得到链表的长度。然后，既然要删除链表的第length-n+1个元素，显然<strong>首先需要得到第length-n个元素</strong>。而链表是没有下标的，所以我们要维护一个计数器。然后遍历链表，计数器递增，当计数器的值等于length-n时，我们记录下当前指针指向的元素，也就是待删除节点的上一个节点。最后删除返回链表就ok了。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231423480.png" alt="image-20210707231423480"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262124309.png" alt="image-20210707231423480"></p>
 <h3 id="快慢指针-1"><a href="#快慢指针-1" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>在聊快慢指针之前，我们有必要先了解一下什么是<strong>模式识别</strong>。</p>
 <blockquote>
 <p>所谓模式识别的问题就是用计算的方法根据样本的<strong>特征</strong>将样本划分到一定的<strong>类别</strong>中去。</p>
@@ -812,11 +812,11 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
 <li><code>需要定位确切位置的节点</code>：快慢指针</li>
 </ul>
 <p>讲真，九年义务教育我们最大的成果就是通过思考得到模式，再按照模式做题，但可笑的是，当我们在之后所谓的深造中，却将最大的财富抛在脑后，真是可怜至极。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231423480.png" alt="image-20210707231355517"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262125147.png" alt="image-20210707231423480"></p>
 <p>好啦，言归正传。哨兵节点就不再赘述了。如何通过快慢指针找到要删除节点的前一个节点呢？</p>
 <p>开局一张图~</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231338256.png" alt="image-20210707231338256"></p>
-<p>也就是说，快指针的初始位置为<strong>慢指针向前移动n+1个位置</strong>。然后遍历链表，移动快慢指针，确定慢指针的位置。最后，就是删除咯——<br><img src="https://gitee.com//future727/imgs/raw/master/zyz_img4/image-20210707231254243.png" alt="image-20210707231254243"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262125220.png" alt="image-20210707231338256"></p>
+<p>也就是说，快指针的初始位置为<strong>慢指针向前移动n+1个位置</strong>。然后遍历链表，移动快慢指针，确定慢指针的位置。最后，就是删除咯——<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262125191.png" alt="image-20210707231254243"></p>
 <h2 id="5-3-趣味图解"><a href="#5-3-趣味图解" class="headerlink" title="5.3 趣味图解"></a>5.3 趣味图解</h2><p>请朋友们移步力扣官方视频，一如既往的给力——</p>
 <p><a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/shan-chu-lian-biao-de-dao-shu-di-nge-jie-dian-b-61/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/shan-chu-lian-biao-de-dao-shu-di-nge-jie-dian-b-61/</a></p>
 <h2 id="5-4-代码演示"><a href="#5-4-代码演示" class="headerlink" title="5.4 代码演示"></a>5.4 代码演示</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
@@ -1258,7 +1258,7 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">98.4k</span>
+            <span class="white-color">97.9k</span>
             
 
             <br>
