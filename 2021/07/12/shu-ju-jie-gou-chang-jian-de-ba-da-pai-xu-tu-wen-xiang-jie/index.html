@@ -501,7 +501,7 @@
 <h2 id="1-3-冒泡排序"><a href="#1-3-冒泡排序" class="headerlink" title="1.3 冒泡排序"></a>1.3 冒泡排序</h2><h3 id="1-3-1-冒泡排序概述"><a href="#1-3-1-冒泡排序概述" class="headerlink" title="1.3.1 冒泡排序概述"></a>1.3.1 冒泡排序概述</h3><p>冒泡排序比较相邻的两个元素，如果不满足大小关系，则互换位置，一次冒泡会让至少一个元素移动到它应该在的位置。重复n次即可完成排序。</p>
 <p>下面我们来看具体的例子：对一组数据4,5,6,3,2,1从小到大进行排序。</p>
 <p>那么第一次冒泡的过程是这样的——</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/e47dbf3b0ff8dea0e83d65e1a17fe4fe.png" alt="image-20210214151417841"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262146406.png" alt="image-20231026214631316"></p>
 <p>这样重复n次即可完成冒泡排序。但这样的排序方式是可以优化的，因为在某次冒泡后，整个数据已经是有序的了，就不需要再排序。所以我们<code>需要一个标志量来标识有序的状态</code>，下面是优化后的代码——</p>
 <pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">/**
      * 冒泡排序
@@ -545,7 +545,7 @@
 <li><input checked disabled type="checkbox"> 插入算法的<strong>核心</strong>是<strong>取未排序区间中的元素，将其插入到已排序区间的合适位置，并保证已排序区间数据一致有序。</strong></li>
 </ul>
 <p>如下图所示，要排序的数据为<strong>4,5,6,1,3,2</strong>——</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/c080151ce91820fc9a8697ee4e70d98e.png" alt="image-20210214155307987"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262146207.png" alt="image-20231026214648097"></p>
 <p>插入排序同冒泡排序，包含元素的比较进而元素的移动两种操作，那我们如何描述需要移动元素多少次呢？</p>
 <p>这里直接给出概念，<code>移动次数就等于逆序度</code>。当然，也容易理解，移动完成后逆序度为0，那么移动次数自然等于逆序度。</p>
 <p>来看下插入排序的代码——</p>
@@ -579,7 +579,7 @@
 </ul>
 <h2 id="1-5-选择排序"><a href="#1-5-选择排序" class="headerlink" title="1.5 选择排序"></a>1.5 选择排序</h2><h3 id="1-5-1-选择排序概述"><a href="#1-5-1-选择排序概述" class="headerlink" title="1.5.1 选择排序概述"></a>1.5.1 选择排序概述</h3><p>选择排序的<strong>思路类似于插入排序</strong>，同样基于<strong>已排序区间和未排序区间</strong>的思路。不同的是，选择排序依次找出<strong>未排序区间中的最小元素</strong>，<strong>将其与未排序区间的第一个元素互换位置,排好序的部分作为已排序区间。</strong></p>
 <p>我们来看下面的小例子——</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/cfffb76ec8fbe3678179f5d397b4047c.png" alt="image-20210214182637560"><br>再来看下具体的代码实现——</p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262147378.png" alt="image-20231026214707288"><br>再来看下具体的代码实现——</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
 * 选择排序
 */</span>
@@ -625,7 +625,7 @@
 <h2 id="2-2-归并排序"><a href="#2-2-归并排序" class="headerlink" title="2.2 归并排序"></a>2.2 归并排序</h2><h3 id="2-2-1-概述"><a href="#2-2-1-概述" class="headerlink" title="2.2.1 概述"></a>2.2.1 概述</h3><p>归并排序是用<strong>分治</strong>的思想，将大问题分成小问题，小问题解决了，大问题自然也就解决了。</p>
 <p>归并排序时，首先执行<strong>递</strong>，将数组从中间分成两部分，对这两部分<strong>分别进行分治，直到区间为1为止</strong>。然后是<strong>归</strong>的过程，<strong>依次排序合并每个小区间成大区间，直到得到排好序的数据集</strong>。</p>
 <p>这样说总归是不形象的，我们来看下图解——</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/a0c1aaa677cec70cea2934481234173b.png" alt="image-20210215112204718"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262147188.png" alt="image-20231026214730104"></p>
 <h3 id="2-2-2-代码实现"><a href="#2-2-2-代码实现" class="headerlink" title="2.2.2 代码实现"></a>2.2.2 代码实现</h3><p>有了大致的思路，我们来使用递归实现归并排序，既然是递归问题，那就先找递归终止条件和递归公式咯——</p>
 <ul>
 <li><p><code>递归终止条件</code>：<br>$$<br>merge_sort(p…r) = merge(merge_sort(p,q),merge_sort(q+1,r))<br>$$</p>
@@ -727,7 +727,7 @@
 </li>
 </ul>
 <h2 id="2-3-快速排序"><a href="#2-3-快速排序" class="headerlink" title="2.3 快速排序"></a>2.3 快速排序</h2><h3 id="2-3-1-概述"><a href="#2-3-1-概述" class="headerlink" title="2.3.1 概述"></a>2.3.1 概述</h3><p>Java1.8源码中Arrays.sort()排序函数使用快速排序算法。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230458288.png" alt="image-20210707230458288"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262144915.png" alt="image-20210707230458288"></p>
 <p>快速排序是用<strong>递归与分治</strong>，将数据集按照<strong>某个分区点</strong>分为<strong>比分区点小的区间</strong>和<strong>比分区间大的区间</strong>，然后在区间内再<strong>递归</strong>这项操作<strong>直到区间内只有一个元素为止</strong>。</p>
 <p>既然是递归，我们同样写出<strong>递归终止条件</strong>和<strong>递推公式</strong>——<br>$$<br>递推公式：<br>quick_sort(p…r) = quick_sort(p…q-1) + quick_sort(q+1… r)<br>\<br>终止条件：<br>p &gt;= r<br>$$<br>到这，我们只需要选出适合的分区点即可，通常将<strong>区间内的最后一个元素</strong>作为分区点，然后将比分区点小的元素放到一个数组中，把比分区点大的元素放到一个数组中。</p>
 <p>思路完全合理，但并不优雅，因为这意味着需要额外的空间。那怎样才能不申请额外空间呢？这里我们借助选择排序的思路，即核心是<strong>交换元素</strong>。</p>
@@ -804,7 +804,7 @@
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
 <p>桶排序堆排序数据的要求很苛刻，首先，要排序的数据需要<code>很容易就能划分成m个桶</code>，并且，桶和桶之间之间有着<code>天然的大小关系</code>。其次，数据在每个桶中的<code>分布是比较均匀</code>的，如果将数据都划分到同一个桶中，就会退化为O(nlogn)的排序算法啦。</p>
 </blockquote>
-<h3 id="3-2-2-趣味图解"><a href="#3-2-2-趣味图解" class="headerlink" title="3.2.2 趣味图解"></a>3.2.2 趣味图解</h3><p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230520254.png" alt="image-20210707230520254"></p>
+<h3 id="3-2-2-趣味图解"><a href="#3-2-2-趣味图解" class="headerlink" title="3.2.2 趣味图解"></a>3.2.2 趣味图解</h3><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262144813.png" alt="image-20210707230520254"></p>
 <h3 id="3-2-3-代码演示"><a href="#3-2-3-代码演示" class="headerlink" title="3.2.3 代码演示"></a>3.2.3 代码演示</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>practice<span class="token punctuation">.</span>sort<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">;</span>
@@ -880,13 +880,13 @@
 <li><p>然后，我们需要将源数据分配到对应的桶中，显然，如果分配到了对应的桶中，排序就已经完成了。那如何分配呢？</p>
 <p>这个环节就是计数排序的核心啦——</p>
 <p>假设有一组数据A[8]:2,5,3,0,2,3,0,3,我们首先遍历一遍数据，得到对应数据的个数C[6]——</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230533740.png" alt="image-20210707230533740"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262145737.png" alt="image-20210707230533740"></p>
 <p>再对数据做顺序求和：</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230544186.png" alt="image-20210707230544186"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262145009.png" alt="image-20210707230544186"></p>
 <p>也就是说C[i]里面存储的是小于等于I的数据个数。</p>
 <p>最后的最后，最容易蒙圈的一步——</p>
 <p><code>逆序遍历数组，然后在数组C中找到与其相同的下标，然后通过下标对应的元素确定排序后数据的下标，再将个数减1。</code></p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img3/image-20210707230600134.png" alt="image-20210707230600134"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262145416.png" alt="image-20210707230600134"></p>
 <p>王争老师的图绝了，非常有用！！！</p>
 </li>
 </ol>
@@ -1183,12 +1183,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/极客时间/" target="_blank">
-                        <span class="chip bg-color">极客时间</span>
-                    </a>
-                    
                     <a href="/tags/数组/" target="_blank">
                         <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                    <a href="/tags/极客时间/" target="_blank">
+                        <span class="chip bg-color">极客时间</span>
                     </a>
                     
                 </div>
