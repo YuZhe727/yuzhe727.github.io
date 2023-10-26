@@ -15,8 +15,8 @@
         repo: '<%- theme.gitalk.repo %>',
         owner: '<%- theme.gitalk.owner %>',
         proxy: '<%- theme.gitalk.proxy %>',
-        admin: <%- CryptoJS.MD5(page.path).toString() %>,
-        id: <%- md5(page.path) %>,
+        admin: <%- JSON.stringify(theme.gitalk.admin) %>,
+        id: <%- CryptoJS.MD5(page.path).toString() %>,
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
