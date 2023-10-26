@@ -140,7 +140,7 @@ code:
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
-  enable: true
+  enable: false
   title: 写作不易，客官能否打赏一杯奶茶？
   wechat: /medias/reward/wechat.png
   alipay: /medias/reward/alipay.jpg
@@ -262,7 +262,7 @@ postCalendar: true
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
   enable: true
-  owner: 归处
+  owner: YuZhe727
   repo: yuzhe727.github.io
   oauth:
     clientId: a0dd4b3edfe5d21c2c49
