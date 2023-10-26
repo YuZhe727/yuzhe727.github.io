@@ -1,3 +1,4 @@
+<<<<<<< HEAD:themes/matery/source/libs/others/snow.js
 /*样式一*/
 //(function($){
 //    $.fn.snow = function(options){
