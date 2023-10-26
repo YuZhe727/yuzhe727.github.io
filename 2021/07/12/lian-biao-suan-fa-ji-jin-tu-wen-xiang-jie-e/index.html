@@ -965,7 +965,10 @@ head<span class="token punctuation">.</span>next <span class="token operator">=<
         id: '2021/07/12/lian-biao-suan-fa-ji-jin-tu-wen-xiang-jie-e/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
+    let md5 = crypto.createHash("md5");
+    md5.update(page.path);
+    var result=md5.digest('hex');
+    gitalk.id = result;
     gitalk.render('gitalk-container');
 </script>
     

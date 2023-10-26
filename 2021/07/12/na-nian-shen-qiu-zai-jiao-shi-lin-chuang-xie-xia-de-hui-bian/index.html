@@ -1218,7 +1218,10 @@ end start</code></pre>
         id: '2021/07/12/na-nian-shen-qiu-zai-jiao-shi-lin-chuang-xie-xia-de-hui-bian/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
+    let md5 = crypto.createHash("md5");
+    md5.update(page.path);
+    var result=md5.digest('hex');
+    gitalk.id = result;
     gitalk.render('gitalk-container');
 </script>
     
