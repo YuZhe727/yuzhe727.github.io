@@ -1077,7 +1077,6 @@ End<span class="token punctuation">:</span>
 
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
-    const crypto = require('crypto');
     let gitalk = new Gitalk({
         clientID: 'a0dd4b3edfe5d21c2c49',
         clientSecret: '1308acb2f93f2d81dfad1bfe1a2d7b9784546b90',
@@ -1087,10 +1086,6 @@ End<span class="token punctuation">:</span>
         id: '2021/07/11/jin-cheng-yu-xian-cheng/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-    let md5 = crypto.createHash("md5");
-    md5.update(page.path);
-    var result=md5.digest('hex');
-    gitalk.id = result;
     gitalk.render('gitalk-container');
 </script>
     

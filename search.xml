@@ -76,9 +76,9 @@
       
         <tags>
             
-            <tag> 极客时间 </tag>
-            
             <tag> Mysql </tag>
+            
+            <tag> 极客时间 </tag>
             
         </tags>
       
@@ -232,9 +232,9 @@
       
         <tags>
             
-            <tag> 数组 </tag>
-            
             <tag> 极客时间 </tag>
+            
+            <tag> 数组 </tag>
             
         </tags>
       
@@ -243,7 +243,7 @@
     
     
     <entry>
-      <title>数据结构常见的八大排序图文详解</title>
+      <title>八大排序算法图文详解</title>
       <link href="/2021/07/12/shu-ju-jie-gou-chang-jian-de-ba-da-pai-xu-tu-wen-xiang-jie/"/>
       <url>/2021/07/12/shu-ju-jie-gou-chang-jian-de-ba-da-pai-xu-tu-wen-xiang-jie/</url>
       
