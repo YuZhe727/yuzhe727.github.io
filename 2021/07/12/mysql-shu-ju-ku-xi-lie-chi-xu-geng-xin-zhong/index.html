@@ -907,8 +907,6 @@
 </div>
 
 <script src="/libs/gitalk/gitalk.min.js"></script>
-<!--1、新增md5.min.js-->
-   <script src="https://cdn.bootcss.com/blueimp-md5/2.13.0/js/md5.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: 'a0dd4b3edfe5d21c2c49',
@@ -917,7 +915,7 @@
         owner: 'YuZhe727',
         proxy: 'https://cors-server-ecru.vercel.app/github_access_token',
         admin: "YuZhe727",
-        id: md5(page.path),
+        id: '2021/07/12/mysql-shu-ju-ku-xi-lie-chi-xu-geng-xin-zhong/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
