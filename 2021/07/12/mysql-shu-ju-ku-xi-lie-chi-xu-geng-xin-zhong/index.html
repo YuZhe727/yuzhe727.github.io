@@ -278,7 +278,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -395,12 +395,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Mysql/" target="_blank">
-                            <span class="chip bg-color">Mysql</span>
-                        </a>
-                        
                         <a href="/tags/极客时间/" target="_blank">
                             <span class="chip bg-color">极客时间</span>
+                        </a>
+                        
+                        <a href="/tags/Mysql/" target="_blank">
+                            <span class="chip bg-color">Mysql</span>
                         </a>
                         
                     </div>
@@ -465,7 +465,7 @@
 <p>将每一小节的内容提炼成问题，通过回答这些问题来掌握知识，详略分明且高效！</p>
 </blockquote>
 <h2 id="一-一条sql查询语句是如何执行的"><a href="#一-一条sql查询语句是如何执行的" class="headerlink" title="一.一条sql查询语句是如何执行的"></a>一.一条sql查询语句是如何执行的</h2><h3 id="1-mysql的框架有哪些基本组件，各是什么功能？"><a href="#1-mysql的框架有哪些基本组件，各是什么功能？" class="headerlink" title="1.mysql的框架有哪些基本组件，各是什么功能？"></a>1.mysql的框架有哪些基本组件，各是什么功能？</h3><p>所有的故事，都从一张图开始：</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210604153409674.png" alt="image-20210604153409674"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310252112890.png" alt="img"></p>
 <p>可以看到，mysql大致分为server层与存储引擎层：</p>
 <ul>
 <li><code>server层：</code>包含连接器，查询缓存，分析器，执行器等，涵盖了mysql的大多数的核心功能，以及所有的内置函数(日期，时间，数学，加密函数）,所有跨存储引擎的功能都在这一层实现，如存储过程，触发器，视图。</li>
@@ -474,13 +474,13 @@
 </ul>
 <h3 id="2-server层包含哪些组件？它们各是什么作用？"><a href="#2-server层包含哪些组件？它们各是什么作用？" class="headerlink" title="2.server层包含哪些组件？它们各是什么作用？"></a>2.server层包含哪些组件？它们各是什么作用？</h3><ol>
 <li><p><code>连接器</code>：连接器负责和mysql服务器端<strong>建立连接，获取权限，维持和管理连接</strong></p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210604155808563.png" alt="image-20210604155808563"></p>
+<pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">-</span>h$ip <span class="token operator">-</span>P$port <span class="token operator">-</span>u$<span class="token keyword">user</span> <span class="token operator">-</span>p</code></pre>
 <p>在连接建立后，如果没有使用，就会进入sleep状态。</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210604160921192.png" alt="image-20210604160921192"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310252116918.png" alt="img"></p>
 <p>如果客户端太久没动作（<strong>wait_timeout=8小时</strong>），连接器就会将其自动断开。</p>
 <p>当然，上面的情况是基于长连接的，而长连接正如我们在计网中了解的一样：<strong>如果客户端持续有请求，则使用同一个连接</strong>。长连接有效减少了频繁建立，销毁连接的成本，但也带来了一些问题：</p>
 <ul>
-<li><input checked disabled type="checkbox"> mysql在执行过程中临时使用的内存是管理在连接对象中的，如果连接长期存在，会导致MYsql占用内存过多，最终导致OOM</li>
+<li><input checked disabled type="checkbox"> mysql在执行过程中临时使用的内存是管理在连接对象中的，如果连接长期存在，会导致Mysql占用内存过多，最终导致OOM</li>
 </ul>
 <p>而针对长连接占用内存过多的问题，通常有这样两种解决方式：</p>
 <ul>
@@ -589,7 +589,7 @@
 <p>事务是对数据库中数据操作的<code>保证数据逻辑一致性的最小操作单元</code>。</p>
 </blockquote>
 <h3 id="2-简述某一场景下，不同事务隔离级别的区别"><a href="#2-简述某一场景下，不同事务隔离级别的区别" class="headerlink" title="2.简述某一场景下，不同事务隔离级别的区别"></a>2.简述某一场景下，不同事务隔离级别的区别</h3><p>有这样的一个场景：</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210606161322663.png" alt="image-20210606161322663"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310252119793.png" alt="img"></p>
 <p>在该场景下，不同事务隔离级别有不同的返回值：</p>
 <ul>
 <li><p><code>读未提交</code>：即在事务B没有提交的时候，它做的变更就可以被事务A看到。所以读到的值分别是1,2,2；</p>
@@ -618,7 +618,7 @@
 <h3 id="4-简要说明可重复读的使用场景"><a href="#4-简要说明可重复读的使用场景" class="headerlink" title="4.简要说明可重复读的使用场景"></a>4.简要说明可重复读的使用场景</h3><p>在记账的时候很有用。</p>
 <h3 id="5-事务隔离是怎样通过read-view实现的"><a href="#5-事务隔离是怎样通过read-view实现的" class="headerlink" title="5.事务隔离是怎样通过read-view实现的?"></a>5.事务隔离是怎样通过read-view实现的?</h3><p>之前我们提到，在事务隔离中，提供了<code>视图这种数据拷贝</code>的方式，而在事务隔离级别下，我们会读到不同的数据，这说明是存在多个视图的，也就是read-view。</p>
 <p>在MYSQL中，实际上每条记录在更新时都会记录一条<code>回滚操作</code>，通过回滚操作，可以得到上一个状态的值：</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210606163851669.png" alt="image-20210606163851669"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310252120128.png" alt="img"></p>
 <p>也就是说，<code>同一个记录在数据库中是存在多个版本的</code>，当我们要读取数据时，要判断这个数据的版本对于当前事务是否可见，如果不可见，就通过<code>undo-log</code>计算得到上一个版本，直到找到正确版本为止。</p>
 <p>在不需要的时候，数据库系统会将回滚日志删除。</p>
 <h3 id="6-并发版本控制的概念是什么？如何实现？"><a href="#6-并发版本控制的概念是什么？如何实现？" class="headerlink" title="6.并发版本控制的概念是什么？如何实现？"></a>6.并发版本控制的概念是什么？如何实现？</h3><p><code>概念</code>：同一个数据行，在数据库中存在<code>多个版本号</code>，这个版本号可以理解为当前操作这行数据的<code>事务的ID</code>。</p>
@@ -649,13 +649,13 @@
 <p><strong>类比</strong>：操作系统中使用<strong>inode</strong>来唯一标识文件，在inode中，记录了各个<code>文件分别包含哪些磁盘块</code>，给定inode,就可以找到文件的所有块，在inode中，同样存储了文件属性的磁盘地址。</p>
 <h3 id="2-简述索引模型之哈希表"><a href="#2-简述索引模型之哈希表" class="headerlink" title="2.简述索引模型之哈希表"></a>2.简述索引模型之哈希表</h3><p><strong>概述</strong>：哈希表是一种以<code>键值对</code>存储数据的结构，我们只需要输入待查找的key，就可以找到对应的value,哈希表的思路很简单，把值放在数组中，用一个<code>哈希函数把key换算成一个确定的位置</code>，然后将value放在数组的这个位置。</p>
 <p><strong>哈希冲突</strong>：使用链表法解决；</p>
-<p><strong>示例</strong>：<img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210607202153949.png" alt="image-20210607202153949"></p>
+<p><strong>示例</strong>：<img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310252121333.png" alt="img"></p>
 <p><strong>特点</strong>：只适用于<code>等值查询</code>，可以应用于NoSQL不能做<code>区间查询</code>。</p>
 <h3 id="3-简述索引模型之有序数组"><a href="#3-简述索引模型之有序数组" class="headerlink" title="3.简述索引模型之有序数组"></a>3.简述索引模型之有序数组</h3><p><strong>概述</strong>：将元素按照一定的顺序排列，这里的顺序<code>不一定是严格自增</code>，而是按照某一属性从小到大排序。假如有一个按照身份证号排列的有序数组，我们要查询某一个身份证号的名字，通过<code>二分法</code>就可以找到。</p>
-<p><strong>示例</strong>：<img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210607202732018.png" alt="image-20210607202732018"></p>
+<p><strong>示例</strong>：<img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310252122045.png" alt="img"></p>
 <p><strong>特点</strong>：对于<code>等值查找</code>和<code>范围查找</code>都较友好，查询的时间复杂度为<code>O(logN)</code>,但实际上有序数组并没有得到大量应用，这是因为在插入元素时需要大量的<code>数据搬移</code>，也因此有序数组被大量应用于<code>静态存储引擎</code>。</p>
 <h3 id="4-简述索引模型之B-树"><a href="#4-简述索引模型之B-树" class="headerlink" title="4.简述索引模型之B+树"></a>4.简述索引模型之B+树</h3><p><strong>概述</strong>：B+树是一种二叉搜索树，它的节点遵循严格的大小关系，<code>二叉搜索树的查询，更新的时间复杂度为O(logN)</code>,</p>
-<p><strong>示例</strong>：<img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210607203522696.png" alt="image-20210607203522696"></p>
+<p><strong>示例</strong>：<img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img/202310252122217.png" alt="img"></p>
 <p><strong>特点</strong>：<code>B+树</code>即为InnoDB的引擎模型，但考虑到性能，更多被使用的实则是<code>多叉树</code>。</p>
 <h3 id="5-为什么N叉树被广泛应用到数据库引擎中？"><a href="#5-为什么N叉树被广泛应用到数据库引擎中？" class="headerlink" title="5.为什么N叉树被广泛应用到数据库引擎中？"></a>5.为什么N叉树被广泛应用到数据库引擎中？</h3><p>我们先设想二叉树存储的场景：假如二叉树<code>树高20</code>，存储了100万行数据，<code>需要读取20个数据块(连续的存储空间)</code>，在机械硬盘时代，读取硬盘是龟速，而这样的龟速，居然要连续查询20次，那怎么提高查询的性能呢？</p>
 <p>减少树高，增加一个数据块中的数据，即<code>使用N叉树</code>。</p>
@@ -687,7 +687,8 @@
 <p>一致性读是好，但是前提是引擎要支持这个隔离级别。</p>
 <h2 id="3-如果要全库只读，为什么不使用set-global-readonly-true的方式？"><a href="#3-如果要全库只读，为什么不使用set-global-readonly-true的方式？" class="headerlink" title="3.如果要全库只读，为什么不使用set global readonly=true的方式？"></a>3.如果要全库只读，为什么不使用set global readonly=true的方式？</h2><p>1.在有些系统中，<code>readonly的值会被用来做其他逻辑</code>，比如判断主备库。所以修改global变量的方式影响太大。<br>2.在异常处理机制上有差异。如果执行FTWRL命令之后由于客户端发生异常断开，那么MySQL会自动释放这个全局锁，整个库回到可以正常更新的状态。而将整个库设置为readonly之后，如果客户端发生异常，则数据库就会一直保持readonly状态，这样会<code>导致整个库长时间处于不可写状态，风险较高</code>。</p>
 <h2 id="4-表锁简述"><a href="#4-表锁简述" class="headerlink" title="4.表锁简述"></a>4.表锁简述</h2><p><strong>概述</strong>：mysql里面表锁有两种：表锁和MDL(元数据锁)，表锁不建议加，MDL会默认加上；</p>
-<p><strong>表锁</strong>：<img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210608082421097.png" alt="    "></p>
+<p><strong>表锁</strong>：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">LOCK</span> <span class="token keyword">TABLE</span> table_name <span class="token punctuation">[</span> <span class="token keyword">AS</span> alias_name <span class="token punctuation">]</span> <span class="token keyword">READ</span></code></pre>
 <p><strong>MDL</strong>：不需要显式使用，在访问的时候会自动加上，MDL包含<code>读锁和写锁</code>，<code>读锁之间不互斥</code>，可多线程共享，<code>写锁互斥</code>，来保证表结构变更时的安全性。</p>
 <p><strong>风险</strong>：MDL直到事务提交才会被释放，因此为了防止MDL存在时间过长，从而MYSQL异常重启，应该避免长事务。</p>
 <h3 id="5-如何安全地小表加一个字段"><a href="#5-如何安全地小表加一个字段" class="headerlink" title="5.如何安全地小表加一个字段"></a>5.如何安全地小表加一个字段</h3><ol>
@@ -722,7 +723,7 @@
 <blockquote>
 <p>日拱一卒，功不唐捐。</p>
 </blockquote>
-<h2 id="番外"><a href="#番外" class="headerlink" title="番外"></a>番外</h2><h3 id="1-mysql的服务器配置文件"><a href="#1-mysql的服务器配置文件" class="headerlink" title="1.mysql的服务器配置文件"></a>1.mysql的服务器配置文件</h3><p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210607105513978.png" alt="image-20210607105513978"></p>
+<h2 id="番外"><a href="#番外" class="headerlink" title="番外"></a>番外</h2><h3 id="1-mysql的服务器配置文件"><a href="#1-mysql的服务器配置文件" class="headerlink" title="1.mysql的服务器配置文件"></a>1.mysql的服务器配置文件</h3><p><a href="https://zhuanlan.zhihu.com/p/430679474" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/430679474</a></p>
 <h3 id="2-my-cnf-my-ini配置文件详解"><a href="#2-my-cnf-my-ini配置文件详解" class="headerlink" title="2.my.cnf/my.ini配置文件详解"></a>2.my.cnf/my.ini配置文件详解</h3><p><a href="https://www.cnblogs.com/kuoAT/p/7080770.html" target="_blank" rel="noopener">https://www.cnblogs.com/kuoAT/p/7080770.html</a></p>
 <h3 id="3-mysql日志系统详解"><a href="#3-mysql日志系统详解" class="headerlink" title="3.mysql日志系统详解"></a>3.mysql日志系统详解</h3><p><a href="https://segmentfault.com/a/1190000023827696" target="_blank" rel="noopener">https://segmentfault.com/a/1190000023827696</a></p>
 <h3 id="4-查看mysql下的几个日志"><a href="#4-查看mysql下的几个日志" class="headerlink" title="4.查看mysql下的几个日志"></a>4.查看mysql下的几个日志</h3><p><a href="https://blog.csdn.net/xuheng8600/article/details/79823875" target="_blank" rel="noopener">https://blog.csdn.net/xuheng8600/article/details/79823875</a></p>
@@ -740,13 +741,10 @@
 </ol>
 <h2 id="面经集锦"><a href="#面经集锦" class="headerlink" title="面经集锦"></a>面经集锦</h2><ol>
 <li><p>Explain的主要字段</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210613161115048.png" alt="image-20210613161115048"></p>
 </li>
 <li><p>b+树相比B树的优点</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210613170513272.png" alt="image-20210613170513272"></p>
 </li>
 <li><p>可不可以切换索引为哈希索引？</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210613162722458.png" alt="image-20210613162722458"></p>
 </li>
 <li><p>场景题：高并发场景下数据库压力很大，怎么解决？</p>
 <p><code>使用索引，使用缓存，分库分表，消息队列</code></p>
@@ -760,8 +758,7 @@
 <p>一般情况下，在数据库中建立表的时候，强制为每一张表添加 id 递增字段，这样方便查询。</p>
 </li>
 <li><p>mysql 联合索引使用 A&gt;n and B=m 和 A=n and B=m 的区别</p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210613165722760.png" alt="image-20210613165722760"></p>
-<p><img src="C:/Users/zyz/AppData/Roaming/Typora/typora-user-images/image-20210613165652454.png" alt="image-20210613165652454"></p>
+<p>第一部分（A列）是范围查询，无法利用到索引。因此，这种情况下，MySQL可能需要进行全表扫描来找到满足条件的记录。</p>
 </li>
 <li><p>MySQL的InnoDB和MyISAM区别</p>
 <table>
@@ -1332,7 +1329,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="JVM系列知识点总结">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="JVM系列知识点总结">
                         
                         <span class="card-title">JVM系列知识点总结</span>
                     </div>
@@ -1397,7 +1394,7 @@ JVM知识全景图
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Spring IOC源码浅析">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Spring IOC源码浅析">
                         
                         <span class="card-title">Spring IOC源码浅析</span>
                     </div>
