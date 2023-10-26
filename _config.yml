@@ -142,7 +142,7 @@ live2d:
     opacity: 0.7
 
 baidu_url_submit:
-  count: 100
+  count: 500
   host: www.xiaozhe.cc
   token: WrjmR4SenXme9OAh
   path: baidu_urls.txt
