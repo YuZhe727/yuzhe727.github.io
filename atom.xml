@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xiaozhe.cc/"/>
-  <updated>2023-10-26T12:33:28.057Z</updated>
+  <updated>2023-12-18T10:54:15.790Z</updated>
   <id>https://www.xiaozhe.cc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>默</title>
+    <link href="https://www.xiaozhe.cc/2023/12/18/mo/"/>
+    <id>https://www.xiaozhe.cc/2023/12/18/mo/</id>
+    <published>2023-12-18T10:46:04.000Z</published>
+    <updated>2023-12-18T10:54:15.790Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;默&quot;&gt;&lt;a href=&quot;#默&quot; class=&quot;headerlink&quot; title=&quot;默&quot;&gt;&lt;/a&gt;默&lt;/h2&gt;&lt;h3 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="https://www.xiaozhe.cc/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="荒腔走板" scheme="https://www.xiaozhe.cc/tags/%E8%8D%92%E8%85%94%E8%B5%B0%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>基于hexo框架、mastery主题的个人博客搭建[小白教程]</title>
@@ -529,34 +555,6 @@
         
         
           &lt;h2 id=&quot;1、内存使用与分段&quot;&gt;&lt;a href=&quot;#1、内存使用与分段&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="操作系统" scheme="https://www.xiaozhe.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="linux0.11" scheme="https://www.xiaozhe.cc/tags/linux0-11/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>进程与线程</title>
-    <link href="https://www.xiaozhe.cc/2021/07/11/jin-cheng-yu-xian-cheng/"/>
-    <id>https://www.xiaozhe.cc/2021/07/11/jin-cheng-yu-xian-cheng/</id>
-    <published>2021-07-11T12:32:04.000Z</published>
-    <updated>2021-07-18T12:07:06.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;一、多进程图像的引出&quot;&gt;&lt;a href=&quot;#一、多进程图像的引出&quot; class=&quot;headerlink&quot; title=&quot;一、多进程图像的引出&quot;&gt;&lt;/a&gt;一、多进程图像的引出&lt;/h1&gt;&lt;h2 id=&quot;1-多进程图像&quot;&gt;&lt;a href=&quot;#1-多进程图像&quot;
         
       
     
