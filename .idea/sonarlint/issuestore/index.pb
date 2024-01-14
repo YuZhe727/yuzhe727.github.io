@@ -101,3 +101,5 @@ _
 run.sh,3/2/324fcb49f1cf313ebdd7cbda6a71b73727ddd94d
 D
 source/_posts/默.md,e/0/e03f7f30e214d324f7f837f28767fd6de2c4e279
+M
+source/_posts/以静制动.md,7/3/7385a747b5eb1de1e16a150e2fc63f6b9e0631a9
