@@ -4,14 +4,38 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="递归的基本思想, 归处 java 算法 计算机基础 闲聊">
+    <meta name="keywords" content="1.16-2.16 工作整体框架, 归处 java 算法 计算机基础 闲聊">
     <meta name="baidu-site-verification" content="codeva-Tb46ZjblhS">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="从一个问题开始假设A的推荐人是B，B的推荐人是C，如何来查找A的最终推荐人呢？
-这里直接给出答案——
-long findRootRerfererId(long actorId){
-    Long refererId = select re">
+    <meta name="description" content="工作整体框架
+
+
+
+日期
+主线
+支线1
+支线2
+支线3
+
+
+
+1.16-1.20
+工具篇完结（核心工具熟练使用，其他工具面向使用）
+
+
+
+
+
+1.21
+代码整洁之道两章、effective java一章
+
+
+
+
+
+1.22-1.26
+业务篇">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +43,7 @@ long findRootRerfererId(long actorId){
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>递归的基本思想 | 归处的博客</title>
+    <title>1.16-2.16 工作整体框架 | 归处的博客</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -277,13 +301,13 @@ long findRootRerfererId(long actorId){
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        递归的基本思想
+                        1.16-2.16 工作整体框架
                     </div>
                 </div>
             </div>
@@ -393,24 +417,11 @@ long findRootRerfererId(long actorId){
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/递归/" target="_blank">
-                            <span class="chip bg-color">递归</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/算法/" class="post-category" target="_blank">
-                            算法
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -418,7 +429,7 @@ long findRootRerfererId(long actorId){
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-12
+                    2024-01-16
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -432,14 +443,14 @@ long findRootRerfererId(long actorId){
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    984
+                    244
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -455,52 +466,74 @@ long findRootRerfererId(long actorId){
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="从一个问题开始"><a href="#从一个问题开始" class="headerlink" title="从一个问题开始"></a>从一个问题开始</h2><p>假设A的推荐人是B，B的推荐人是C，如何来查找A的最终推荐人呢？</p>
-<p>这里直接给出答案——</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">long</span> <span class="token function">findRootRerfererId</span><span class="token punctuation">(</span><span class="token keyword">long</span> actorId<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    Long refererId <span class="token operator">=</span> select referer_id from <span class="token punctuation">[</span>table<span class="token punctuation">]</span> where actor_id <span class="token operator">=</span> actorId<span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>refererId <span class="token operator">==</span> null<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> actorId<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token function">findRootRerfererId</span><span class="token punctuation">(</span>refererId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="递归概述"><a href="#递归概述" class="headerlink" title="递归概述"></a>递归概述</h2><p>递归是一种应用非常广泛的算法，亦可称作编程技巧。</p>
-<h2 id="递归的引出"><a href="#递归的引出" class="headerlink" title="递归的引出"></a>递归的引出</h2><p>递归顾名思义，包含递与归两个过程。我们用下面的例子来体会一下。</p>
-<p>假设你去电影院看电影，你想知道自己坐在第几排，所以你询问前排的人，但前排的人有相同的困惑，他又去问他的前排，直到第一排的人明确自己坐在第几排。然后每一排的人将结果告诉自己的后排，整个递归的过程就完成了。</p>
-<p>这个小例子中，第一排是终止条件，不断问前排的人是递归条件。无疑是很典型的递归问题，但面对递归问题更通常的反应是看了全会，写了全废。所以我们还要按部就班的学习递归的知识。。。</p>
-<h2 id="递归的三个条件"><a href="#递归的三个条件" class="headerlink" title="递归的三个条件"></a>递归的三个条件</h2><ol>
-<li>一个问题的解可以分解为几个子问题的解</li>
-<li>设个问题与分解后的问题除了问题规模不同外，求解思路完全相同</li>
-<li>存在递归终止条件</li>
-</ol>
-<h2 id="如何编写递归代码"><a href="#如何编写递归代码" class="headerlink" title="如何编写递归代码"></a>如何编写递归代码</h2><p>编写递归代码的核心无非就两个：<strong>递归公式+终止条件</strong>。我们通过下面的小例子来理解下——</p>
-<p>假设有n个台阶，每次你自己可以跨越1个台阶或者2个台阶。请问走这n个台阶共有多少种走法？</p>
-<p>我们会想到，可以按照第一步的走法将问题分解为两个子问题，也就是走一步之后的走法和走两步之后的走法，对应的递归公式就是<br>$$<br>f(n) = f(n-1)+f(n-2)<br>$$<br>再来确定终止条件，显然，当只有一个台阶时就没必要再递归了，也就是：<br>$$<br>f(1)=1<br>$$<br>将这个递归终止条件带入递归公式后，发现f(2)是无法确定的，所以终止条件还应该包含<br>$$<br>f(2)=2<br>$$<br>表示的含义是走两个台阶有两种走法。最后我们将其转换为代码实现——</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">f</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>站在巨人的肩膀——</p>
-<blockquote>
-<p>写递归代码的关键在于找到将大问题转化为小问题的关键，并且基于此写下递归公式，然后再推敲递归终止条件，最终将递归公式和递归条件转化为代码实现。</p>
-</blockquote>
-<h2 id="递归代码要警惕堆栈溢出"><a href="#递归代码要警惕堆栈溢出" class="headerlink" title="递归代码要警惕堆栈溢出"></a>递归代码要警惕堆栈溢出</h2><p>递归代码在简洁可读性强的同时，却也带来了堆栈溢出的隐患。</p>
-<p>之前提到过系统没调用一个函数，会将临时变量作为栈帧压栈，等到函数返回再弹栈。而递归代码因为调用的函数层数多，在函数调用时不断申请栈空间。从而导致空间复杂度不理想。</p>
-<p>那怎样避免呢？理想的方法是根据场景选择递归，如果递归层数不多，则限制递归层数，这时使用递归是合适的。</p>
-<h2 id="递归代码要警惕重复计算"><a href="#递归代码要警惕重复计算" class="headerlink" title="递归代码要警惕重复计算"></a>递归代码要警惕重复计算</h2><p>在刚才走台阶的例子中，就不可避免的遇到了重复计算的问题，这样对问题的求解并没有障碍，但并不优雅，我们要使用哈比表这样的数据结构动态存储每个子问题的结果。</p>
-<h2 id="一点思考"><a href="#一点思考" class="headerlink" title="一点思考"></a>一点思考</h2><p>在问题规模较大时，有什么比较好的调试方式——</p>
-<blockquote>
-<ul>
-<li>打印日志发现递归值</li>
-<li>结合条件断点进行调试</li>
-</ul>
-</blockquote>
-<hr>
-<blockquote>
-<p>山高路远，静水深流</p>
-</blockquote>
+                <p>工作整体框架<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img4/202401161435348.png" alt="image-20240116143520166"></p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>主线</th>
+<th>支线1</th>
+<th>支线2</th>
+<th>支线3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.16-1.20</td>
+<td>工具篇完结（核心工具熟练使用，其他工具面向使用）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.21</td>
+<td>代码整洁之道两章、effective java一章</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.22-1.26</td>
+<td>业务篇完整主链路分析、完成一个纵向需求</td>
+<td>业务篇完整主链路技术分析debug</td>
+<td>组件简单使用再确认</td>
+<td>工具再熟练，在之前博文基础上添加小技巧</td>
+</tr>
+<tr>
+<td>1.27-1.28</td>
+<td>业务篇完整主链路技术分析debug完成，博文整理完成、疑问整理完成</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1.29-2.2</td>
+<td>完成一个横向/纵向需求、主链路业务/技术问题解决</td>
+<td>整理数据库设计相关问题、解决问题</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>职业素养篇-说是与说否</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.4-2.8</td>
+<td>解决数据库设计相关问题、完成一个需求</td>
+<td>初步了解用户模型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>过年期间</td>
+<td></td>
+<td>代码整洁之道、effective java</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
             </div>
             <hr />
@@ -535,9 +568,9 @@ long findRootRerfererId(long actorId){
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《递归的基本思想》
+                    《1.16-2.16 工作整体框架》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/07/12/di-gui-de-ji-ben-si-xiang/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2024/01/16/1-16-2-16-gong-zuo-zheng-ti-kuang-jia/" property="cc:attributionName"
                rel="cc:attributionURL">
                 归处
             </a> 采用
@@ -578,7 +611,7 @@ long findRootRerfererId(long actorId){
         repo: 'yuzhe727.github.io',
         owner: 'YuZhe727',
         admin: "YuZhe727",
-        id: '2021/07/12/di-gui-de-ji-ben-si-xiang/',
+        id: '2024/01/16/1-16-2-16-gong-zuo-zheng-ti-kuang-jia/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
     gitalk.render('gitalk-container');
@@ -598,55 +631,63 @@ long findRootRerfererId(long actorId){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/12/maven-cong-ru-men-dao-ru-keng/">
+                <a href="/2024/01/16/1-16-2-16-gong-zuo-zheng-ti-kuang-jia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Maven从入门到入坑">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="1.16-2.16 工作整体框架">
                         
-                        <span class="card-title">Maven从入门到入坑</span>
+                        <span class="card-title">1.16-2.16 工作整体框架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学习Maven的基础目前所有的项目项目都在使用Maven，那到底Maven是什么，为什么Maven可以大行其道，它究竟为我们的项目开发带来了怎样的好处呢——
-为什么要学习Maven
-在开发庞大的项目时，使用package的结构来区分复杂的代
+                            工作整体框架
+
+
+
+日期
+主线
+支线1
+支线2
+支线3
+
+
+
+1.16-1.20
+工具篇完结（核心工具熟练使用，其他工具面向使用）
+
+
+
+
+
+1.21
+代码整洁之道两章、effective java一章
+
+
+
+
+
+1.22-1.26
+业务篇
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-16
+                            </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/敏捷开发/" class="post-category" target="_blank">
-                                    敏捷开发
-                                </a>
-                            
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Maven/" target="_blank">
-                        <span class="chip bg-color">Maven</span>
-                    </a>
-                    
-                    <a href="/tags/IDEA/" target="_blank">
-                        <span class="chip bg-color">IDEA</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -657,52 +698,41 @@ long findRootRerfererId(long actorId){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/12/si-chong-ji-ben-de-shu-ju-jie-gou/">
+                <a href="/2024/01/14/yi-jing-zhi-dong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="四种基本的数据结构">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="以静制动">
                         
-                        <span class="card-title">四种基本的数据结构</span>
+                        <span class="card-title">以静制动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-在具体的算法题解之前，我会先简要的描述一些知识点，这些知识点都是基于数据结构与算法专栏的总结，对于详细的推理不再涉及，仅当做笔记使用。
+                            习惯：以静制动O：持续地做一件事情的动力
+K：完成度80%以上
+R: 二动、二平、三静
 
-我们所熟识的数组1.1 从一个问题开始为什么大部分编程语言中，数组要从0开始编号，而不是从1开始？
+总线：以静制动
+事项一：早上锻炼、晚上散步30min
+事项二：早上总结、晚上读书30min
+事项三：早、中、晚冥想5min
 
+
+
+事项/打卡
+Day1
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/数据结构与算法/" class="post-category" target="_blank">
-                                    数据结构与算法
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/极客时间/" target="_blank">
-                        <span class="chip bg-color">极客时间</span>
-                    </a>
-                    
-                    <a href="/tags/数据结构/" target="_blank">
-                        <span class="chip bg-color">数据结构</span>
-                    </a>
-                    
                 </div>
                 
             </div>

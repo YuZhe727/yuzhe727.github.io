@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>1.16-2.16 工作整体框架</title>
+      <link href="/2024/01/16/1-16-2-16-gong-zuo-zheng-ti-kuang-jia/"/>
+      <url>/2024/01/16/1-16-2-16-gong-zuo-zheng-ti-kuang-jia/</url>
+      
+        <content type="html"><![CDATA[<p>工作整体框架<br><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img4/202401161435348.png" alt="image-20240116143520166"></p><table><thead><tr><th>日期</th><th>主线</th><th>支线1</th><th>支线2</th><th>支线3</th></tr></thead><tbody><tr><td>1.16-1.20</td><td>工具篇完结（核心工具熟练使用，其他工具面向使用）</td><td></td><td></td><td></td></tr><tr><td>1.21</td><td>代码整洁之道两章、effective java一章</td><td></td><td></td><td></td></tr><tr><td>1.22-1.26</td><td>业务篇完整主链路分析、完成一个纵向需求</td><td>业务篇完整主链路技术分析debug</td><td>组件简单使用再确认</td><td>工具再熟练，在之前博文基础上添加小技巧</td></tr><tr><td>1.27-1.28</td><td>业务篇完整主链路技术分析debug完成，博文整理完成、疑问整理完成</td><td></td><td></td><td></td></tr><tr><td>1.29-2.2</td><td>完成一个横向/纵向需求、主链路业务/技术问题解决</td><td>整理数据库设计相关问题、解决问题</td><td></td><td></td></tr><tr><td>2.3</td><td>职业素养篇-说是与说否</td><td></td><td></td><td></td></tr><tr><td>2.4-2.8</td><td>解决数据库设计相关问题、完成一个需求</td><td>初步了解用户模型</td><td></td><td></td></tr><tr><td>过年期间</td><td></td><td>代码整洁之道、effective java</td><td></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>以静制动</title>
       <link href="/2024/01/14/yi-jing-zhi-dong/"/>
       <url>/2024/01/14/yi-jing-zhi-dong/</url>
@@ -114,9 +127,9 @@
       
         <tags>
             
-            <tag> Mysql </tag>
-            
             <tag> 极客时间 </tag>
+            
+            <tag> Mysql </tag>
             
         </tags>
       
@@ -270,9 +283,9 @@
       
         <tags>
             
-            <tag> 极客时间 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 极客时间 </tag>
             
         </tags>
       
