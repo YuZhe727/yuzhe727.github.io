@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.xiaozhe.cc/2024/01/16/git-shi-yong/</loc>
+    <lastmod>2024-01-16</lastmod>
+  </url>
+  <url>
     <loc>https://www.xiaozhe.cc/2024/01/16/maven-shi-yong/</loc>
     <lastmod>2024-01-16</lastmod>
   </url>
@@ -85,11 +89,11 @@
     <lastmod>2021-07-18</lastmod>
   </url>
   <url>
-    <loc>https://www.xiaozhe.cc/2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/</loc>
+    <loc>https://www.xiaozhe.cc/2021/07/11/cao-zuo-xi-tong-ji-chu/</loc>
     <lastmod>2021-07-18</lastmod>
   </url>
   <url>
-    <loc>https://www.xiaozhe.cc/2021/07/11/cao-zuo-xi-tong-ji-chu/</loc>
+    <loc>https://www.xiaozhe.cc/2021/07/12/java-duo-xian-cheng-de-qian-shi-jin-sheng/</loc>
     <lastmod>2021-07-18</lastmod>
   </url>
   <url>
