@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xiaozhe.cc/"/>
-  <updated>2024-01-14T04:05:50.622Z</updated>
+  <updated>2024-01-16T07:06:54.728Z</updated>
   <id>https://www.xiaozhe.cc/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1.16-2.16 工作整体框架</title>
+    <link href="https://www.xiaozhe.cc/2024/01/16/1-16-2-16-gong-zuo-zheng-ti-kuang-jia/"/>
+    <id>https://www.xiaozhe.cc/2024/01/16/1-16-2-16-gong-zuo-zheng-ti-kuang-jia/</id>
+    <published>2024-01-16T07:02:34.000Z</published>
+    <updated>2024-01-16T07:06:54.728Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;工作整体框架&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img4/202401161435348.png&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>以静制动</title>
@@ -150,9 +172,9 @@
       <category term="数据库" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Mysql" scheme="https://www.xiaozhe.cc/tags/Mysql/"/>
-    
       <category term="极客时间" scheme="https://www.xiaozhe.cc/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="Mysql" scheme="https://www.xiaozhe.cc/tags/Mysql/"/>
     
   </entry>
   
@@ -315,9 +337,9 @@
       <category term="数据结构与算法" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="极客时间" scheme="https://www.xiaozhe.cc/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
-    
       <category term="数组" scheme="https://www.xiaozhe.cc/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="极客时间" scheme="https://www.xiaozhe.cc/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
     
   </entry>
   
@@ -526,33 +548,6 @@
         
         
           &lt;p&gt;操作系统的&lt;strong&gt;核心&lt;/strong&gt;无非是&lt;strong&gt;多进程图像&lt;/strong&gt;和&lt;strong&gt;文件图像&lt;/strong&gt;，它们共同支撑了一个计算机&lt;strong&gt;最基础的骨架&lt;/strong&gt;，前者使多道程序能够被加载到内存，并有序的运行与切换，这其中
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://www.xiaozhe.cc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="操作系统" scheme="https://www.xiaozhe.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>虚拟内存</title>
-    <link href="https://www.xiaozhe.cc/2021/07/12/xu-ni-nei-cun/"/>
-    <id>https://www.xiaozhe.cc/2021/07/12/xu-ni-nei-cun/</id>
-    <published>2021-07-12T03:26:10.000Z</published>
-    <updated>2023-10-26T13:00:54.029Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;我们在第三章的内存管理中常用的一个概念是虚拟内存，虚拟内存是用&lt;strong&gt;于分离用户与物理层&lt;/strong&gt;，且实现物&lt;strong&gt;理内存的扩展&lt;/strong&gt;的。&lt;/p&gt;
-&lt;p&gt;但对于虚拟内存的&lt;strong&gt;内在机理&lt;/strong&gt;，我们没有太多的谈及，只是
         
       
     
