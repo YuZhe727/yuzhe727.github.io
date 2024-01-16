@@ -6,11 +6,11 @@ toc: true
 mathjax: true
 date: 2024-01-16 15:47:22
 password:
-summary: 工具篇
+summary: 
 tags: 
 - maven
 - 模块设计
-categories:
+categories: 工具篇
 ---
 
 ## Maven使用
