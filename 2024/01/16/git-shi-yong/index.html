@@ -4,12 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="计算机网络概述, 归处 java 算法 计算机基础 闲聊">
+    <meta name="keywords" content="git使用, 归处 java 算法 计算机基础 闲聊">
     <meta name="baidu-site-verification" content="codeva-Tb46ZjblhS">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="前言终于要进入正题了。
-但当看到第一章居然是概述，小伙伴们可能会困惑，概述的内容值得这么大的篇章吗？起初我也抱着这样的心里，所以仓促的看了下第一章，就去看后面的重点内容了。但往后学，慢慢发现所有的框架知识都是在概述建立的，还有那繁多却实用的">
+    <meta name="description" content="git使用一、前言在壳壳子工作一年有余，回头来看，对工具的使用总归差了点意思，首档其冲的就是git了。
+对于git，总有种晦涩难明的情绪，这是我在壳壳子做技术分享的第一个主题，当初针对原理、基础使用、高级使用侃侃而谈。现如今，对于git呼之">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>计算机网络概述 | 归处的博客</title>
+    <title>git使用 | 归处的博客</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +275,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        计算机网络概述
+                        git使用
                     </div>
                 </div>
             </div>
@@ -392,8 +392,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/计算机网络/" target="_blank">
-                            <span class="chip bg-color">计算机网络</span>
+                        <a href="/tags/git/" target="_blank">
+                            <span class="chip bg-color">git</span>
+                        </a>
+                        
+                        <a href="/tags/模块设计/" target="_blank">
+                            <span class="chip bg-color">模块设计</span>
                         </a>
                         
                     </div>
@@ -401,22 +405,13 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/计算机基础/" class="post-category" target="_blank">
-                            计算机基础
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-12
+                    2024-01-16
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -430,14 +425,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    923
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    3 分
                 </div>
                 
                 
@@ -453,183 +448,68 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>终于要进入<strong>正题</strong>了。</p>
-<p>但当看到第一章居然是概述，小伙伴们可能会困惑，概述的内容值得这么大的篇章吗？起初我也抱着这样的心里，所以仓促的看了下第一章，就去看后面的重点内容了。但往后学，慢慢发现<strong>所有的框架知识都是在概述建立的，还有那繁多却实用的术语</strong>，所以呢，在写这篇文章之前，我又老老实实看了一遍这看似鸡肋的概述。</p>
-<p>其实呢，第一章的内容设置还是很<strong>友好</strong>的，在这一章中，我们首先就会从<strong>网络的定义</strong>出发，探寻<strong>网络的框架结构</strong>，深入<strong>技术发展的征途</strong>，最终自然的回归<strong>分层模型</strong>。</p>
-<p>如果通过第一章的学习能让我们建立起学习的纹路，那就不虚此行了。话不多说，出发咯——</p>
-<hr>
-<h2 id="1-1-什么是Internet"><a href="#1-1-什么是Internet" class="headerlink" title="1.1 什么是Internet"></a>1.1 什么是Internet</h2><p>网络是什么？这个是很宽泛的问题，我们将从两个维度来展开——</p>
-<h3 id="从组成角度"><a href="#从组成角度" class="headerlink" title="从组成角度"></a>从组成角度</h3><p>从数学的概念出发，网这种数据结构包含边和点。同样的，Internet包含<strong>节点</strong>和<strong>通信链路</strong>。而除此之外，一个网络还必须有<strong>协议</strong>的支持才能稳定的运行。</p>
-<p><code>节点</code>：网络中的节点有两类，端节点和分组节点。端节点是指<strong>主机及其上运行的应用程序</strong>，而分组节点则是<strong>路由器，交换机等网络交换设备</strong>；</p>
-<p><code>通信链路</code> ： 根据通信链路所在的位置分为<strong>接入网链路</strong>和<strong>主干链路</strong>。接入网链路是指从主机连接到互联网的链路，比如我们日常生活使用无线接入设备WIFI接入互联网就是接入网。而主干链路是指路由器之间的链路，它负责数据的传输和中转，通常通信链路使用的材质为<strong>双绞线，光纤，电缆</strong>等。</p>
-<p>那么如何衡量通信链路的传输速率呢，就需要引入<strong>带宽</strong>，带宽在通信和网络中的定义是有所区别的，在计算机网络中，带宽被这样定义：</p>
-<blockquote>
-<p>带宽，在计算机网络中用来表示网络的<strong>通信线路传输数据的能力</strong>。注意，这里是传输，而不是传播，带宽描述的是<strong>发送数据的发送器的能力强弱</strong>，而带宽越大，将数据注入这个链路所需要的时间就越少。而传播和发送器是没有关系的。它表示的是信号在信道中传输的速率。</p>
-</blockquote>
-<p>那协议又是什么东东呢？协议指在对等实体之间通信需要遵循的规则。通常我们会从一个协议的<strong>语法</strong>，<strong>语义</strong>，<strong>时序</strong>，<strong>动作</strong>方面来衡量一个协议。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262116307.png" alt="image-20210707204758527"></p>
-<h3 id="从服务角度"><a href="#从服务角度" class="headerlink" title="从服务角度"></a>从服务角度</h3><p>从服务的维度来看，Internet包括<strong>分布式的应用程序</strong>和<strong>支撑分布式应用程序通信的基础设施</strong>。</p>
-<hr>
-<h2 id="1-2-网络边缘"><a href="#1-2-网络边缘" class="headerlink" title="1.2 网络边缘"></a>1.2 网络边缘</h2><p>网络边缘包含<strong>计算机和其他接入网络的设备</strong>，又因为他们处于边缘位置，故也称<strong>端系统</strong>。它的另一为人所知的称谓是<strong>主机</strong>，而网络边缘即是<strong>主机+运行在主机上的应用程序</strong></p>
-<p>我们来看下面的网络图示——</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262116719.png" alt="image-20210707204813922"></p>
-<p>在这个图中<strong>，计算机，服务器，AP(无线访问设备)</strong>都属于端系统的范畴。</p>
-<p>那这些端系统是如何介入网络的呢？很显然，通过通信链路，更具体的说，是通过<strong>接入网</strong>，接入网是<strong>将端系统物理连接到边缘路由器</strong>的链路。</p>
-<p>写到这，<strong>不妨将知识映射到实际的应用</strong>。我家是使用<strong>电话线</strong>来接入因特网的，学过通信原理的朋友都知道在信道中传输的信号必须是<strong>数字信号</strong>，也就是说，我们需要一个<strong>调制解调器</strong>来完成信号的转换，这就是我们常说的<strong>猫(Modem)</strong>。这样就可以保证使用计算机上网了。但如果要多个设备都接入网络，就需要我们常说的WIFI，具体的说，是<strong>WIFI路由器</strong>，WIFI路由器上有<strong>很多以太网的网口</strong>，这样就可以实现多设备的接入网络了，当然，是<strong>共享带宽</strong>哦。</p>
-<p><img src="https://gitee.com//future727/imgs/raw/master/zyz_img2/image-20210707204838947.png" alt="image-20210707204826842"></p>
-<p>而同样值得一提的是，使用电话线的接入网它的<strong>上行和下行的速率是不一样的</strong>，我们普遍的需求是下载的速度更快，而对上传的速率没有严格的要求，因此使用这种带宽分发策略更有利。</p>
-<p>接入网的方式自然不限于电话线，使用线缆反而是现在更通用的方式。<img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117561.png" alt="image-20210707204838947"></p>
-<p>我们来描述一下这个过程——<br><strong>首先计算机通过Modem,即DSL调制解调器完成信号的转化，连接线缆的设备共享线缆的接入网络，再通过CMTS(线缆调制解调终端系统)接入到ISP的路由器中。</strong></p>
-<p>我们描述了端系统是如何接入网络的，那端系统之上的<strong>应用进程是如何通信的呢</strong>？</p>
-<p>应用进程属于应用层，应用层的通信实现需要<strong>通过传输层提供的接口调用传输层的服务</strong>。当然，这只是一个概述，具体展开那就是第二章的故事了。</p>
-<p>换一个维度看，也就是从通信模式上说，应用进程之间的通信分为CS模式和P2P模式，我们常使用的WEB应用使用的就是CS架构，而迅雷使用的则是P2P模式，它们各有千秋，在后面章节中后提及~</p>
-<blockquote>
-<p>总而言之。网络边缘负责提供应用进程端到端的通信。</p>
-</blockquote>
-<hr>
-<h2 id="1-3-网络核心"><a href="#1-3-网络核心" class="headerlink" title="1.3 网络核心"></a>1.3 网络核心</h2><p>前面我们提及网络边缘通过接入网接入Internet，其实这种说法是不准确的，通过接入网接入的是网络核心，而网络核心指的是路由器的网状网络，所以说，网络核心其<strong>本质是网络的网络</strong>。</p>
-<p>从大的框架来看，<strong>网络核心是为网络边缘服务的</strong>，它负责将数据从一个应用进程通过网络核心这个黑盒子传输到另一个应用进程。</p>
-<p>那怎样实现传输呢？接根线直接连过去显然不合适，那是名副其实的互连，但着实不优雅。</p>
-<p>我们需要一种<strong>中继的设备</strong>，它需要知道数据从何而来，要去往何处，也要保证传输一定程度的稳定。在实际中，满足这样需求的设备就是<strong>交换机。而使用网络链路和交换机传输数据有两种基本方法：</strong>电路交换和分组交换。</p>
-<h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p>电路交换的思路是<strong>为每一个呼叫预留一条专有的电路</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117944.png" alt="image-20210707204900893"></p>
-<p>从上图中可以看到，在两个交换机之间有四条链路，假如网络带宽是1Mbps,那每条链路的带宽都是250Kbps,发起通信以后以后，首先会建立一个专有的连接，在连接保持期间，它独享链路资源。这就好比两个人通过手机正在通话，第三方想接入的话会显示占线中。</p>
-<p>这种VIP的通信服务除了<code>专用带宽</code>以外，它也提供<code>缓存服务</code>。但同时它的缺点也很明显，接入的用户太少了。因特网的用户接入是有局部性和突发性的，一成不变的电路交换显然不能胜任。</p>
-<p>这里需要额外的给出一些<strong>小贴士</strong>：</p>
-<blockquote>
-<p>带宽可以认为是网络中的一种资源，而为了更充分的利用这种资源，通常将带宽分成片。这里可以类比CPU的时间片。通常的分片方式有时分，频分，码分，波分。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117833.png" alt="image-20210707204915415"></p>
-</blockquote>
-<h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p>分组交换传输数据的<strong>粒度更小</strong>，它是<strong>基于分组</strong>的传输，那首先要了解分组的定义，在端与端之间传输数据的单元是报文。报文中包含协议设计者需要的任何东西。而网络核心的设备处于网络层，因而源主机将报文分成一个个的分组，分组按照协议要求，封装特定的头部和实体部分，在网络中传输。</p>
-<p>为了量化传输的效率，我们通常将分组的长度记做L比特，而将链路的传输速率记做R比特/秒，即带宽为Rbps，那传输速率就为L/R。</p>
-<p>分组交换为了提高传输的效率并让传输变得稳定可控，采用<strong>存储转发</strong>的机制。即路由器先将接收到的分组存储起来，将分组中的某些信息取出，按照一定的路由算法得到路由表，再由路由表即可得到下一条的IP地址，最终将分组转发给下一个路由器。</p>
-<p>上面我们提及存储转发可以让传输稳定可用，但实际上，<strong>存储转发只是一种尽力而为的机制</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117316.png" alt="image-20210707204929034"></p>
-<p>当<code>分组的到达速率&gt;链路的输出速率</code>，分组就需要排队，当队列已满，即路由器的<code>缓存用完</code>时，分组就<code>会被抛弃</code>。</p>
-<p>从上图中可以看出，分组<code>没有时序的讲究</code>，分组共享链路的带宽资源。我们常将这种模式称为统计多路复用。</p>
-<h3 id="网络核心的关键功能"><a href="#网络核心的关键功能" class="headerlink" title="网络核心的关键功能"></a>网络核心的关键功能</h3><ol>
-<li><p><strong>路由</strong></p>
-<p>即决定分组采用的源到目标的路径，传统的是使用<strong>路由算法</strong>得到下一条的地址，而现在效率更高，也更通用的方式是——<code>控制平面与数据平面</code>。第四章会着重聊到。</p>
-</li>
-<li><p>转发</p>
-<p>即将分组从路由器的输入链路转移到输出链路。</p>
-</li>
-</ol>
-<h3 id="分组交换VS电路交换"><a href="#分组交换VS电路交换" class="headerlink" title="分组交换VS电路交换"></a>分组交换VS电路交换</h3><p>理论知识的掌握仅仅是定性，要想更透彻的了解区别，还需要定量分析，我们一起来看下面的小例子——</p>
-<blockquote>
-<p>假设链路的带宽是1Mbps,,每个用户活动时所需要的带宽为100kbps，且每个用户只有10%的时间是活动的，分析电路交换和分组交换模式下所能支撑的最大用户数量？</p>
-</blockquote>
-<ul>
-<li><p>电路交换： 显然可以支撑1M/100K=<strong>10个</strong>用户</p>
-</li>
-<li><p>分组交换：假设有35个用户，按使用概率论的知识可以求得<strong>链路不允许10个以上用户活动的概率为0.004</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117658.png" alt="image-20210707204942286"></p>
-<p>通俗的说，允许10个以上用户活动的概率就等于允许0个，1个。。。的<strong>概率累加和</strong>，而35个中可以允许1个用户活动的概率服从<strong>伯努利实验，即二项分布</strong>。</p>
-<p><img src="http://qnuez6z2b.hn-bkt.clouddn.com/typora/image-20210204122319342.png" alt="image-20210204122319342"></p>
-<p>通过计算结果，很容易推断出分组交换在<code>用户容量</code>方面优于电路交换。</p>
-</li>
-</ul>
-<hr>
-<h2 id="1-4-Internet结构与ISP"><a href="#1-4-Internet结构与ISP" class="headerlink" title="1.4 Internet结构与ISP"></a>1.4 Internet结构与ISP</h2><p>这里我们不再回顾Internet的演变过程，下图直接给出最终的框架——</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262117186.png" alt="image-20210707204955995"></p>
-<p>那如何来解释这张网络架构图呢？我们以<strong>从边沿到核心的思路</strong>说起：</p>
-<p>首先零散的端系统接入到<code>附近的ISP服务商</code>提供的区域网络，区域接入再通过很多路由器接入到去<code>global ISPS</code>,global ISPS通过互连IXP的方式接入到其他的global ISPS，这样一个网络框架就有了。但网络还需要实质的数据传输，这时候<code>ICP(内容分发网络，如谷歌)</code>就加入进去了，而为了节省成本，ICP通常会自己搭建更靠近用户的网络来向用户提供服务。</p>
-<p>为了更形象的展示错综复杂的网络，我们看下实际应用中的网络——</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118147.png" alt="image-20210707205016410"></p>
-<hr>
-<h2 id="1-5-分组延时-丢失和吞吐量"><a href="#1-5-分组延时-丢失和吞吐量" class="headerlink" title="1.5 分组延时,丢失和吞吐量"></a>1.5 分组延时,丢失和吞吐量</h2><p>又到了万恶的知识点环节，但朋友们大可放心，这些概念还是很好理解的——</p>
-<h3 id="分组延时"><a href="#分组延时" class="headerlink" title="分组延时"></a>分组延时</h3><p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118516.png" alt="image-20210707205026706"></p>
-<p>分组延时有四种——</p>
-<ul>
-<li><p><code>节点处理延时</code>：检查<strong>分组首部</strong>以及决定将分组导向何处。</p>
-</li>
-<li><p><code>排队延时</code>：在输出链路上<strong>等待传输</strong>的时间</p>
-<p>在排队延时中我们引入<strong>流量强度</strong>的概念——<br>$$<br>流量强度=La/R<br>$$<br>a指的是分组到达队列的<strong>平均速率</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118077.png" alt="image-20210707205224266"></p>
-</li>
-<li><p><code>传输延时</code>：长度为L的分组在带宽为Rbps的链路上传输的时间为<strong>L/R</strong>.</p>
-</li>
-<li><p><code>传播延时</code>：在<strong>物理链路上的传播时间</strong>。</p>
-</li>
-</ul>
-<h3 id="分组丢失"><a href="#分组丢失" class="headerlink" title="分组丢失"></a>分组丢失</h3><p>当分组到达队列已满的路由器时，分组根据协议类型被<strong>丢弃</strong>或从上一个节点<strong>重传</strong>。</p>
-<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p>吞吐量指单位时间内从源端传输到目标端的数据量，它<strong>取决于路径上最小的吞吐量</strong>。</p>
-<hr>
-<h2 id="1-6-协议层次与服务模型"><a href="#1-6-协议层次与服务模型" class="headerlink" title="1.6 协议层次与服务模型"></a>1.6 协议层次与服务模型</h2><p>在解决复杂问题时，将问题模块化，分层解决是一个很好的思路，我们先来看日常生活中称作航班的例子——</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262118996.png" alt="image-20210707205236557"></p>
-<p>这个例子有什么特点呢？</p>
+                <h2 id="git使用"><a href="#git使用" class="headerlink" title="git使用"></a>git使用</h2><h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>在壳壳子工作一年有余，回头来看，对工具的使用总归差了点意思，首档其冲的就是git了。</p>
+<p>对于git，总有种晦涩难明的情绪，这是我在壳壳子做技术分享的第一个主题，当初针对原理、基础使用、高级使用侃侃而谈。现如今，对于git呼之欲出的印象，却仅有git pull、git add几个常用的命令，换言之，到底还是走了能用就行的老路。</p>
+<p>这种认知不能算错，但在某些时机，<strong>那些高级的用法、习以为常的git规范、通用的原理往往能让人在棘手问题前游刃有余</strong>。</p>
+<p>这种投入少数精力就能实现差异化竞争的领域，其实很值得投入，所以在工作一年半之后的今天，重新拾起落灰的git神技，也是件水到渠成的事情了。</p>
+<p>在正式书写之前，有一点仍需要反复告诫自己：</p>
+<p><code>以前那种精耕细作的博客记录方式已经不适用了，用最少的结构化语言描述最重要的点，才是当务之急</code></p>
+<h3 id="二、背景"><a href="#二、背景" class="headerlink" title="二、背景"></a>二、背景</h3><p>在2024年，如果一个开发人员不能熟练使用git，那他显然就是一个没有职业素养的程序员。</p>
+<p>git如此重要的原因，是因为其代表了团队的分布式协作模式，这种可<strong>P2P与CS结合的架构方式</strong>，让它既实现了高效协作，也满足集中管理的诉求。</p>
+<h3 id="三、概述"><a href="#三、概述" class="headerlink" title="三、概述"></a>三、概述</h3><blockquote>
+<p>git是一个分布式版本控制软件，与集中式的版本控制工具相比，它有着一下优点：</p>
 <ol>
-<li>在每一层都实现了<strong>特定的功能</strong>，比如购票，托运行李巴拉巴拉；</li>
-<li>在使用上层服务时，必须依托下层提供的<strong>服务</strong>。简言之，总得先购票才能坐飞机吧，当然，像&lt;猫和老鼠&gt;中的莱昂纳多除外~</li>
-<li>每一层都有特有的<strong>规范</strong>，比如按特定路线航行。</li>
+<li>可离线访问，速度快，因为本地仓库～远端仓库</li>
+<li><code>记录快照而非diff</code>，Git存储的是每个文件的完整内容</li>
+<li>分支管理功能强大</li>
 </ol>
-<p>在上面我们了服务，那怎样解释服务呢？</p>
-<p><code>服务</code>：底层实体向上层实体提供他们之间的通信的能力。</p>
-<p>与服务会发生概念混淆的，是<strong>原语</strong>的概念，这里的原语区别于操作系统的原语，指的是使用服务的方式，说白了，就是<strong>API</strong>。有了服务，自然就有服务作用的对象——</p>
-<p><code>服务访问点SAP</code>: 即下层提供的服务要通过<strong>接口</strong>来让上层调用。在传输层，SAP就是端口。</p>
-<p>我们将服务的粒度放小就是<strong>数据单元DU</strong>，下面的图会展示DU的结构——</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262119230.png" alt="image-20210707205247263"></p>
-<p>也就是说，数据单元是由<strong>实体+特定的协议头部</strong>构成的。</p>
-<p>到这里，前置知识大抵就完了，我们直接上正菜——</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262119497.png" alt="image-20210707205300541"></p>
-<p>换种描述方式——</p>
-<table>
-<thead>
-<tr>
-<th>协议分层</th>
-<th>数据单元</th>
-<th>服务</th>
-<th>服务访问点</th>
-<th>常用协议</th>
-<th><strong>关键词</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>应用层</td>
-<td>报文</td>
-<td>网络应用</td>
-<td></td>
-<td>HTTP.DNS,SMTP,FTP</td>
-<td></td>
-</tr>
-<tr>
-<td>传输层</td>
-<td>报文段</td>
-<td>主机之间的数据传输</td>
-<td>端口</td>
-<td>TCP/UDP</td>
-<td>拥塞控制，流量管理，可靠数据传输，面向连接/不面向连接</td>
-</tr>
-<tr>
-<td>网络层</td>
-<td>分组</td>
-<td>为数据包从源到目的选择路由</td>
-<td>IP地址</td>
-<td>IP</td>
-<td>路由，转发</td>
-</tr>
-<tr>
-<td>链路层</td>
-<td>数据帧</td>
-<td>相邻网络节点间的数据传输</td>
-<td></td>
-<td>PPP,802.11WIFI</td>
-<td>不可靠</td>
-</tr>
-<tr>
-<td>物理层</td>
-<td>字节</td>
-<td>在线路上传送bit</td>
-<td></td>
-<td></td>
-<td>通信链路</td>
-</tr>
-</tbody></table>
-<p>这时我们就可以解答实际中应用程序间的通信是如何实现的啦——</p>
-<p><img src="https://cdn.jsdelivr.net/gh/YuZhe727/xiaozhe_img/img3/202310262119692.png" alt="image-20210707205315024"></p>
-<blockquote>
-<p>山高路远，静水深流</p>
 </blockquote>
+<h3 id="四、具体使用"><a href="#四、具体使用" class="headerlink" title="四、具体使用"></a>四、具体使用</h3><h4 id="1-使用前配置"><a href="#1-使用前配置" class="headerlink" title="1. 使用前配置"></a>1. 使用前配置</h4><p>有状态协议自然需要识别用户身份是否合法：</p>
+<ol>
+<li><p>下载git</p>
+</li>
+<li><p>使用公司内部用户信息登陆代码平台</p>
+</li>
+<li><p>本地生成ssh秘钥，将公钥复制到代码平台,在通信时使用非对称加密的方式验证本地的私钥与远端的公钥</p>
+<pre class=" language-sh"><code class="language-sh">ssh-keygen -t rsa -C "公司内部邮箱地址"
+cat ~/.ssh/id_rsa.pub 
+add ssh key</code></pre>
+</li>
+<li><p>配置通信用的用户信息</p>
+<pre class=" language-shell"><code class="language-shell">git config --global user.name "xxx"
+git config --global user.email "xxx@xx.com"</code></pre>
+</li>
+</ol>
+<h4 id="2-用一个例子认识git"><a href="#2-用一个例子认识git" class="headerlink" title="2. 用一个例子认识git"></a>2. 用一个例子认识git</h4><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ec7210655b4d4fc4afcd1466d9aa2343~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" alt="git"></p>
+<p>场景：拉取一个新项目并修改其中的checkstyle.xml文件</p>
+<p>实践：</p>
+<pre class=" language-sh"><code class="language-sh">#使用https/ssh的方式拉取，通常使用ssh地址
+git clone 远端git地址 
+#在项目文件的根目录执行命令 交由git管理
+git init 
+#修改文件  #添加文件到暂存区
+git add checkstyle.xml
+#不确定改动是否合适，还不到commit的时机，但要看别的代码，遂暂存现场
+git stash 
+git stash list
+git stash pop/apply
+#确定改动是合适且是一个阶段的最终结果，遂提交
+git commit -m“feat：修改checkstyle.xml文件”
+#认为提交信息要更改，遂修改
+git commit --amend
+#本次做的变更没有意义，认为应该回退到上一个版本 --soft，--mixed和--hard
+git reset HEAD 
+#修改信息，重新提交，准备部署到远端
+git pull
+#别人也修改了相同的代码，代码出现冲突 这一步建议使用可视化工具合并
+git merge 分支名 
+#产品说这个功能不用做了，回退到上个版本 
+git revert 版本号</code></pre>
+<h4 id="3-奇技淫巧"><a href="#3-奇技淫巧" class="headerlink" title="3. 奇技淫巧"></a>3. 奇技淫巧</h4><p>git reset</p>
+<p>git revert</p>
+<p>git cherry-pick</p>
+<p>git reflog</p>
+<h3 id="五、延伸：git设计"><a href="#五、延伸：git设计" class="headerlink" title="五、延伸：git设计"></a>五、延伸：git设计</h3><p>c语言 指针</p>
 
             </div>
             <hr />
@@ -664,9 +544,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《计算机网络概述》
+                    《git使用》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/07/12/ji-suan-ji-wang-luo-gai-shu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2024/01/16/git-shi-yong/" property="cc:attributionName"
                rel="cc:attributionURL">
                 归处
             </a> 采用
@@ -707,7 +587,7 @@
         repo: 'yuzhe727.github.io',
         owner: 'YuZhe727',
         admin: "YuZhe727",
-        id: '2021/07/12/ji-suan-ji-wang-luo-gai-shu/',
+        id: '2024/01/16/git-shi-yong/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
     gitalk.render('gitalk-container');
@@ -727,50 +607,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/12/ji-suan-ji-wang-luo-ying-yong-ceng/">
+                <a href="/2024/01/16/git-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="计算机网络应用层">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git使用">
                         
-                        <span class="card-title">计算机网络应用层</span>
+                        <span class="card-title">git使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            摘要到第二章我们就将进入具体5层协议栈的描述，更具体地说，是从顶层应用层开始，渐进地学习计算机网络。我们知道，应用层是在传输层提供的服务上实现应用进程通信的，也就是借助操作系统使用Socket API的方式实现的。那基于Socket API
+                            工具篇
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-16
+                            </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/计算机基础/" class="post-category" target="_blank">
-                                    计算机基础
-                                </a>
-                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/计算机网络/" target="_blank">
-                        <span class="chip bg-color">计算机网络</span>
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
-                    <a href="/tags/抓包/" target="_blank">
-                        <span class="chip bg-color">抓包</span>
+                    <a href="/tags/模块设计/" target="_blank">
+                        <span class="chip bg-color">模块设计</span>
                     </a>
                     
                 </div>
@@ -784,34 +659,33 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/12/ci-pan-yu-wen-jian/">
+                <a href="/2024/01/16/maven-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="磁盘与文件">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="maven使用">
                         
-                        <span class="card-title">磁盘与文件</span>
+                        <span class="card-title">maven使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、磁盘与文件
-1.生磁盘的使用生磁盘指单独的磁盘，不包括文件系统。
-磁盘的使用同外设一样，它的工作机制也是三步走：CPU向磁盘控制器中的寄存器读写数据，磁盘控制器完成真正的工作，并向CPU发中断信息。
-学习磁盘从认识磁盘开始，磁盘是长这样
+                            Maven使用前言两年前写的一篇文章：maven从入门到入坑已经对maven的全貌做了详细介绍，这里不再赘述。仅从一个自然的思维顺序简要地描述maven的使用，力求做到与实际紧密结合
+
+背景最开始手动导入jar包面临以下问题：各个模块都在其
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/计算机基础/" class="post-category" target="_blank">
-                                    计算机基础
+                            <a href="/categories/工具篇/" class="post-category" target="_blank">
+                                    工具篇
                                 </a>
                             
                             
@@ -821,8 +695,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/操作系统/" target="_blank">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/模块设计/" target="_blank">
+                        <span class="chip bg-color">模块设计</span>
+                    </a>
+                    
+                    <a href="/tags/maven/" target="_blank">
+                        <span class="chip bg-color">maven</span>
                     </a>
                     
                 </div>
