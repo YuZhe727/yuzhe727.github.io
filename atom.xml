@@ -36,9 +36,9 @@
     </summary>
     
     
-      <category term="git" scheme="https://www.xiaozhe.cc/tags/git/"/>
-    
       <category term="模块设计" scheme="https://www.xiaozhe.cc/tags/%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="git" scheme="https://www.xiaozhe.cc/tags/git/"/>
     
   </entry>
   
@@ -64,9 +64,9 @@
       <category term="工具篇" scheme="https://www.xiaozhe.cc/categories/%E5%B7%A5%E5%85%B7%E7%AF%87/"/>
     
     
-      <category term="模块设计" scheme="https://www.xiaozhe.cc/tags/%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1/"/>
-    
       <category term="maven" scheme="https://www.xiaozhe.cc/tags/maven/"/>
+    
+      <category term="模块设计" scheme="https://www.xiaozhe.cc/tags/%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
@@ -121,7 +121,7 @@
     <link href="https://www.xiaozhe.cc/2023/12/18/mo/"/>
     <id>https://www.xiaozhe.cc/2023/12/18/mo/</id>
     <published>2023-12-18T10:46:04.000Z</published>
-    <updated>2024-01-19T16:03:02.098Z</updated>
+    <updated>2024-01-20T03:47:17.834Z</updated>
     
     <summary type="html">
     
@@ -419,9 +419,9 @@
       <category term="数据结构与算法" scheme="https://www.xiaozhe.cc/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="java" scheme="https://www.xiaozhe.cc/tags/java/"/>
-    
       <category term="排序算法" scheme="https://www.xiaozhe.cc/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="java" scheme="https://www.xiaozhe.cc/tags/java/"/>
     
   </entry>
   
